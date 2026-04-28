@@ -2,18 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
 :root{
-    /* --signature: #6a00ff74; */
     --signature: #6a00ff;
-    /* --signature: #9500ff; */
-    --nav: #0a1222c8;
+    --nav: #0f1118c8;
     --background: linear-gradient(135deg, #030813 0%, #0a1222 55%, #050a12 100%);
     --links: #adc9fa;
     --main-text: #d1ff05;
     --main-text1: #b1ff3c;
     --main-text2: #e0ff58;
-}
-main div{
-    min-height: 500px;
 }
 *{
     margin: 0px;
@@ -24,22 +19,25 @@ a{
     text-decoration: none;
 }
 body{
+    position: relative;
     background: var(--background);
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: scroll;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: "Chakra Petch", "Trebuchet MS", sans-serif;
-    font-family: "Saira Stencil", "Chakra Petch", sans-serif;
+    /* font-family: "Saira Stencil", "Chakra Petch", sans-serif; */
     /* font-family: "VT323", "Chakra Petch"; */
 }
 header{
     position: fixed;
     top: 0;
     width: 100%;
-    /* background-color: var(--nav); */
-    backdrop-filter: blur(5px);
-    max-height: 75px;
+    background-color: var(--nav);
+    /* backdrop-filter: blur(5px); */
+    min-height: 75px;
     padding: 5px 50px;
 }
 nav{
@@ -66,7 +64,7 @@ nav .bar{
     border-radius: 2px;
     transition: 0.3s ease;
 }
-.nav-logo a{
+.nav-logo .logo, footer .logo{
     color: var(--main-text);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -96,7 +94,7 @@ nav .bar{
     background-color: #b54eff1a;
     border: white 2px solid;
 }
-.Log-in{
+.sign-in{
     padding: 7px 25px;
     display: flex;
     text-decoration: none;
@@ -107,15 +105,30 @@ nav .bar{
     font-size: 1.2rem;
     transition: 0.7s ease;
 }
-.Log-in:hover{
+.sign-in:hover{
     background: #b54eff1a;
     color:var(--main-text);
 }
 main{
-    margin: 20px 0;
+    margin: 89px 0;
     display: flex;
     flex-direction: column;
     gap: 50px;
+}
+footer{
+    background-color: var(--nav);
+    color: white;
+    padding: 10px;
+    margin: 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-family: "Chakra Petch", 'Franklin Gothic Medium', Arial, sans-serif ;
 }
 @media (max-width: 992px) {
     .nav-menu{
@@ -157,16 +170,3 @@ main{
         padding: 5px 25px;
     }
 }
-/*
-    color: #39ff14;
-    color: #00fbff;
-    color: #64daef;
-    color: #3ad2f4;
-    color: #00d5ffb6;
-    color: #dab1da;
-    color: #cbc3e3;
-    background: linear-gradient(145deg, #210236, #050c15f2);
-    background: #050c15f2;
-    background-color: #3fa7a3;
-    background-color: #2f8f8b;
-    */
