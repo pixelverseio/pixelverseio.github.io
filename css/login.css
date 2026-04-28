@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap');
+:root {
+    --background: linear-gradient(135deg, #030813 0%, #0a1222 55%, #050a12 100%);
+    --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    --signature: #1e0146;
+    --nav: #0a1222;
+    --main-text: rgb(209, 255, 5);
+    --main-text1: #b1ff3c;
+    --main-text2: #e0ff58;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    color: var(--main-text);
+    background-color: var(--nav);
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: "Chakra Petch", "Trebuchet MS", sans-serif;
+    font-weight: 400;
+}
+
+header:hover{
+    letter-spacing: 15px;
+    transition: .5s;
+}
+
+footer{
+    background-color: var(--nav);
+    color: white;
+    padding: 10px;
+    margin: 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-family: "Chakra Petch", 'Franklin Gothic Medium', Arial, sans-serif ;
+    a{
+        color: #b1ff3c;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 800;
+
+    }
+}
+
+main{
+    height: 80vh;
+    background: linear-gradient(135deg, #030813 0%, #0a1222 55%, #050a12 100%);;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    
+    width: 420px;
+    background-color: transparent;
+    border-radius: 15px;
+    color: white;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow:
+    0 0 10px rgba(255,255,255,0.3),
+    0 0 30px rgba(255,255,255,0.2),
+    inset 0 0 15px rgba(255,255,255,0.1);
+    gap: 20px;
+    border-radius: 25px;
+    font-family: "Chakra Petch", "Trebuchet MS", sans-serif;
+    h1{
+        text-align: center;
+        padding: 10px;
+        color: var(--main-text);
+        font-family: 'Chakra Petch';
+        font-size: 50px;
+    }
+    
+
+    .input-box{
+        padding: 10px;
+        width: 100%;
+    }
+        display: flex;
+        flex-direction: column;
+    .input-box input{
+        padding: 10px;
+        width: 100%;
+        border-style:none ;
+        outline: none;
+        border-radius: 15px;
+    }
+
+    .input-box input:hover{
+        transform: translateX(1.7px);
+        transition: .3s;
+    }
+
+    .login-btn{
+        padding: 10px;
+        width: 352px;
+        border-radius: 25px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 900;
+        border-style: none;
+        background-color: rgb(0, 170, 255);    }
+    .login-btn:hover{
+        color: white;
+        transform: translateY(1.7px);
+        transition: .3s;
+        cursor: pointer;
+    }
+    .fa-user{
+        position: absolute;
+        top: 143px;
+        color: black;
+        right: 43px;
+    }
+
+    .fa-lock{
+        position: absolute;
+        top: 222px;
+        color: black;
+        right: 42px;
+    }
+
+    .forget a{
+        text-decoration: underline;
+        color: rgb(0, 170, 255);
+        margin-left: 10px;
+    }
+    
+    .forget a:hover{
+        color: white;
+        transform: translateY(2px);
+        transition: .5s;
+    }
+    .register{
+        display: flex;
+        gap: 5px;
+    }
+
+    .register a{
+        text-decoration: underline;
+        color: rgb(0, 170, 255);
+    }
+    
+    .register a:hover{
+        color: white;
+        transform: translateY(2px);
+        transition: .5s;
+    }
+
+    .input-box .forget {
+        margin-top: 8px;
+    }
+
+}
+
+
+
+
+
+
+/* Mobiles */
+@media (max-width: 767px) {
+}
+/* Small Screens */
+@media (min-width: 768px) {
+}
+/* M Screens */
+@media (min-width: 992px) {
+}
+/* L Screens */
+@media (min-width: 1200px) {
+}
+/* XL Screens */
+@media (min-width: 1400px) {
+}
