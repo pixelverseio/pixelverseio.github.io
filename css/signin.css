@@ -10,7 +10,6 @@
     --main-text2: #e0ff58;
 }
 
-
 body{
     display: flex;
     flex-direction: column;
@@ -25,16 +24,17 @@ body{
 
 header{
     display: flex;
+    font-size: xx-large;
     color: var(--main-text);
     background-color: var(--nav);
     padding: 10px;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-family: "Chakra Petch", "Trebuchet MS", sans-serif;
     font-weight: 400;
+    justify-content: center;
+    align-items: center;
 }
 
 header:hover{
