@@ -27,9 +27,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: "Chakra Petch", "Trebuchet MS", sans-serif;
-    /* font-family: "Saira Stencil", "Chakra Petch", sans-serif; */
-    /* font-family: "VT323", "Chakra Petch"; */
+    font-family: "Chakra Petch", "Saira Stencil", sans-serif;
 }
 header{
     position: fixed;
@@ -167,6 +165,19 @@ footer{
 }
 @media (max-width: 767px) {
     header{
-        padding: 5px 25px;
+    padding: 5px 10px;
+    }
+    .nav-logo .logo, footer .logo{
+    font-size: 1.5rem;
+    }
+    .sign-in{
+    padding: 7px 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.7s ease;
+    }
+    footer{
+    font-size: 14px;
+    font-weight: 500;
     }
 }
