@@ -10,6 +10,7 @@
     --main-text2: #e0ff58;
 }
 
+
 body{
     display: flex;
     flex-direction: column;
