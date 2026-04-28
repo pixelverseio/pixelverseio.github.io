@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    /* --signature: #6a00ff74; */
+    --signature: #6a00ff;
+    /* --signature: #9500ff; */
+    --nav: #0a1222c8;
+    --background: linear-gradient(135deg, #030813 0%, #0a1222 55%, #050a12 100%);
+    --links: #adc9fa;
+    --main-text: #d1ff05;
+    --main-text1: #b1ff3c;
+    --main-text2: #e0ff58;
+}
+main div{
+    min-height: 500px;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background: var(--background);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 100vh;
+    font-family: "Chakra Petch", "Trebuchet MS", sans-serif;
+    font-family: "Saira Stencil", "Chakra Petch", sans-serif;
+    /* font-family: "VT323", "Chakra Petch"; */
+}
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* background-color: var(--nav); */
+    backdrop-filter: blur(5px);
+    max-height: 75px;
+    padding: 5px 50px;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+}
+nav .nav-toggle{
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer
+}
+nav .bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px auto;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+.nav-logo a{
+    color: var(--main-text);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.nav-menu{
+    padding: 0px;
+    width: 55%;
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+.nav-menu a{
+    padding: 5px 20px;
+    color: var(--main-text2);
+    color: var(--links);
+    border: var(--nav) 2px transparent;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    transition: 0.7s ease;
+}
+.nav-menu a:hover, .nav-menu a.active{
+    color: var(--main-text);
+    background-color: #b54eff1a;
+    border: white 2px solid;
+}
+.Log-in{
+    padding: 7px 25px;
+    display: flex;
+    text-decoration: none;
+    background-color: var(--signature);
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: 0.7s ease;
+}
+.Log-in:hover{
+    background: #b54eff1a;
+    color:var(--main-text);
+}
+main{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+@media (max-width: 992px) {
+    .nav-menu{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100vh;
+        width: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        backdrop-filter: blur(5px);
+    }
+    nav .nav-toggle{
+        display: block;
+        z-index: 999;
+    }
+    .nav-menu.active{
+        display: flex;
+    }
+    .nav-toggle.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .nav-toggle.active .bar:nth-child(1){
+                transform: 
+                    translateY(8px)
+                    rotate(45deg);
+                ;
+    }
+    .nav-toggle.active .bar:nth-child(3){
+        transform: 
+            translateY(-8px)
+            rotate(-45deg);
+    }
+}
+@media (max-width: 767px) {
+    header{
+        padding: 5px 25px;
+    }
+}
+/*
+    color: #39ff14;
+    color: #00fbff;
+    color: #64daef;
+    color: #3ad2f4;
+    color: #00d5ffb6;
+    color: #dab1da;
+    color: #cbc3e3;
+    background: linear-gradient(145deg, #210236, #050c15f2);
+    background: #050c15f2;
+    background-color: #3fa7a3;
+    background-color: #2f8f8b;
+    */
