@@ -22,7 +22,7 @@ body{
     box-sizing: border-box;
 }
 
-header{
+header a{
     display: flex;
     font-size: xx-large;
     color: var(--main-text);
@@ -37,7 +37,7 @@ header{
     align-items: center;
 }
 
-header:hover{
+header a:hover{
     letter-spacing: 15px;
     transition: .5s;
 }
