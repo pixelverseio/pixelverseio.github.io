@@ -23,10 +23,13 @@ body{
 }
 
 header{
+    display: flex;
     color: var(--main-text);
     background-color: var(--nav);
     padding: 10px;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-family: "Chakra Petch", "Trebuchet MS", sans-serif;
