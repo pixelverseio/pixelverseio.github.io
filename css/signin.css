@@ -108,7 +108,7 @@ form{
         display: flex;
         flex-direction: column;
         width: 600px;
-        height: 430px;
+        height: 400px;
     .input-box input{
         padding: 10px;
         width: 100%;
