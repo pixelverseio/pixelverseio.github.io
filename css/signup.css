@@ -10,6 +10,10 @@
     --main-text2: #e0ff58;
 }
 
+header{
+    z-index: 999;
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -83,7 +87,7 @@ form{
     align-items: center;
     padding: 20px;
     margin: 20px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(0, 0, 0, 0.18);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
     box-shadow:
@@ -108,7 +112,7 @@ form{
     }
     display: flex;
     flex-direction: column;
-    height: 515px;
+    height: 535px;
     width: 636px;
     .input-box input{
         padding: 10px;
@@ -171,7 +175,14 @@ form{
 }
 
 
-
+.have-acc{
+    display: flex;
+    gap: 5px;
+    font-size: large;
+    a{
+        color: rgb(0, 170, 255);
+    }
+}
 
 
 /* Mobiles */
