@@ -157,7 +157,7 @@ form{
     
     .forget a:hover{
         color: white;
-        transform: translateY(2px);
+        transform: translateY(-2px);
         transition: .5s;
     }
     .register{
