@@ -150,7 +150,7 @@ form {
 /* Mobiles */
 @media (max-width: 767px) {
   form {
-    width: 100%;
+    width: 300px;
     h1{
       font-size: 1.5rem;
     }
