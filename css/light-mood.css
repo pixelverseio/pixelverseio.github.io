@@ -15,6 +15,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+.cc{
+    height: 2000px;
+}
 a{
     text-decoration: none;
 }
@@ -151,7 +154,7 @@ nav .nav-toggle{
     opacity: 0;
     transition: all 1s ease;
 }
-#theme-loginContainer{
+#theme-userContainer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -217,7 +220,7 @@ nav .nav-toggle{
     border: white 2px solid;
 }
 main{
-    margin: 89px 0;
+    margin-left: 80px;
 }
 /************************************ Footer **************************************/
 footer{
