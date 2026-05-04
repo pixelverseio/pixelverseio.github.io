@@ -3,12 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
 :root{
     --signature: #6a00ff;
-    --nav: #0f1118c8;
+    --nav: #13172b;
     --background: linear-gradient(135deg, #030813 0%, #0a1222 55%, #050a12 100%);
     --links: #adc9fa;
+    --links-hover: #261E47;
     --main-text: #d1ff05;
-    --main-text1: #b1ff3c;
-    --main-text2: #e0ff58;
 }
 *{
     margin: 0px;
@@ -29,22 +28,25 @@ body{
     flex-direction: column;
     font-family: "Chakra Petch", "Saira Stencil", sans-serif;
 }
+/****************************************** Header And Nav ************************************/  
 header{
     position: fixed;
     top: 0;
     width: 100%;
     background-color: var(--nav);
-    /* backdrop-filter: blur(5px); */
     min-height: 75px;
-    padding: 5px 50px;
+    padding: 5px 30px;
+    box-shadow: 0px 0px 2px #0f009ca8, 0 0 25px #3b2dc09c;
+    border-radius: 10px;
 }
 nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    /* gap: 20px; */
     padding: 15px;
+    margin: 0px;
 }
 nav .nav-toggle{
     display: none;
@@ -68,9 +70,13 @@ nav .bar{
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: 600;
+    white-space: nowrap;
 }
 .nav-logo .logo i{
     margin: 0px 8px;
+}
+.nav-logo .logo p{
+    display: inline;
 }
 .nav-menu{
     padding: 0px;
@@ -83,17 +89,65 @@ nav .bar{
 }
 .nav-menu a{
     padding: 5px 20px;
-    color: var(--main-text2);
     color: var(--links);
-    border: var(--nav) 2px transparent;
+    border: var(--nav) 2px solid;
     border-radius: 20px;
     font-size: 1.3rem;
     transition: 0.7s ease;
 }
+.nav-menu a p{
+    display: inline;
+}
+.nav-menu i, .lightnav-toggle, .sign-in i{
+    display: none;
+}
 .nav-menu a:hover, .nav-menu a.active{
     color: var(--main-text);
-    background-color: #b54eff1a;
+    background-color: var(--links-hover);
     border: white 2px solid;
+}
+#theme-loginContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+}
+#theme-loginContainer > div{
+    display: flex;
+    align-items: center;
+}
+.theme-toggle{
+    background-color: white;
+    position: relative;
+    border-radius: 25px;
+    width: 90px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+.theme-toggle:hover::after{
+    width: 40px;
+}
+.theme-toggle::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: var(--signature);
+    position: absolute;
+    right: 6px;
+    transition: all 0.7s ease;
+}
+.theme-toggle i.fa-moon{
+    z-index: 10;
+    color: var(--links);
+}
+#theme-btn{
+    width: 0;
+    height: 0;
+    visibility: hidden;
 }
 .sign-in{
     padding: 7px 25px;
@@ -105,6 +159,7 @@ nav .bar{
     font-weight: 700;
     font-size: 1.2rem;
     transition: 0.7s ease;
+    white-space: nowrap;
 }
 .sign-in:hover{
     background: #b54eff1a;
@@ -112,10 +167,8 @@ nav .bar{
 }
 main{
     margin: 89px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
 }
+/************************************ Footer **************************************/
 footer{
     background-color: var(--nav);
     color: white;
@@ -130,6 +183,26 @@ footer{
     font-size: 1.1rem;
     font-weight: 800;
     font-family: "Chakra Petch", 'Franklin Gothic Medium', Arial, sans-serif ;
+    box-shadow: 0px 0px 2px #0f009ca8, 0 0 25px #3b2dc09c;
+    border-radius: 10px;
+}
+
+@media (max-width: 1092px) {
+    .sign-in{
+    font-size: 1rem;
+    }
+    .theme-toggle{
+        width: 85px;
+        height: 35px;
+    }
+    #theme-loginContainer{
+    gap: 50px;
+}
+}
+@media (max-width: 1050px){
+    #theme-loginContainer{
+    gap: 40px;
+    }
 }
 @media (max-width: 992px) {
     .nav-menu{
@@ -165,6 +238,19 @@ footer{
             translateY(-8px)
             rotate(-45deg);
     }
+    #theme-loginContainer{
+    gap: 35px;
+}
+    .theme-toggle{
+        width: 80px;
+        height: 35px;
+    }
+    .theme-toggle:hover::after{
+        width: 37px;
+    }
+    .theme-toggle::after{
+        translate: 2px 0px;
+    }
 }
 @media (max-width: 767px) {
     header{
@@ -183,6 +269,29 @@ footer{
     font-size: 14px;
     font-weight: 500;
     }
+    #theme-loginContainer{
+    gap: 30px;
+}
+    .theme-toggle{
+        width: 70px;
+        height: 33px;
+    }
+    .theme-toggle:hover::after{
+        width: 33px;
+    }
+    .theme-toggle::after{
+        width: 27px;
+        height: 27px;
+        translate: 2px 0px;
+    }
+}
+@media (max-width: 480px){
+    #theme-loginContainer{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
 }
 
 
