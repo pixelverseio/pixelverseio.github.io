@@ -21,15 +21,15 @@ let themeToggle = document.querySelector(".theme-toggle");
 let link = document.querySelector("link.theme");
 let currentTheme = localStorage.getItem("theme");
 
-if(currentTheme == "dark")
+if(currentTheme == "light")
 {
-    link.setAttribute("href", "css/global.css");
-    link.classList.remove("light-theme");
-    link.classList.add("dark-theme");
-}else{
     link.setAttribute("href", "css/light-mood.css");
     link.classList.remove("dark-theme");
     link.classList.add("light-theme");
+}else{
+    link.setAttribute("href", "css/global.css");
+    link.classList.remove("light-theme");
+    link.classList.add("dark-theme");
 }
 
 themeToggle.addEventListener("click", function(){
