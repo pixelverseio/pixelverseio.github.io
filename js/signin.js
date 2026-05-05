@@ -65,7 +65,7 @@ document.forms[0].onsubmit = function (event) {
       passInput.value.trim() === adminPass
     ) {
       localStorage.setItem("admin", "true");
-      localStorage.setItem("loggedIn", "false");
+      localStorage.setItem("login", "");
       event.preventDefault();
       adminLoginSuccess.style.display = "block";
       form.style.display = "none";
@@ -83,7 +83,7 @@ document.forms[0].onsubmit = function (event) {
       });
 
       if (found) {
-        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("login", "user");
         localStorage.setItem("admin", "false");
         localStorage.setItem("pixeluser", JSON.stringify(found));
         event.preventDefault();

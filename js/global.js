@@ -1,8 +1,3 @@
-let userobj = {
-    username: "marwan",
-    library: ["game1", "game2"],
-    wishlist: ["game1", "game2"],
-};
 if(JSON.parse(localStorage.getItem("pixelUser"))){
     var user = JSON.parse(localStorage.getItem("pixelUser"));
 }
@@ -11,26 +6,30 @@ else{
         username: "no User"
     };
 }
-/*Dont forget to remove this vvvvvv **************************************** IMPORTANT *****************************************************/
-// localStorage.setItem("login", "user");
 
 // dark-mood nav toggle (small screens)
 let navToggle = document.querySelector(".nav-toggle");
 let navMenu = document.querySelector(".nav-menu");
 
-navToggle.addEventListener("click", function(){
-    navToggle.classList.toggle("active");
-    navMenu.classList.toggle("active");
-})
+let sign_in_up = document.querySelector(".sign-in-up")
+if(!sign_in_up){
+    navToggle.addEventListener("click", function(){
+        navToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    })
+}
 
 // light-mood nav toggle
 let ltNavToggle = document.querySelector(".lightnav-toggle");
 let header = document.querySelector("header");
 
+if(!sign_in_up){
 ltNavToggle.addEventListener("click", function(){
     ltNavToggle.classList.toggle("active-light");
     header.classList.toggle("active-light");
 })
+}
+
 
 // Login Nav
 let signinBtn = document.querySelector(".sign-in");
@@ -121,8 +120,10 @@ if(logout){
 }
 
 // Dark/Light theme switching
-let themeToggle = document.querySelector("label.theme-toggle");
+window.addEventListener("load", function(){
+    let themeToggle = document.querySelector("label.theme-toggle");
 let link = document.querySelector("link.theme");
+console.log(link);
 if(currentTheme == "light"){
     link.setAttribute("href", "css/light-mood.css");
     link.classList.remove("dark-theme");
@@ -166,7 +167,15 @@ themeToggle.addEventListener("click", function(){
         }
     }
 })
+})
 
-localStorage.setItem("pixelUser", JSON.stringify(userobj));
 
-let obj = JSON.parse(localStorage.getItem("pixelUser"));
+// localStorage.setItem("pixelUser", JSON.stringify(userobj));
+
+// let obj = JSON.parse(localStorage.getItem("pixelUser"));
+
+
+
+
+
+
