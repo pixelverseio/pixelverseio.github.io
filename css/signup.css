@@ -5,7 +5,9 @@
   letter-spacing: 15px;
   transition: 0.5s;
 }
-
+header{
+  display: none;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -209,15 +211,12 @@ form {
 }
 
 .light-theme form {
-  /* padding: 10px; */
   background: linear-gradient(180deg, #eef5fa 80%, #d4dde4 100%);
   box-shadow:
     0px 0px 0px #010101d1,
     0 0 25px #2424269c;
 }
-.light-theme main{
-  margin: 100px auto;
-}
+
 .light-theme .have-acc p {
   font-size: 500;
   color: #1a3a8a;

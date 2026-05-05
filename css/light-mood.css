@@ -32,7 +32,7 @@ body{
 }
 /* to make the screen displayed from left to right (nav then main) and footer under them*/
 .screen{
-    display: flex;
+    display: grid;
 }
 /****************************************** Header And Nav ************************************/  
 header{
