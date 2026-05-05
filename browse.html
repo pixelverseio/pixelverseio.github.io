@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
     <link rel = "stylesheet" class = "theme dark-theme" href = "css/global.css"/>
-    <link rel = "stylesheet" class = "theme dark-theme" href = "css/store.css"/>    
+    <link rel = "stylesheet" href = "css/browse.css"/>
+    
 </head>
 <body>
     <div class="screen">
@@ -29,14 +30,14 @@
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
                 <ul class="nav-menu">
-                    <li>
-                        <a href="index.html" class = "active">
+                    <li ca>
+                        <a href="index.html">
                             <i class="fa-solid fa-gamepad"></i>
                             <p>Store</p>
                         </a>
                     </li>
                     <li>
-                        <a href="browse.html">
+                        <a href="browse.html" class = "active">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <p>Browse</p>
                         </a>
@@ -52,6 +53,7 @@
                             <i class="fa-solid fa-newspaper"></i>
                             <P>News</P>
                         </a>
+                    </li>
                     </li>
                     <div id = "theme-container">
                         <input type="checkbox" id = "theme-btn">
@@ -70,39 +72,15 @@
             </nav>
         </header>
         <main class="main-content">
-            <h1> store </h1>
-            <section id="display-container">
-                <i class="fa-solid fa-chevron-left arrow left-arrow" id="prevBtn"></i>
-                <div id="display-screen">
-                    <div class="slide active">
-                        <img src="images/the_last_of_us_part_ii.jpg" alt="">
-                    </div>
-                    <div class="slide">
-                        <img src="images/Cyberpunk-2077.jpg" alt="">
-                    </div>
-                    <div class="slide">
-                        <img src="images/valorant1.jpg" alt="">
-                    </div>
-                    <div class="slide">
-                        <img src="images/minecraftslide1.jpg" alt="">
-                    </div>
-                    <div class="slide">
-                        <img src="images/god_of_warslide.jpg" alt="">
-                    </div>
+        <div class="explore-layout">
+            <div class="games-show">
+                <div class="search-container">
+                    <span class="browse">Browse:</span>
+                    <input type="text" name="search" class="search" placeholder="Search">
                 </div>
-                <i class="fa-solid fa-chevron-right arrow right-arrow" id="nextBtn"></i>
-            </section>
-            <!-- <section id="explore">
-                <h1> Explore </h1>
                 <div class="cards-container"></div>
-            </section>
-            <section id="new">
-                <h1> New Games </h1>
-                <div class="cards-container"></div>
-            </section> -->
-
-            <!-- <div class="cards-container"></div> -->
-        
+            </div>
+        </div>
         </main>
     </div>
     <footer>
@@ -110,7 +88,7 @@
         <p>&copy; 2026 Pixels | All rights reserved</p>
     </footer>
     <script src = "js/global.js"></script>
+    <script src = "js/browse.js"></script>
     <script src = "js/games_data.js"></script>
-    <script src = "js/store.js"></script>
 </body>
 </html>
