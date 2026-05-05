@@ -33,6 +33,7 @@ body{
 /* to make the screen displayed from left to right (nav then main) and footer under them*/
 .screen{
     display: grid;
+    margin-bottom: 150px;
 }
 /****************************************** Header And Nav ************************************/  
 header{
@@ -44,6 +45,7 @@ header{
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     position: fixed;
     transition: all 0.3s ease;
+    z-index: 999;
 }
 header.active-light{
     width: 200px;
@@ -343,6 +345,7 @@ footer{
     bottom: 0px;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     font-size: 1.1rem;
@@ -350,6 +353,29 @@ footer{
     font-family: "Chakra Petch", 'Franklin Gothic Medium', Arial, sans-serif ;
     box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.14);
     border-radius: 10px;
+}
+footer .foot{
+    color: var(--menu);
+    padding: 10px;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-family: "Chakra Petch", 'Franklin Gothic Medium', Arial, sans-serif ;
+}
+footer a.about{
+    color: var(--main-text);
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-family: "Chakra Petch", 'Franklin Gothic Medium', Arial, sans-serif;
+    margin: 0px auto;
+}
+.about:hover{
+    color: var(--signature);
 }
 @media (max-width: 992px) {
     
