@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --signature: #6a00ff;
+    --nav: #13172b;
+    --background: linear-gradient(135deg, #030813 0%, #0a1222 55%, #050a12 100%);
+    --links: #adc9fa;
+    --links-hover: #261E47;
+    --main-text: #d1ff05;
+    --menu: #c7c7c7;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    position: relative;
+    background: var(--background);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Chakra Petch", "Saira Stencil", sans-serif;
+}
+/****************************************** Header And Nav ************************************/  
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--nav);
+    min-height: 75px;
+    padding: 5px 70px;
+    box-shadow: 0px 0px 2px #0f009ca8, 0 0 25px #3b2dc09c;
+    border-radius: 10px;
+    z-index: 800;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 20px; */
+    padding: 15px;
+    margin: 0px;
+}
+nav .nav-toggle{
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer
+}
+nav .bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px auto;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+.nav-logo .logo, footer .logo{
+    color: var(--main-text);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.nav-logo .logo i{
+    margin: 0px 8px;
+}
+.nav-logo .logo p{
+    display: inline;
+}
+.nav-menu{
+    padding: 0px;
+    width: 60%;
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+.nav-menu a{
+    padding: 5px 20px;
+    color: var(--links);
+    border: var(--nav) 2px solid;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    transition: 0.7s ease;
+}
+.nav-menu a p{
+    display: inline;
+}
+.nav-menu i, .lightnav-toggle, .sign-in i{
+    display: none;
+}
+.nav-menu a:hover, .nav-menu a.active{
+    color: var(--main-text);
+    background-color: var(--links-hover);
+    border: white 2px solid;
+}
+#theme-container{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+.theme-toggle{
+    background-color: var(--menu);
+    position: relative;
+    border-radius: 25px;
+    width: 90px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+.theme-toggle:hover::after{
+    width: 40px;
+}
+.theme-toggle::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: var(--signature);
+    position: absolute;
+    right: 6px;
+    transition: all 0.7s ease;
+}
+.theme-toggle i.fa-moon{
+    display: inline;
+    z-index: 1000;
+    color: var(--links);
+}
+.theme-toggle i.bi-sun-fill{
+    display: inline;
+}
+#theme-btn{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.sign-in{
+    padding: 7px 25px;
+    display: flex;
+    text-decoration: none;
+    background-color: var(--signature);
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: 0.7s ease;
+    white-space: nowrap;
+}
+.sign-in:hover{
+    background: #b54eff1a;
+    color:var(--main-text);
+}
+#signin-userContainer .user-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#signin-userContainer .user-photo i{
+    font-size: 2.3rem; 
+    color: #c7c7c7; 
+    cursor: pointer;
+}
+#signin-userContainer .user-photo p{
+    color: var(--links);
+    font-size: 1.3rem;
+}
+#signin-userContainer{
+    position: relative;
+}
+.menu-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 40px;
+    right: 0px;
+    background-color: var(--menu);
+    width: 200px;
+    border-radius: 10px;
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.7s ease;
+}
+.menu-container.active{
+    padding: 10px 20px;
+    height: 280px;
+}
+.sub-menu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+#signin-userContainer .sub-menu i{
+    font-size: 1.5rem;
+}
+#signin-userContainer .sub-menu .user-info{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 1.1rem; 
+    color: var(--nav);
+    .fa-circle-user{
+        font-size: 1.6rem; 
+        color: var(--nav);
+    }
+    padding: 3px 10px;
+}
+#signin-userContainer .sub-menu .balanceLi{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 1.1rem;
+    color: var(--nav); 
+    padding: 3px 10px;
+}
+#signin-userContainer .sub-menu li a{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--links-hover);
+    transition: all 1s;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+.sub-menu .logout{
+    padding: 10px;
+    background-color: #d51616;
+    i,p{
+    color: white;
+    }
+}
+#signin-userContainer .sub-menu li a:hover{
+    i{
+        translate: 5px 0px;
+    }
+    color: var(--links);
+    background-color: var(--links-hover);
+    translate: 5px;
+}
+#signin-userContainer .sub-menu li .logout:hover{
+    background-color: var(--signature);
+}
+main{
+    margin: 100px 0;
+}
+/************************************ Footer **************************************/
+footer{
+    background-color: var(--nav);
+    color: white;
+    padding: 10px;
+    margin: 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-family: "Chakra Petch", 'Franklin Gothic Medium', Arial, sans-serif ;
+    box-shadow: 0px 0px 2px #0f009ca8, 0 0 25px #3b2dc09c;
+    border-radius: 10px;
+}
+@media (max-width: 1292px) {
+    header{
+        padding: 5px 50px;
+    }
+    #theme-container{
+    margin-left: 0px;
+}
+}
+@media (max-width: 1092px) {
+    .sign-in{
+    font-size: 1rem;
+    }
+    .theme-toggle{
+        width: 85px;
+        height: 35px;
+    }
+    #theme-userContainer{
+    gap: 50px;
+    }
+    #signin-userContainer .user-photo p{
+        display: none;
+    }
+}
+@media (max-width: 1050px){
+    #theme-userContainer{
+    gap: 40px;
+    }
+}
+@media (max-width: 992px) {
+    header{
+        padding: 5px 40px;
+    }
+    .nav-logo .logo i{
+    margin: 0px;
+    }
+    .nav-menu{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100vh;
+        width: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        backdrop-filter: blur(5px);
+    }
+    nav .nav-toggle{
+        display: block;
+        z-index: 999;
+    }
+    .nav-menu.active{
+        display: flex;
+    }
+    .nav-toggle.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .nav-toggle.active .bar:nth-child(1){
+                transform: 
+                    translateY(8px)
+                    rotate(45deg);
+                ;
+    }
+    .nav-toggle.active .bar:nth-child(3){
+        transform: 
+            translateY(-8px)
+            rotate(-45deg);
+    }
+    #theme-userContainer{
+    gap: 35px;
+}
+    .theme-toggle{
+        width: 80px;
+        height: 35px;
+    }
+    .theme-toggle:hover::after{
+        width: 37px;
+    }
+    .theme-toggle::after{
+        translate: 2px 0px;
+    }
+}
+@media (max-width: 767px) {
+    header{
+    padding: 5px 10px;
+    }
+    .nav-logo .logo, footer .logo{
+    font-size: 1.5rem;
+    }
+    .sign-in{
+    padding: 7px 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.7s ease;
+    }
+    footer{
+    font-size: 14px;
+    font-weight: 500;
+    }
+    #theme-userContainer{
+    gap: 30px;
+    margin-right: 20px;
+    }
+    .theme-toggle{
+        width: 70px;
+        height: 33px;
+    }
+    .theme-toggle:hover::after{
+        width: 33px;
+    }
+    .theme-toggle::after{
+        width: 27px;
+        height: 27px;
+        translate: 2px 0px;
+    }
+}
+@media (max-width: 480px){
+    #theme-userContainer{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+}

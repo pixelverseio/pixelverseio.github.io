@@ -1,0 +1,375 @@
+/* @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --signature: #6a00ff;
+    --nav: #d1e4fd;
+    --background: #add0ff;
+    --links: #4a5568;
+    --links-hover: #b54eff38;
+    --main-text: #1a3a8a;
+    --menu: #252444;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    position: relative;
+    background: var(--background);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Chakra Petch", "Saira Stencil", sans-serif;
+}
+/* to make the screen displayed from left to right (nav then main) and footer under them*/
+.screen{
+    display: grid;
+}
+/****************************************** Header And Nav ************************************/  
+header{
+    background-color: var(--nav);
+    height: 100vh;
+    border-radius: 10px;
+    width: 80px;
+    box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.14);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    transition: all 0.3s ease;
+}
+header.active-light{
+    width: 200px;
+    .nav-bar a p{
+        display: inline;
+        opacity: 1;
+        /* Starting style when displayed inline so the transition goes from
+        opacity 0 (defined below in .nav-bar a p) to 1 as header size grows */
+        @starting-style {
+            opacity: 0;
+            font-size: 10px;
+        }
+    }
+    .theme-toggle i.fa-moon {
+        display: inline;
+    }
+    .theme-toggle{
+    border-radius: 25px;
+    width: 90px;
+    height: 40px;
+    }
+    .theme-toggle:hover::after{
+        width: 40px;
+        border-radius: 15px;
+        translate: 0px 0px;
+    }
+    .theme-toggle::after{
+        width: 32px;
+        height: 30px;
+        left: 8px;
+    }
+    .theme-toggle i{
+        font-size: 1.2rem;
+    }
+    .nav-bar .user-photo p{
+        display: inline-block;
+        @starting-style {
+            opacity: 0;
+            font-size: 10px;
+        }
+    }
+    .menu-container{
+    top: 120px;
+    left: 170px;
+    background-color: var(--menu);
+    }
+}
+nav{
+    width: 100%;
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+    padding: 15px;
+    overflow: hidden;
+}
+nav .nav-toggle{
+    display: none;
+}
+.lightnav-toggle{
+    position: absolute;
+    top: 75px;
+    right: -15px;
+    width: 35px;
+    height: 35px;
+    /* background-color: #466fb6; */
+    background-color: #8c9ab1dd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.lightnav-toggle.active-light{
+    background-color: white;
+    rotate: 180deg;
+}
+.nav-logo .logo, footer .logo{
+    font-family: "Chakra Petch", "Saira Stencil", sans-serif;
+    display: flex;
+    align-items: center;
+    color: var(--main-text);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.nav-logo .logo i{
+    margin: 0px 5px;
+}
+.nav-bar .user-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 2.3rem; 
+    color: var(--menu); 
+    cursor: pointer;
+    font-family: "Chakra Petch", "Saira Stencil", sans-serif;
+}
+.nav-bar .user-photo p{
+    font-size: 1.3rem;
+    display: none;
+    transition: all 1s ease;
+}
+.menu-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 120px;
+    left: 60px;
+    background-color: var(--menu);
+    width: 200px;
+    border-radius: 10px;
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.7s ease;
+    z-index: 100;
+}
+.menu-container.active{
+    padding: 10px 20px;
+    height: 280px;
+}
+.sub-menu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+nav .sub-menu i{
+    font-size: 1.5rem;
+}
+nav .sub-menu .user-info{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 1.1rem; 
+    color: var(--nav);
+    .fa-circle-user{
+        font-size: 1.6rem; 
+        color: var(--nav);
+    }
+    padding: 3px 10px;
+}
+nav .sub-menu .balanceLi{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 1.1rem;
+    color: var(--nav); 
+    padding: 3px 10px;
+}
+nav .sub-menu li a{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--nav);
+    transition: all 1s;
+    border-radius: 20px;
+    padding: 3px 10px;
+}
+.sub-menu .logout{
+    background-color: #d51616;
+    i,p{
+    color: white;
+    }
+}
+nav .sub-menu li a:hover{
+    i{
+        translate: 5px 0px;
+    }
+    color: var(--signature);
+    background-color: var(--links-hover);
+    translate: 5px;
+}
+#signin-userContainer .sub-menu li .logout:hover{
+    background-color: var(--signature);
+}
+.nav-menu{
+    margin: 10px;
+    padding: 5px;
+    height: 70%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+}
+.nav-menu a{
+    padding: 5px 10px;
+    display: flex;
+    gap: 10px;
+    color: var(--links);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 540;
+    border: var(--nav) 2px solid;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    transition: 0.7s ease;
+}
+.nav-menu a p, .nav-logo a p{
+    display: none;
+    opacity: 0;
+    transition: all 1s ease;
+}
+#theme-userContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding:0px;
+    margin:0px;
+}
+.theme-toggle{
+    background-color: white;
+    position: relative;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.7s ease;
+}
+.theme-toggle::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: var(--signature);
+    position: absolute;
+    left: 5px;
+    transition: all 0.7s ease;
+}
+.theme-toggle:hover::after{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    translate: -5px 0px;
+}
+.theme-toggle i.bi-sun-fill {
+    z-index: 10;
+    color: var(--nav);
+}
+.theme-toggle i.fa-moon {
+    display: none;
+}
+#theme-btn{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.nav-bar .sign-in{
+    padding: 7px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    background-color: var(--signature);
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: 0.7s ease;
+}
+.sign-in p{
+    display: none;
+    opacity: 0;
+    transition: all 1s ease;
+}
+.nav-menu a:hover, .nav-menu a.active, .sign-in:hover{
+    color: var(--main-text);
+    background-color: var(--links-hover);
+    border: white 2px solid;
+}
+main{
+    margin-left: 80px;
+}
+/************************************ Footer **************************************/
+footer{
+    background-color: var(--nav);
+    color: var(--links);
+    padding: 10px;
+    margin: 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-family: "Chakra Petch", 'Franklin Gothic Medium', Arial, sans-serif ;
+    box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+}
+@media (max-width: 992px) {
+    
+}
+@media (max-width: 767px) {
+    header{
+    padding: 5px 10px;
+    }
+    .nav-logo .logo, footer .logo{
+    font-size: 1.5rem;
+    }
+    .sign-in{
+    padding: 7px 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.7s ease;
+    }
+    footer{
+    font-size: 14px;
+    font-weight: 500;
+    }
+}
+
