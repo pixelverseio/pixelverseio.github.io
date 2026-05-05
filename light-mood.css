@@ -33,6 +33,7 @@ body{
 /* to make the screen displayed from left to right (nav then main) and footer under them*/
 .screen{
     display: grid;
+    margin-bottom: 100px;
 }
 /****************************************** Header And Nav ************************************/  
 header{
