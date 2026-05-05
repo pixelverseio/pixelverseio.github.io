@@ -3,7 +3,9 @@ header {
     margin-bottom: 4rem;
     z-index: 9999;
 }
-
+main{
+    margin-left: 115px;
+}
 .hot-news {
     width: 95%;
     height: 66vh;
