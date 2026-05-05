@@ -9,14 +9,12 @@
     --links: #4a5568;
     --links-hover: #b54eff38;
     --main-text: #1a3a8a;
+    --menu: #252444;
 }
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
-.cc{
-    height: 2000px;
 }
 a{
     text-decoration: none;
@@ -80,6 +78,18 @@ header.active-light{
     .theme-toggle i{
         font-size: 1.2rem;
     }
+    .nav-bar .user-photo p{
+        display: inline-block;
+        @starting-style {
+            opacity: 0;
+            font-size: 10px;
+        }
+    }
+    .menu-container{
+    top: 120px;
+    left: 170px;
+    background-color: var(--menu);
+    }
 }
 nav{
     width: 100%;
@@ -127,6 +137,100 @@ nav .nav-toggle{
 .nav-logo .logo i{
     margin: 0px 5px;
 }
+.nav-bar .user-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 2.3rem; 
+    color: var(--menu); 
+    cursor: pointer;
+    font-family: "Chakra Petch", "Saira Stencil", sans-serif;
+}
+.nav-bar .user-photo p{
+    font-size: 1.3rem;
+    display: none;
+    transition: all 1s ease;
+}
+.menu-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 120px;
+    left: 60px;
+    background-color: var(--menu);
+    width: 200px;
+    border-radius: 10px;
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.7s ease;
+    z-index: 100;
+}
+.menu-container.active{
+    padding: 10px 20px;
+    height: 280px;
+}
+.sub-menu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+nav .sub-menu i{
+    font-size: 1.5rem;
+}
+nav .sub-menu .user-info{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 1.1rem; 
+    color: var(--nav);
+    .fa-circle-user{
+        font-size: 1.6rem; 
+        color: var(--nav);
+    }
+    padding: 3px 10px;
+}
+nav .sub-menu .balanceLi{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 1.1rem;
+    color: var(--nav); 
+    padding: 3px 10px;
+}
+nav .sub-menu li a{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--nav);
+    transition: all 1s;
+    border-radius: 20px;
+    padding: 3px 10px;
+}
+.sub-menu .logout{
+    background-color: #d51616;
+    i,p{
+    color: white;
+    }
+}
+nav .sub-menu li a:hover{
+    i{
+        translate: 5px 0px;
+    }
+    color: var(--signature);
+    background-color: var(--links-hover);
+    translate: 5px;
+}
+#signin-userContainer .sub-menu li .logout:hover{
+    background-color: var(--signature);
+}
 .nav-menu{
     margin: 10px;
     padding: 5px;
@@ -137,7 +241,7 @@ nav .nav-toggle{
     justify-content:space-between;
     align-items: center;
 }
-.nav-bar a{
+.nav-menu a{
     padding: 5px 10px;
     display: flex;
     gap: 10px;
@@ -149,7 +253,7 @@ nav .nav-toggle{
     font-size: 1.3rem;
     transition: 0.7s ease;
 }
-.nav-bar a p{
+.nav-menu a p, .nav-logo a p{
     display: none;
     opacity: 0;
     transition: all 1s ease;
@@ -173,12 +277,7 @@ nav .nav-toggle{
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
-}
-.theme-toggle:hover::after{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    translate: -5px 0px;
+    transition: all 0.7s ease;
 }
 .theme-toggle::after{
     content: "";
@@ -189,6 +288,12 @@ nav .nav-toggle{
     position: absolute;
     left: 5px;
     transition: all 0.7s ease;
+}
+.theme-toggle:hover::after{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    translate: -5px 0px;
 }
 .theme-toggle i.bi-sun-fill {
     z-index: 10;
@@ -206,6 +311,7 @@ nav .nav-toggle{
     padding: 7px 20px;
     display: flex;
     align-items: center;
+    gap: 10px;
     text-decoration: none;
     background-color: var(--signature);
     border-radius: 20px;
@@ -213,6 +319,11 @@ nav .nav-toggle{
     font-weight: 700;
     font-size: 1.2rem;
     transition: 0.7s ease;
+}
+.sign-in p{
+    display: none;
+    opacity: 0;
+    transition: all 1s ease;
 }
 .nav-menu a:hover, .nav-menu a.active, .sign-in:hover{
     color: var(--main-text);
@@ -261,7 +372,4 @@ footer{
     font-weight: 500;
     }
 }
-
-
-
 
