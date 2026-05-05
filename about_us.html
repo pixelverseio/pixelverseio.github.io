@@ -1,79 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pixels | Store</title>
-    <link rel="icon" type="png" href="images/pixels_icon.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
-    <link rel = "stylesheet" class = "theme dark-theme" href = "css/global.css"/>
-    <link rel="stylesheet" href="css/about_us.css">
+    <link rel="icon" type="png" href="images/pixels_icon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" class="theme dark-theme" href="css/global.css" />
+    <link rel="stylesheet" href="css/about_us.css" />
 
     <!-- Link Your Fucken CSS Here -->
-    
-</head>
-<body>
+  </head>
+  <body>
     <div class="screen">
-        <header>
-            <nav class="nav-bar">
-                <button class="nav-toggle">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </button>
-                <div class="nav-logo">
-                    <a href="" class="logo">
-                        <i class="fa-solid fa-ghost"></i>
-                        <p>Pixels</p>
-                    </a>
-                </div>
-                <div class = "lightnav-toggle">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-                <ul class="nav-menu">
-                    <li>
-                        <a href="index.html">
-                            <i class="fa-solid fa-gamepad"></i>
-                            <p>Store</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="browse.html">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <p>Browse</p>
-                        </a>
-                    </li>
-                    <li class = "session-dependentLink">
-                        <a href="support.html">
-                            <i class="fa-solid fa-headset"></i>
-                            <p>Support</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="news.html">
-                            <i class="fa-solid fa-newspaper"></i>
-                            <P>News</P>
-                        </a>
-                    </li>
-                    <div id = "theme-container">
-                        <input type="checkbox" id = "theme-btn">
-                        <label for="theme-btn" class = "theme-toggle">
-                            <i class="bi bi-sun-fill"></i>
-                            <i class="fa-solid fa-moon"></i>
-                        </label>
-                    </div>
-                </ul>
-                <div id = "signin-userContainer">
-                    <a href="signin.html" class="sign-in">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        <p>Sign in</p>
-                    </a>
-                </div>
-            </nav>
-        </header>
-        <main class="main-content">
-                <div class="about_us">
+      <header>
+        <nav class="nav-bar">
+          <button class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </button>
+          <div class="nav-logo">
+            <a href="" class="logo">
+              <i class="fa-solid fa-ghost"></i>
+              <p>Pixels</p>
+            </a>
+          </div>
+          <div class="lightnav-toggle">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="nav-menu">
+            <li>
+              <a href="index.html" class="active">
+                <i class="fa-solid fa-gamepad"></i>
+                <p>Store</p>
+              </a>
+            </li>
+            <li>
+              <a href="browse.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>Browse</p>
+              </a>
+            </li>
+            <li class="session-dependentLink">
+              <a href="support.html">
+                <i class="fa-solid fa-headset"></i>
+                <p>Support</p>
+              </a>
+            </li>
+            <li>
+              <a href="news.html">
+                <i class="fa-solid fa-newspaper"></i>
+                <p>News</p>
+              </a>
+            </li>
+            <div id="theme-container">
+              <input type="checkbox" id="theme-btn" />
+              <label for="theme-btn" class="theme-toggle">
+                <i class="bi bi-sun-fill"></i>
+                <i class="fa-solid fa-moon"></i>
+              </label>
+            </div>
+          </ul>
+          <div id="signin-userContainer">
+            <a href="signin.html" class="sign-in">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <p>Sign in</p>
+            </a>
+          </div>
+        </nav>
+      </header>
+      <main class="main-content">
+        <div class="about_us">
           <div class="contaner">
             <h2 class="speasial-text">About Us</h2>
             <p>All information about the site</p>
@@ -104,12 +111,7 @@
               </div>
               <div class="col">
                 <div class="video">
-                  <video
-                    src="imgs/WhatsApp Video 2026-05-05 at 5.32.23 PM.mp4"
-                    autoplay
-                    muted
-                    loop
-                  ></video>
+                  <video src="imgs/run.mp4" autoplay muted loop></video>
                 </div>
               </div>
             </div>
@@ -118,9 +120,7 @@
                 <div class="col">
                   <div class="img">
                     <a href="browse.html"
-                      ><img
-                        src="imgs/controller.jpeg"
-                        alt=""
+                      ><img src="imgs/controller.jpeg" alt=""
                     /></a>
                   </div>
                 </div>
@@ -251,7 +251,9 @@
 
               <div class="cer">
                 <img src="imgs/gamal.jpeg" alt="" />
-                <a href="https://www.linkedin.com/in/mohammed-gamal-844604407/"><h3>Mohamed gamal</h3></a>
+                <a href="https://www.linkedin.com/in/mohammed-gamal-844604407/"
+                  ><h3>Mohamed gamal</h3></a
+                >
               </div>
 
               <div class="cer">
@@ -265,7 +267,7 @@
               <div class="cer">
                 <img src="imgs/marawan.jpeg" alt="" />
                 <a href="https://www.linkedin.com/in/marwan-amr-38a554387/"
-                ><h3>Marwan Amr</h3></a
+                  ><h3>Marwan Amr</h3></a
                 >
               </div>
             </div>
@@ -273,17 +275,16 @@
         </div>
 
         <!-- Put Your Mother Fucken Code Here -->
-        
-        </main>
+      </main>
     </div>
     <footer>
-        <div class="foot">
-            <a class = "logo" href = "index.html"> Pixels </a>
-            <p>&copy; 2026 Pixels | All rights reserved</p>
-        </div>
-        <a href = "about_us.html" class = "about"> About us </a>
+      <div class="foot">
+        <a class="logo" href="index.html"> Pixels </a>
+        <p>&copy; 2026 Pixels | All rights reserved</p>
+      </div>
+      <a href="about_us.html" class="about"> About us </a>
     </footer>
-    <script src = "js/global.js"></script>
+    <script src="js/global.js"></script>
     <script src="js/about_us.js"></script>
-</body>
+  </body>
 </html>
