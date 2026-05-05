@@ -1,5 +1,5 @@
-if(JSON.parse(localStorage.getItem("pixelUser"))){
-    var user = JSON.parse(localStorage.getItem("pixelUser"));
+if(JSON.parse(localStorage.getItem("pixeluser"))){
+    var user = JSON.parse(localStorage.getItem("pixeluser"));
 }
 else{
     var user = {
