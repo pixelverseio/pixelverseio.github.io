@@ -95,6 +95,10 @@ main{
     margin: 2.5rem auto;
 }
 
+.big-headline h1 {
+    margin: 1rem;
+}
+
 .reguler {
     width: 90%;
     align-self: center;
