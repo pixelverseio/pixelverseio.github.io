@@ -89,7 +89,7 @@ window.addEventListener("load", function(){
                 <span class="wish" onclick="wishListActive('${name}')" style="color: #ff3b3b">⭐</span>
                 <img src="${gameOb.image}">
                 <h3 style="margin: 15px 10px 5px;">${gameOb.game_name}</h3>
-                <p style="margin: 0 10px 10px; color: #d1ff05; font-weight: bold;">${gameOb.price=="free"? "Free" : `${gameOb.price}$`}</p>
+                <p style="margin: 0 10px 10px; color: #d1ff05; font-weight: bold;">${gameOb.price=="free"? "Free" : `${gameOb.price}`}</p>
                 <button class="action-btn" onclick="libraryActive('${name}')">
                 Buy Now
                 </button>`;
