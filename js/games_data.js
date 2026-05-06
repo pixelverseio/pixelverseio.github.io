@@ -1,6 +1,6 @@
 let games = {
 
-    "Horizon Zero Dawn": {
+    "HorizonZeroDawn": {
         "game_name": "Horizon Zero Dawn",
         "image": "images/horizon-card.jpg",
         "price": "$60",
@@ -32,7 +32,7 @@ let games = {
         "badge": "RPG"
     },
 
-        "Dying Light: The Beast": {
+        "DyingLightTheBeast": {
         "game_name": "Dying Light: The Beast",
         "image": "images/dying-light-card.jpg",
         "price": "$60",
@@ -47,7 +47,7 @@ let games = {
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
-    "Spider Man": {
+    "SpiderMan": {
         "game_name": "Spider Man",
         "image": "images/spider.jpg",
         "price": "$70",
@@ -78,7 +78,7 @@ let games = {
         "badge": "RPG"
     },
 
-    "Poppy Playtime": {
+    "PoppyPlaytime": {
         "game_name": "Poppy Playtime",
         "image": "images/poppy-card.jpg",
         "price": "$70",
