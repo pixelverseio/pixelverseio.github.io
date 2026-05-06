@@ -173,6 +173,10 @@ img {
 
 @media (max-width: 768px) {
 
+    main {
+        margin-left:10px;
+    }
+
     .hot-news {
         flex-direction: column;
         height: auto;
