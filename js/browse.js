@@ -56,7 +56,19 @@ function libraryAvtive(game_div){
     localStorage.removeItem("users");
     localStorage.setItem("users",JSON.stringify(usersData));
 }
-
+const searchBox = document.querySelector('.search-box');
+searchBox.addEventListener('input', (e) => {
+    let word = e.target.value.toLowerCase();
+    let cards = document.querySelectorAll('.game-card'); 
+    cards.forEach(card => {
+        let title = card.querySelector('h3').textContent.toLowerCase();
+        if (title.includes(word)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
 
 
 
