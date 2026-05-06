@@ -115,7 +115,7 @@ document.forms[0].onsubmit = function (event) {
     let emailExist = Object.values(users).find(function (user) {
   return user.email === emailInput.value.trim();
 });
-
+  var username = userInput.value.trim();
     if (emailExist) {
       event.preventDefault();
       setTimeout(function () {
@@ -126,11 +126,16 @@ document.forms[0].onsubmit = function (event) {
       return;
     }
 
-    let userExist = Object.values(users).find(function (user) {
-      return user.username === userInput.value.trim();
-    });
+    let userExist = Object.keys(users).includes(username);
 
+    // let userExist = Object.values(users).find(function (user) {
+    //   return user.username === userInput.value.trim();
+    // });
+    console.log(userExist);
     if (userExist) {
+      console.log(users)
+      console.log(Object.keys(users))
+      console.log(username)
       event.preventDefault();
       userMsg.style.display = "block";
       setTimeout(function () {
@@ -142,17 +147,15 @@ document.forms[0].onsubmit = function (event) {
       return user.password === passInput.value.trim();
     });
 
-    if (passExist) {
-      event.preventDefault();
-      passMsg.style.display = "block";
-      setTimeout(function () {
-        passMsg.style.display = "none";
-      }, 3000);
+    // if (passExist) {
+    //   event.preventDefault();
+    //   passMsg.style.display = "block";
+    //   setTimeout(function () {
+    //     passMsg.style.display = "none";
+    //   }, 3000);
+    //   return;
+    // }
 
-      return;
-    }
-
-var username = userInput.value.trim();
 
     users[username] ={
       email: `${emailInput.value.trim()}`,
