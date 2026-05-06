@@ -1,0 +1,122 @@
+let games = {
+
+    "Horizon Zero Dawn": {
+        "game_name": "Horizon Zero Dawn",
+        "image": "images/horizon-card.jpg",
+        "price": "$60",
+        "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+
+    "valorant": {
+        "game_name": "Valorant",
+        "image": "images/valorant.jpg",
+        "price": "free",
+        "categories": ["explore", "action", "windows", "5", "free", "multiplayer", "online", "strategy"],
+        "badge": "RPG"
+    },
+
+        "the_last_of_us": {
+        "game_name": "The Last Of Us II",
+        "image": "images/the_last_of_us2.jpg",
+        "price": "$69.99",
+        "categories": ["explore", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+
+        "god_of_war_ragnarok": {
+        "game_name": "God Of War Ragnarok",
+        "image": "images/god_of_war_ragnarok.jpg",
+        "price": "$50",
+        "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+
+        "Dying Light: The Beast": {
+        "game_name": "Dying Light: The Beast",
+        "image": "images/dying-light-card.jpg",
+        "price": "$60",
+        "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+
+        "fc26": {
+        "game_name": "FC 26",
+        "image": "images/fc26.jpg",
+        "price": "$69.99",
+        "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+    "Spider Man": {
+        "game_name": "Spider Man",
+        "image": "images/spider.jpg",
+        "price": "$70",
+        "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+    "GTAV": {
+        "game_name": "GTA V",
+        "image": "images/gta-card.jpg",
+        "price": "$50",
+        "categories": ["explore", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+
+    "minecraft": {
+        "game_name": "Minecraft",
+        "image": "images/minecraft.jpg",
+        "price": "$40",
+        "categories": ["explore", "adventure", "openWorld", "puzzle", "platform", "windows", "macOs", "ios", "android", "5", "10$-20$", "singlePlayer", "multiplayer", "coOp", "online", "offline"],
+        "badge": "RPG"
+    },
+
+    "cyberpunk_2077": {
+        "game_name": "Cyberpunk 2077",
+        "image": "images/cyberpunk.jpg",
+        "price": "$56",
+        "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+
+    "Poppy Playtime": {
+        "game_name": "Poppy Playtime",
+        "image": "images/poppy-card.jpg",
+        "price": "$70",
+        "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+    "Roblox": {
+        "game_name": "Roblox",
+        "image": "images/roblox-card.jpg",
+        "price": "$15",
+        "categories": ["explore", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+
+        "elden_ring": {
+        "game_name": "Elden ring",
+        "image": "images/elden_ring.jpg",
+        "price": "$60",
+        "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "5", "40$", "singlePlayer", "multiplayer", "coOp", "online", "offline", "strategy"],
+        "badge": "RPG"
+    },
+
+        "red_dead_redemption_2": {
+        "game_name": "Red dead redemption 2",
+        "image": "images/red_dead_redemption_2.jpg",
+        "price": "$45",
+        "categories": ["explore", "action", "adventure", "openWorld", "windows", "macOs", "5", "40$", "singlePlayer", "multiplayer", "online", "offline"],
+        "badge": "RPG"
+    },
+
+    "NBA2K26": {
+        "game_name": "NBA 2K26",
+        "image": "images/nba-card.jpg",
+        "price": "$80",
+        "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
+        "badge": "RPG"
+    },
+};
+// if(!localStorage.getItem("games"))
+localStorage.setItem("games", JSON.stringify(games))
+
