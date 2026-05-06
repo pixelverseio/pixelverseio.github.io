@@ -35,6 +35,7 @@ appearMes.innerHTML = `
 `;
 form.insertBefore(appearMes, form.children[1]);
 document.forms[0].onsubmit = function (event) {
+  var username = userInput.value.trim();
   appearMes.style.display = "none";
   loginSuccess.style.display = "none";
   adminLoginSuccess.style.display = "none";
@@ -64,8 +65,7 @@ document.forms[0].onsubmit = function (event) {
       userInput.value.trim() === adminName &&
       passInput.value.trim() === adminPass
     ) {
-      localStorage.setItem("admin", "true");
-      localStorage.setItem("login", "");
+      localStorage.setItem("login", "admin");
       event.preventDefault();
       adminLoginSuccess.style.display = "block";
       form.style.display = "none";
@@ -73,27 +73,35 @@ document.forms[0].onsubmit = function (event) {
         window.location.href = "index.html";
       }, 2000);
     } else {
-      let users = JSON.parse(localStorage.getItem("users")) || [];
+      let users = JSON.parse(localStorage.getItem("users")) || {};
 
-      let found = users.find(function (user) {
-        return (
-          user.username === userInput.value.trim() &&
-          user.password === passInput.value.trim()
-        );
-      });
+      let found = function() {
+        let username = userInput.value.trim();
+        let password = passInput.value.trim();
+
+        let user = users[username];
+                console.log(username)
+
+        return user !== undefined && user.password === password;
+};
+      // let found = users.find(function (user) {
+      //   return (
+      //     user.username === userInput.value.trim() &&
+      //     user.password === passInput.value.trim()
+      //   );
+      // });
+      event.preventDefault();
 
       if (found) {
+        console.log(username)
         localStorage.setItem("login", "user");
-        localStorage.setItem("admin", "false");
-        localStorage.setItem("pixeluser", JSON.stringify(found));
-        event.preventDefault();
+        localStorage.setItem("pixeluser", username);
         loginSuccess.style.display = "block";
         form.style.display = "none";
         setTimeout(function () {
           window.location.href = "index.html";
         }, 2000);
       } else {
-        event.preventDefault();
         appearMes.style.display = "block";
         setTimeout(function () {
           appearMes.style.display = "none";

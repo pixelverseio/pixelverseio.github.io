@@ -4,8 +4,8 @@ console.log("gamesData = ",gamesData);
 let usersData = JSON.parse(localStorage.getItem("users")); //getting the usersData data
 console.log("usersData = ",usersData);
 
-let userData = JSON.parse(localStorage.getItem("pixelUser"));
-console.log("userData = ",userData);
+let username = localStorage.getItem("pixeluser");
+console.log("username = ",username);
 
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -37,26 +37,25 @@ document.addEventListener("DOMContentLoaded", function(){
 function wishListActive(game_div){
     console.log("game_div = ",game_div)
     console.log("usersData = ",usersData)
-    console.log("userData = ",userData)
-    console.log("usersData[userData.username].wishlist = ",usersData[userData.username].wishlist)
-    if(usersData[userData.username].wishlist.includes(game_div.id) === false){
-        usersData[userData.username].wishlist.push(game_div.id);
+    console.log("username = ",username)
+    console.log("usersData[username].wishlist = ",usersData[username].wishlist)
+    if(usersData[username].wishlist.includes(game_div.id) === false){
+        usersData[username].wishlist.push(game_div.id);
     }
-    console.log("usersData[userData.username].wishlist.push(game_div.id) = ",usersData[userData.username].wishlist);
+    console.log("usersData[username].wishlist.push(game_div.id) = ",usersData[username].wishlist);
     localStorage.removeItem("users");
     localStorage.setItem("users",JSON.stringify(usersData));
 }
 
 function libraryAvtive(game_div){
-    console.log("usersData[userData.username].library = ",usersData[userData.username].library)
-    if(usersData[userData.username].library.includes(game_div.id) === false){
-        usersData[userData.username].library.push(game_div.id);
+    console.log("usersData[username].library = ",usersData[username].library)
+    if(usersData[username].library.includes(game_div.id) === false){
+        usersData[username].library.push(game_div.id);
     }
-    console.log("usersData[userData.username].library = ",usersData[userData.username].library)
+    console.log("usersData[username].library = ",usersData[username].library)
     localStorage.removeItem("users");
     localStorage.setItem("users",JSON.stringify(usersData));
 }
-
 
 
 

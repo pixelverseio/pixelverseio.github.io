@@ -110,11 +110,11 @@ document.forms[0].onsubmit = function (event) {
   ) {
     event.preventDefault();
   } else {
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let users = JSON.parse(localStorage.getItem("users")) || {};
 
-    let emailExist = users.find(function (user) {
-      return user.email === emailInput.value.trim();
-    });
+    let emailExist = Object.values(users).find(function (user) {
+  return user.email === emailInput.value.trim();
+});
 
     if (emailExist) {
       event.preventDefault();
@@ -125,7 +125,8 @@ document.forms[0].onsubmit = function (event) {
       emailMsg.style.display = "block";
       return;
     }
-    let userExist = users.find(function (user) {
+
+    let userExist = Object.values(users).find(function (user) {
       return user.username === userInput.value.trim();
     });
 
@@ -137,7 +138,7 @@ document.forms[0].onsubmit = function (event) {
       }, 3000);
       return;
     }
-    let passExist = users.find(function (user) {
+    let passExist = Object.values(users).find(function (user) {
       return user.password === passInput.value.trim();
     });
 
@@ -151,15 +152,15 @@ document.forms[0].onsubmit = function (event) {
       return;
     }
 
-    let newUser = {
-      username: userInput.value.trim(),
-      email: emailInput.value.trim(),
-      password: passInput.value.trim(),
+var username = userInput.value.trim();
+
+    users[username] ={
+      email: `${emailInput.value.trim()}`,
+      password: `${passInput.value.trim()}`,
       balance: 0,
       library: [],
       wishlist: [],
     };
-    users.push(newUser);
 
     localStorage.setItem("users", JSON.stringify(users));
 

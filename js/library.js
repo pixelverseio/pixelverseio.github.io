@@ -4,14 +4,14 @@ console.log("gamesData = ",gamesData);
 let usersData = JSON.parse(localStorage.getItem("users")); //getting the users data
 console.log("users = ",usersData);
 
-let userData = JSON.parse(localStorage.getItem("pixelUser"));
-console.log("userData = ",userData);
+let username = localStorage.getItem("pixeluser");
+console.log("username = ",username);
 
 const container = document.getElementById("library-container");
-console.log("userData.username = ",userData.username)
-for(let i = 0 ; i<usersData[userData.username].library.length ; i++){
-    let game_key = usersData[userData.username].library[i]
-    let gameOb = gamesData[usersData[userData.username].library[i]];
+console.log("username = ",username)
+for(let i = 0 ; i<usersData[username].library.length ; i++){
+    let game_key = usersData[username].library[i]
+    let gameOb = gamesData[usersData[username].library[i]];
     console.log("gameOb = ",gameOb)
     const card = document.createElement("div");
     card.className = "game-card";

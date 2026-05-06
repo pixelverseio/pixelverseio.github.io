@@ -1,5 +1,5 @@
-if(JSON.parse(localStorage.getItem("pixeluser"))){
-    var user = JSON.parse(localStorage.getItem("pixeluser"));
+if(localStorage.getItem("pixeluser")){
+    var user = localStorage.getItem("pixeluser");
 }
 else{
     var user = {
@@ -51,7 +51,7 @@ subMenuContainer.innerHTML =
 `<ul class="sub-menu">
     <li class="user-info">
         <i class="fa-solid fa-circle-user"></i>
-        <p class="username">${user.username}</p>
+        <p class="username">${user}</p>
     </li>
     <li class="balanceLi">
         <i class="fa-solid fa-wallet"></i>
@@ -89,7 +89,7 @@ if(login == "user"){
     signinUserContainer.append(subMenuContainer);
     // add username to profile
     let usernameP = document.createElement("p");
-    usernameP.innerHTML = `${user.username}`;
+    usernameP.innerHTML = `${user}`;
     profile.append(usernameP);
     // remove support link (added to drop menu)
     dynamicLink.setAttribute("href", "library.html");

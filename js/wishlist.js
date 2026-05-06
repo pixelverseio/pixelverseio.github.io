@@ -2,16 +2,16 @@ let gamesData = JSON.parse(localStorage.getItem("games")); //getting the gamesDa
 console.log("gamesData = ",gamesData);
 
 let usersData = JSON.parse(localStorage.getItem("users")); //getting the users data
-console.log("users = ",users);
+// console.log("users = ",users);
 
-let userData = JSON.parse(localStorage.getItem("pixelUser"));
-console.log("userData = ",userData);
+let username = localStorage.getItem("pixeluser");
+console.log("username = ",username);
 
 const container = document.getElementById("wishlist-container");
-for(let i = 0 ; i<usersData[userData.username].wishlist.length ; i++){
-    let game_key = usersData[userData.username].wishlist[i];
-    console.log("gamesData[usersData[userData.username].wishlist[i]] = ",gamesData[usersData[userData.username].wishlist[i]]);
-    let gameOb = gamesData[usersData[userData.username].wishlist[i]];
+for(let i = 0 ; i<usersData[username].wishlist.length ; i++){
+    let game_key = usersData[username].wishlist[i];
+    console.log("gamesData[usersData[username].wishlist[i]] = ",gamesData[usersData[username].wishlist[i]]);
+    let gameOb = gamesData[usersData[username].wishlist[i]];
     console.log("gameOb = ",gameOb)
     const card = document.createElement("div");
     card.className = "game-card";
@@ -32,18 +32,18 @@ for(let i = 0 ; i<usersData[userData.username].wishlist.length ; i++){
 function removeFromWishlist(game_div) {
     console.log("game_div = ",game_div)
     game_div.style.display="none";
-    let indexToDelete = usersData[userData.username].wishlist.indexOf(game_div.id);
-    usersData[userData.username].wishlist.splice(indexToDelete , 1)
+    let indexToDelete = usersData[username].wishlist.indexOf(game_div.id);
+    usersData[username].wishlist.splice(indexToDelete , 1)
     localStorage.removeItem("users");
     localStorage.setItem("users",JSON.stringify(usersData));
 }
 
 function libraryAvtive(game_div){
-    console.log("usersData[userData.username].library = ",usersData[userData.username].library)
-    if(usersData[userData.username].library.includes(game_div.id) === false){
-        usersData[userData.username].library.push(game_div.id);
+    console.log("usersData[username].library = ",usersData[username].library)
+    if(usersData[username].library.includes(game_div.id) === false){
+        usersData[username].library.push(game_div.id);
     }
-    console.log("usersData[userData.username].library = ",usersData[userData.username].library)
+    console.log("usersData[username].library = ",usersData[username].library)
     localStorage.removeItem("users");
     localStorage.setItem("users",JSON.stringify(usersData));
 }
