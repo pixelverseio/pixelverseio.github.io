@@ -3,6 +3,13 @@
     padding: 0px;
     box-sizing: border-box;
 }
+.screen{
+    display: grid;
+}
+body{
+    max-width: 100vw;
+    overflow-x: hidden;
+}
 
 h1{
     color: var(--main-text);
@@ -16,11 +23,11 @@ h1{
     justify-content: center;
     align-items: center;
     gap: 30px;
-    width: 100%;
+    width: 100vw;
     height: auto;
     padding: 20px;
     border-radius: 10px;
-    margin: 10px auto;
+    margin: 0px;
 }
 #display-screen{
     display: flex;
@@ -39,7 +46,6 @@ h1{
     max-height: 500px;
     display: none;
     transition: opacity 1s ease-in-out;
-
 }
 #display-screen div.active{
     display: block;
@@ -74,7 +80,9 @@ h1 a.explore{
 a.explore:hover{
     translate: 10px 0px;
 }
-
+#explore{
+    overflow: hidden;
+}
 .cards-container{
     display: flex;
     flex-direction: row;
@@ -82,11 +90,14 @@ a.explore:hover{
     overflow: auto;
     gap: 25px;
     padding: 20px;
+    max-width: 100vw;
+    scrollbar-color: var(--main-text) transparent;
 }
-
 .game-card {
-    flex: 1 1 280px;
-    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    min-width: 300px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     overflow: hidden;
@@ -104,6 +115,11 @@ a.explore:hover{
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+#red_dead_redemption_2, #elden_ring, #NBA2K26{
+    img{
+    object-fit: contain;
+    }
 }
 
 .game-card h3 {
@@ -155,4 +171,23 @@ a.explore:hover{
     background: rgba(33, 90, 57, 0.8);
     color: #ffffff;
     border: 1px solid rgba(13, 24, 17, 0.4); 
+}
+.light-theme{
+    main{
+        margin-left: 80px;
+        width: 90%;
+    }
+    #display-container{
+        position: relative;
+        right: 5%;
+    }
+    .game-card{
+        background:  #1a3a8ac8;
+
+    }
+    .game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(6, 0, 43, 0.305);
+}
+
 }
