@@ -33,6 +33,8 @@ appearMes.innerHTML = `
       Username or Password may be Incorrect, try again!
     </p>
 `;
+let users = JSON.parse(localStorage.getItem("users")) || {};
+
 form.insertBefore(appearMes, form.children[1]);
 document.forms[0].onsubmit = function (event) {
   var username = userInput.value.trim();
@@ -42,7 +44,7 @@ document.forms[0].onsubmit = function (event) {
   let userValid = false,
     passValid = false;
 
-  if (userInput.value.trim() !== "") {
+  if (userInput.value.trim() !== "" && Object.keys(users).includes(username)) {
     userValid = true;
   }
 
@@ -73,7 +75,6 @@ document.forms[0].onsubmit = function (event) {
         window.location.href = "index.html";
       }, 2000);
     } else {
-      let users = JSON.parse(localStorage.getItem("users")) || {};
 
       let found = function() {
         let username = userInput.value.trim();
