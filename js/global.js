@@ -123,7 +123,6 @@ if(logout){
 window.addEventListener("load", function(){
     let themeToggle = document.querySelector("label.theme-toggle");
 let link = document.querySelector("link.theme");
-console.log(link);
 if(currentTheme == "light"){
     link.setAttribute("href", "css/light-mood.css");
     link.classList.remove("dark-theme");
