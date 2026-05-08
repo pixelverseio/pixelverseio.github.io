@@ -1,11 +1,9 @@
-let gamesData = JSON.parse(localStorage.getItem("games")); //getting the gamesData data
 console.log("gamesData = ",gamesData);
 
-let usersData = JSON.parse(localStorage.getItem("users")); //getting the usersData data
-console.log("usersData = ",usersData);
+// console.log("users = ",users);
 
 let username = localStorage.getItem("pixeluser");
-console.log("username = ",username);
+// console.log("username = ",username);
 
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -20,47 +18,65 @@ document.addEventListener("DOMContentLoaded", function(){
         card.id = name;
         
         card.innerHTML = `
-        <span class="badge">${gameOb.badge}</span>
-        <span class="wish" onclick="wishListActive(${name})" style="color: #ff3b3b">⭐</span>
-        <img src="${gameOb.image}">
-        <h3 style="margin: 15px 10px 5px;">${gameOb.game_name}</h3>
-        <p style="margin: 0 10px 10px; color: #d1ff05; font-weight: bold;">${gameOb.price}</p>
-        <button class="action-btn" onclick="libraryAvtive(${name})">
-        Buy
-        </button>
-        `;
+                <span class="badge">${gameOb.badge}</span>
+                <div class = "wish-container" onclick="event.stopPropagation(); wishListActive(this, '${name}')">
+                    <i class="fa-regular fa-bookmark wish regular"></i>
+                    <i class="fa-solid fa-bookmark wish solid"></i>
+                </div>
+                <img src="${gameOb.image}">
+                <h3 style="margin: 15px 10px 5px;">${gameOb.game_name}</h3>
+                <p style="color: #d1ff05; font-weight: bold;">${gameOb.price=="free"? "Free" : `$${gameOb.price}`}</p>
+                `;
         container.appendChild(card);
 
+
+        // add the active class to whislist icon container 
+        // if the wishlist of this user contain this game
+        if(users[username].wishlist.includes(name)){
+            let wishContainer = card.querySelector(".wish-container");
+            wishContainer.classList.add("active");
+        }
+        card.addEventListener("click", function(){
+        window.location.href = `${name}.html`;
+        })
     }
+
 });
 
-function wishListActive(game_div){
-    console.log("game_div = ",game_div)
-    console.log("usersData = ",usersData)
-    console.log("username = ",username)
-    console.log("usersData[username].wishlist = ",usersData[username].wishlist)
-    if(usersData[username].wishlist.includes(game_div.id) === false){
-        usersData[username].wishlist.push(game_div.id);
+function wishListActive(Container, gameName){
+    // if user not logged in go to login page
+    if(login === ""){
+        window.location.href = `signin.html`;
     }
-    console.log("usersData[username].wishlist.push(game_div.id) = ",usersData[username].wishlist);
-    localStorage.removeItem("users");
-    localStorage.setItem("users",JSON.stringify(usersData));
+    else{
+        // user logged in;
+        let inWish = users[username].wishlist.includes(gameName);
+        let card = document.querySelector(`#${gameName}`);
+        console.log(card);
+        // if not in user's wishlist add it
+        if(!inWish){
+            users[username].wishlist.push(gameName);
+            let wishContainer = card.querySelector(".wish-container");
+            wishContainer.classList.add("active");
+        }else{ // if exists in user's wishlist remove it
+            let wishlistArray = users[username].wishlist;
+            users[username].wishlist = wishlistArray.filter(game => game != gameName);
+            let wishContainer = card.querySelector(".wish-container");
+            wishContainer.classList.remove("active");
+        }
+        localStorage.removeItem("users");
+        localStorage.setItem("users",JSON.stringify(users));
+    }
 }
 
-function libraryAvtive(game_div){
-    console.log("usersData[username].library = ",usersData[username].library)
-    if(usersData[username].library.includes(game_div.id) === false){
-        usersData[username].library.push(game_div.id);
-    }
-    console.log("usersData[username].library = ",usersData[username].library)
-    localStorage.removeItem("users");
-    localStorage.setItem("users",JSON.stringify(usersData));
-}
-const searchBox = document.querySelector('.search-box');
-searchBox.addEventListener('input', (e) => {
-    let word = e.target.value.toLowerCase();
+
+let searchBar = document.querySelector(".search");
+
+searchBar.addEventListener("input",function(event){
+    console.log("working")
+    let word = event.target.value.toLowerCase();
     let cards = document.querySelectorAll('.game-card'); 
-    cards.forEach(card => {
+    cards.forEach(function(card) {
         let title = card.querySelector('h3').textContent.toLowerCase();
         if (title.includes(word)) {
             card.style.display = "block";
@@ -68,10 +84,7 @@ searchBox.addEventListener('input', (e) => {
             card.style.display = "none";
         }
     });
-});
-
-
-
+})
 
 
 
@@ -79,7 +92,6 @@ searchBox.addEventListener('input', (e) => {
 // let activeboxes=[];
 // let cards=document.querySelectorAll(".card");
 
-// let searchBar = document.querySelector(".search");
 
 // for(let i=0 ; i<checkboxes.length ; i++){
 //     checkboxes[i].addEventListener("change", function(event) {
@@ -126,23 +138,7 @@ searchBox.addEventListener('input', (e) => {
 //     }
 // }
 
-// searchBar.addEventListener("input",function(){
-//     for(let game in gamesData){
-//         console.log("game = ",game);
-//         console.log("searchBar.value = ",searchBar.value);
-//         console.log("game === searchBar.value = ",game === searchBar.value);
-//         if(game === searchBar.value){
-//             searchBar.style.border="1px solid";
-//             searchBar.style.borderColor="#0f0";
-//             console.log("searchBar.style.border = ",searchBar.style.border)
-//             console.log("searchBar.style.borderColor = ",searchBar.style.borderColor)
-//         }
-//         else{
-//             searchBar.style.border="1px solid";
-//             searchBar.style.borderColor="#f00";
-//         }
-//     }
-// })
+
 
 
 // searchBar.addEventListener("keydown",function(event){

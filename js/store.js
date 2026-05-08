@@ -44,14 +44,10 @@ timer = setInterval(() => {
 }, 5000);
 
 
-let gamesData = JSON.parse(localStorage.getItem("games")); // getting the gamesData data
 
 let categories = ["explore", "new"];
 let categoriesContainer = document.getElementById("categories-container");
 
-let usersData = JSON.parse(localStorage.getItem("users")); //getting the usersData data
-
-let username = localStorage.getItem("pixeluser");
 
 // on loading window
 window.addEventListener("load", function(){
@@ -96,7 +92,7 @@ window.addEventListener("load", function(){
                 </div>
                 <img src="${gameOb.image}">
                 <h3 style="margin: 15px 10px 5px;">${gameOb.game_name}</h3>
-                <p style="color: #d1ff05; font-weight: bold;">${gameOb.price=="free"? "Free" : `${gameOb.price}`}</p>
+                <p style="color: #d1ff05; font-weight: bold;">${gameOb.price=="free"? "Free" : `$${gameOb.price}`}</p>
                 `;
 
                 // make cards clickable and switches to the game's page
@@ -111,7 +107,7 @@ window.addEventListener("load", function(){
 
                 // add the active class to whislist icon container 
                 // if the wishlist of this user contain this game
-                if(usersData[username].wishlist.includes(name)){
+                if(login == "user" && userData.wishlist.includes(name)){
                     let wishContainer = card.querySelector(".wish-container");
                     wishContainer.classList.add("active");
                 }
@@ -125,12 +121,12 @@ window.addEventListener("load", function(){
 //     if(login === ""){
 //         window.location.href = `signin.html`;
 //     }
-//     if(usersData[username].library.includes(gameName) === false){
-//         usersData[username].library.push(gameName);
+//     if(userData.library.includes(gameName) === false){
+//         userData.library.push(gameName);
 //     }
-//     // console.log("usersData[username].library = ",usersData[username].library)
+//     // console.log("userData.library = ",userData.library)
 //     localStorage.removeItem("users");
-//     localStorage.setItem("users",JSON.stringify(usersData));
+//     localStorage.setItem("users",JSON.stringify(users));
 // }
 
 function wishListActive(Container, gameName){
@@ -140,26 +136,26 @@ function wishListActive(Container, gameName){
     }
     else{
         // user logged in;
-        let inWish = usersData[username].wishlist.includes(gameName);
+        let inWish = userData.wishlist.includes(gameName);
         let allCards = document.querySelectorAll(`.${gameName}`);
         console.log(allCards);
         // if not in user's wishlist add it
         if(!inWish){
-            usersData[username].wishlist.push(gameName);
+            userData.wishlist.push(gameName);
             allCards.forEach(card => {
                 let wishContainer = card.querySelector(".wish-container");
                 wishContainer.classList.add("active");
             })
         }else{ // if exists in user's wishlist remove it
-            let wishlistArray = usersData[username].wishlist;
-            usersData[username].wishlist = wishlistArray.filter(game => game != gameName);
+            let wishlistArray = userData.wishlist;
+            userData.wishlist = wishlistArray.filter(game => game != gameName);
             allCards.forEach(card => {
                 let wishContainer = card.querySelector(".wish-container");
                 wishContainer.classList.remove("active");
             })
         }
         localStorage.removeItem("users");
-        localStorage.setItem("users",JSON.stringify(usersData));
+        localStorage.setItem("users",JSON.stringify(users));
     }
 }
 

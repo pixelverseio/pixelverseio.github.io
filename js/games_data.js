@@ -1,9 +1,9 @@
 let games = {
 
-    "HorizonZeroDawn": {
+    "horizon-zero-dawn": {
         "game_name": "Horizon Zero Dawn",
         "image": "images/horizon-card.jpg",
-        "price": "$60",
+        "price": 60,
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
@@ -19,7 +19,7 @@ let games = {
         "the_last_of_us": {
         "game_name": "The Last Of Us II",
         "image": "images/the_last_of_us2.jpg",
-        "price": "$69.99",
+        "price": 69.99,
         "categories": ["explore", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
@@ -27,37 +27,37 @@ let games = {
         "god_of_war_ragnarok": {
         "game_name": "God Of War Ragnarok",
         "image": "images/god_of_war_ragnarok.jpg",
-        "price": "$50",
+        "price": 50,
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
 
-        "DyingLightTheBeast": {
+        "dying_light_the_beast": {
         "game_name": "Dying Light: The Beast",
         "image": "images/dying-light-card.jpg",
-        "price": "$60",
+        "price": 60,
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
 
-        "fc26": {
+        "fc_26": {
         "game_name": "FC 26",
         "image": "images/fc26.jpg",
-        "price": "$69.99",
+        "price": 69.99,
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
-    "SpiderMan": {
+    "spiderman": {
         "game_name": "Spider Man",
         "image": "images/spider.jpg",
-        "price": "$70",
+        "price": 70,
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
-    "GTAV": {
+    "gta_v": {
         "game_name": "GTA V",
         "image": "images/gta-card.jpg",
-        "price": "$50",
+        "price": 50,
         "categories": ["explore", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
@@ -65,7 +65,7 @@ let games = {
     "minecraft": {
         "game_name": "Minecraft",
         "image": "images/minecraft.jpg",
-        "price": "$40",
+        "price": 40,
         "categories": ["explore", "adventure", "openWorld", "puzzle", "platform", "windows", "macOs", "ios", "android", "5", "10$-20$", "singlePlayer", "multiplayer", "coOp", "online", "offline"],
         "badge": "RPG"
     },
@@ -73,22 +73,22 @@ let games = {
     "cyberpunk_2077": {
         "game_name": "Cyberpunk 2077",
         "image": "images/cyberpunk.jpg",
-        "price": "$56",
+        "price": 56,
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
 
-    "PoppyPlaytime": {
+    "poppy_playtime": {
         "game_name": "Poppy Playtime",
         "image": "images/poppy-card.jpg",
-        "price": "$70",
+        "price": 70,
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
-    "Roblox": {
+    "roblox": {
         "game_name": "Roblox",
         "image": "images/roblox-card.jpg",
-        "price": "$15",
+        "price": 15,
         "categories": ["explore", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
@@ -96,7 +96,7 @@ let games = {
         "elden_ring": {
         "game_name": "Elden ring",
         "image": "images/elden_ring.jpg",
-        "price": "$60",
+        "price": 60,
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "5", "40$", "singlePlayer", "multiplayer", "coOp", "online", "offline", "strategy"],
         "badge": "RPG"
     },
@@ -104,15 +104,15 @@ let games = {
         "red_dead_redemption_2": {
         "game_name": "Red dead redemption 2",
         "image": "images/red_dead_redemption_2.jpg",
-        "price": "$45",
+        "price": 45,
         "categories": ["explore", "action", "adventure", "openWorld", "windows", "macOs", "5", "40$", "singlePlayer", "multiplayer", "online", "offline"],
         "badge": "RPG"
     },
 
-    "NBA2K26": {
+    "nba_2k26": {
         "game_name": "NBA 2K26",
         "image": "images/nba-card.jpg",
-        "price": "$80",
+        "price": 80,
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },

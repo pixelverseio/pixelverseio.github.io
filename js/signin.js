@@ -33,7 +33,6 @@ appearMes.innerHTML = `
       Username or Password may be Incorrect, try again!
     </p>
 `;
-let users = JSON.parse(localStorage.getItem("users")) || {};
 
 form.insertBefore(appearMes, form.children[1]);
 document.forms[0].onsubmit = function (event) {
@@ -41,42 +40,47 @@ document.forms[0].onsubmit = function (event) {
   appearMes.style.display = "none";
   loginSuccess.style.display = "none";
   adminLoginSuccess.style.display = "none";
-  let userValid = false,
-    passValid = false;
-
-  if (userInput.value.trim() !== "" && Object.keys(users).includes(username)) {
-    userValid = true;
-  }
 
   if (
-    passInput.value.trim() !== "" &&
-    passInput.value.length >= 4 &&
-    passInput.value.length <= 10
+    userInput.value.trim() === adminName &&
+    passInput.value.trim() === adminPass
   ) {
-    passValid = true;
-  }
-
-  if (userValid === false || passValid === false) {
+    console.log("Admin");
+    localStorage.setItem("login", "admin");
     event.preventDefault();
-    appearMes.style.display = "block";
+    adminLoginSuccess.style.display = "block";
+    form.style.display = "none";
     setTimeout(function () {
-      appearMes.style.display = "none";
-    }, 3000);
-  } else {
-    if (
-      userInput.value.trim() === adminName &&
-      passInput.value.trim() === adminPass
-    ) {
-      localStorage.setItem("login", "admin");
-      event.preventDefault();
-      adminLoginSuccess.style.display = "block";
-      form.style.display = "none";
-      setTimeout(function () {
-        window.location.href = "index.html";
-      }, 2000);
-    } else {
+      window.location.href = "index.html";
+    }, 2000);
+  }
+  else{
+    let userValid = false,
+    passValid = false;
 
-      let found = function() {
+    if (userInput.value.trim() !== "" && Object.keys(users).includes(username)) {
+      userValid = true;
+    }
+
+    if (
+      passInput.value.trim() !== "" &&
+      passInput.value.length >= 4 &&
+      passInput.value.length <= 10
+    ) {
+      //////////////////////////
+      passValid = true;
+    }
+
+    if (userValid === false || passValid === false) {
+      event.preventDefault();
+      appearMes.style.display = "block";
+      setTimeout(function () {
+        appearMes.style.display = "none";
+      }, 3000);
+    } 
+    else {
+      ////////////////////////////////////
+        let found = function() {
         let username = userInput.value.trim();
         let password = passInput.value.trim();
 
@@ -84,13 +88,8 @@ document.forms[0].onsubmit = function (event) {
                 console.log(username)
 
         return user !== undefined && user.password === password;
-};
-      // let found = users.find(function (user) {
-      //   return (
-      //     user.username === userInput.value.trim() &&
-      //     user.password === passInput.value.trim()
-      //   );
-      // });
+    };
+
       event.preventDefault();
 
       if (found) {
@@ -111,3 +110,4 @@ document.forms[0].onsubmit = function (event) {
     }
   }
 };
+
