@@ -46,7 +46,6 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* gap: 20px; */
     padding: 15px;
     margin: 0px;
 }
@@ -287,7 +286,7 @@ footer{
     border-radius: 10px;
 }
 footer .foot{
-    color: white;
+    color: var(--nav);
     padding: 10px;
     margin: 0px;
     width: 100%;
@@ -299,7 +298,7 @@ footer .foot{
     font-family: "Chakra Petch", 'Franklin Gothic Medium', Arial, sans-serif ;
 }
 footer a.about{
-    color: white;
+    color: var(--nav);
     padding: 10px;
     font-size: 1.1rem;
     font-weight: 800;
