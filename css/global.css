@@ -191,7 +191,7 @@ nav .bar{
     top: 40px;
     right: 0px;
     background-color: var(--menu);
-    width: 200px;
+    width: 250px;
     border-radius: 10px;
     height: 0px;
     overflow: hidden;
@@ -233,6 +233,14 @@ nav .bar{
     font-size: 1.1rem;
     color: var(--nav); 
     padding: 3px 10px;
+    transition: all 1s;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    span{
+        position: relative;
+        right: 5px
+    }
 }
 #signin-userContainer .sub-menu li a{
     width: 100%;
@@ -243,6 +251,9 @@ nav .bar{
     transition: all 1s;
     padding: 3px 10px;
     border-radius: 20px;
+}
+#signin-userContainer .sub-menu #supportLi a{
+    padding: 7px 10px;
 }
 .sub-menu .logout{
     padding: 10px;
@@ -255,6 +266,11 @@ nav .bar{
     i{
         translate: 5px 0px;
     }
+    color: var(--links);
+    background-color: var(--links-hover);
+    translate: 5px;
+}
+#signin-userContainer .sub-menu .balanceLi:hover{
     color: var(--links);
     background-color: var(--links-hover);
     translate: 5px;

@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+}
+
+.logo {
+  margin-top: 10px;
+  color: rgb(209, 255, 5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.adminsuccesslogin {
+  width: 450px;
+  height: 250px;
+  color: #1a3a8a;
+  background-color: #d1e4fd;
+  border-radius: 20px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  padding-top: 20px;
+
+  display: none;
+
+  p {
+    letter-spacing: 4px;
+    font-family: "FontAwesome";
+    font-size: 50px;
+    margin-bottom: -10px;
+    line-height: 1.3;
+  }
+  i {
+    font-size: 60px;
+    padding: 20px;
+  }
+}
+
+.successlogin {
+  width: 400px;
+}
+
+.chargeMsg {
+  width: 500px;
+}
+
+.successlogin,
+.chargeMsg {
+  height: 300px;
+  color: #1a3a8a;
+  background-color: #d1e4fd;
+  border-radius: 20px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  padding-top: 20px;
+
+  display: none;
+
+  p {
+    letter-spacing: 4px;
+    font-family: "FontAwesome";
+    font-size: 50px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+  i {
+    font-size: 60px;
+    padding: 20px;
+  }
+}
+main {
+  height: 100vh;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  color: white;
+  background-color: transparent;
+  padding: 20px;
+  margin: 20px auto;
+  background: #4b46862e;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0px 0px 2px #0f009ca8,
+    0 0 25px #3b2dc09c;
+  gap: 25px;
+  border-radius: 25px;
+  font-family: "Chakra Petch", "Trebuchet MS", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  height: 450px;
+  h1 {
+    text-align: center;
+    margin-bottom: -15px;
+    color: rgb(209, 255, 5);
+    font-family: "Chakra Petch";
+    font-size: 2.3rem;
+  }
+  .logo-container {
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+    color: rgb(209, 255, 5);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .logo-container i {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .error,
+  .errChargeMsg {
+    color: red;
+  }
+
+  .input-box {
+    position: relative;
+    padding: 10px;
+    width: 90%;
+  }
+  .input-box i {
+    position: absolute;
+    color: black;
+    top: 20px;
+    right: 25px;
+  }
+  .input-box input {
+    padding: 10px;
+    width: 100%;
+    border-style: none;
+    outline: none;
+    border-radius: 15px;
+  }
+
+  .input-box input:hover {
+    transform: translateX(1.7px);
+    transition: 0.3s;
+  }
+
+  .login-btn {
+    padding: 10px;
+    width: 90%;
+    border-radius: 25px;
+    font-family:
+      Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-style: none;
+    background-color: rgb(0, 170, 255);
+  }
+  .login-btn:hover {
+    color: white;
+    transform: translateY(1.7px);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .forget a {
+    text-decoration: underline;
+    color: rgb(0, 170, 255);
+    margin-left: 10px;
+  }
+
+  .forget a:hover {
+    color: white;
+    transform: translateY(2px);
+    transition: 0.5s;
+  }
+  .register {
+    display: flex;
+    gap: 5px;
+  }
+
+  .register a {
+    text-decoration: underline;
+    color: rgb(0, 170, 255);
+  }
+
+  .register a:hover {
+    color: white;
+    transform: translateY(2px);
+    transition: 0.5s;
+  }
+
+  .input-box .forget {
+    margin-top: 8px;
+  }
+}
+
+.light-theme form {
+  background: linear-gradient(180deg, #eef5fa 80%, #d4dde4 100%);
+  box-shadow:
+    0px 0px 5px #00000000,
+    0 0 25px #0000004d;
+}
+.light-theme form h1 {
+  color: #1a3a8a;
+}
+.light-theme body,
+.light-theme header,
+.light-theme footer,
+.light-theme main {
+  background: #add0ff;
+}
+
+.light-theme form .register a {
+  text-decoration: underline;
+  color: #406aaf;
+}
+
+.light-theme form .register p {
+  font-weight: 500;
+  color: #1a3a8a;
+}
+
+.light-theme form .register a:hover {
+  color: rgb(93, 52, 146);
+  transform: translateY(-2px);
+  transition: 0.5s;
+}
+
+.light-theme .login-btn {
+  background-color: #1a3a8a;
+  color: white;
+}
+.light-theme .login-btn:hover {
+  color: #add0ff;
+}
+@media (max-width: 1200px) {
+  form {
+    width: 60%;
+  }
+}
+/* Mobiles */
+
+@media (max-width: 767px) {
+  form {
+    width: 80%;
+    align-items: center;
+    padding: 20px;
+    margin: 20px auto;
+
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .logo-container {
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .logo-container i {
+      font-size: 1.8rem;
+    }
+
+    .input-box {
+      padding: 10px;
+      width: 100%;
+    }
+    display: flex;
+    flex-direction: column;
+    .input-box input {
+      padding: 10px;
+      width: 100%;
+      border-style: none;
+      outline: none;
+      border-radius: 15px;
+    }
+
+    .input-box input:hover {
+      transform: translateX(1.7px);
+      transition: 0.3s;
+    }
+
+    .login-btn {
+      padding: 10px;
+      border-radius: 25px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      border-style: none;
+      background-color: rgb(0, 170, 255);
+    }
+    .login-btn:hover {
+      color: var(--links-hover);
+      transform: translateY(1.7px);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .register {
+      display: flex;
+      gap: 5px;
+    }
+
+    .register a {
+      text-decoration: underline;
+      color: rgb(0, 170, 255);
+    }
+
+    .register a:hover {
+      color: var(--links-hover);
+      transform: translateY(2px);
+      transition: 0.5s;
+    }
+  }
+}
