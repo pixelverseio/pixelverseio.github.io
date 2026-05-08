@@ -53,11 +53,15 @@ let usersData = JSON.parse(localStorage.getItem("users")); //getting the usersDa
 
 let username = localStorage.getItem("pixeluser");
 
+// on loading window
 window.addEventListener("load", function(){
+    // loop over the categories to show in store page
     categories.forEach(function(category){
         let categorysection = document.createElement("section");
+        // give the section id with value of the category being displayeed
         categorysection.id = `${category}`;
         if(category == "explore"){
+            // in explore category only add a link to browse page
             categorysection.innerHTML = `
             <div class = "">
                 <h1> 
@@ -68,7 +72,7 @@ window.addEventListener("load", function(){
                 </h1>
             </div>`;
         }
-        else{
+        else{ // other categories
         categorysection.innerHTML = `
         <h1> ${category[0].toUpperCase()}${category.slice(1)} </h1>`;
         }
@@ -76,6 +80,7 @@ window.addEventListener("load", function(){
         let container = document.createElement("div");
         container.classList.add("cards-container");
         for (let name in gamesData) {
+            // creat a card for every game if having this category
             if(gamesData[name].categories.includes(category)){
                 const gameOb = gamesData[name];
                 const price = gameOb.price;
@@ -94,14 +99,18 @@ window.addEventListener("load", function(){
                 <p style="color: #d1ff05; font-weight: bold;">${gameOb.price=="free"? "Free" : `${gameOb.price}`}</p>
                 `;
 
+                // make cards clickable and switches to the game's page
                 card.addEventListener("click", function(){
                     window.location.href = `${name}.html`;
                 })
 
-                
+                // put card in page in the category section
                 container.appendChild(card);
                 categorysection.append(container)
                 categoriesContainer.append(categorysection);
+
+                // add the active class to whislist icon container 
+                // if the wishlist of this user contain this game
                 if(usersData[username].wishlist.includes(name)){
                     let wishContainer = card.querySelector(".wish-container");
                     wishContainer.classList.add("active");
@@ -112,17 +121,17 @@ window.addEventListener("load", function(){
 });
 
 
-function libraryActive(gameName){
-    if(login === ""){
-        window.location.href = `signin.html`;
-    }
-    if(usersData[username].library.includes(gameName) === false){
-        usersData[username].library.push(gameName);
-    }
-    // console.log("usersData[username].library = ",usersData[username].library)
-    localStorage.removeItem("users");
-    localStorage.setItem("users",JSON.stringify(usersData));
-}
+// function libraryActive(gameName){
+//     if(login === ""){
+//         window.location.href = `signin.html`;
+//     }
+//     if(usersData[username].library.includes(gameName) === false){
+//         usersData[username].library.push(gameName);
+//     }
+//     // console.log("usersData[username].library = ",usersData[username].library)
+//     localStorage.removeItem("users");
+//     localStorage.setItem("users",JSON.stringify(usersData));
+// }
 
 function wishListActive(Container, gameName){
     // if user not logged in go to login page
