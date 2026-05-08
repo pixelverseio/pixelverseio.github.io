@@ -60,6 +60,6 @@ form.onsubmit = function (event) {
     form.style.display = "none";
     setTimeout(function () {
       window.location.href = "balance.html";
-    }, 30000);
+    }, 3000);
   }
 };
