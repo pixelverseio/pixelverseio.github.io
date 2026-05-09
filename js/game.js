@@ -75,7 +75,7 @@ trailer.addEventListener("click", ()=>{
     trailerDiv.classList.add("trailer-container");
     trailerDiv.innerHTML = `
         <video 
-            src = "images/horizon-zero-dawn-trailer.mp4"
+            src = "images/${gameName}/trailer.mp4"
             controls
             class = "trailer-vid"
         ></video>
@@ -93,14 +93,3 @@ function updateMainContent(element) {
     mainImage.style.display = "block";
     mainImage.src = element.src;   
 }
-
-
-
-
-
-// usersData is the users in local storage initialized in global.js
-// user is the username of the current user signed in initialized in global 
-
-// buyBtn.addEventListener("click", ()=>{
-//     if(price == "free")
-// })
