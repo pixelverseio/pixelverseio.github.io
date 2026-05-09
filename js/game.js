@@ -19,72 +19,88 @@ noBalanceMsg.id = ("no-balance-div");
 
 // buy button logic
 let buyBtn = document.querySelector("#buy-btn");
-if(userData.library.includes(gameName)){
+if(login == "user"){
+    if(userData.library.includes(gameName)){
     // if game in library
     buyBtn.innerHTML = "Library"
     buyBtn.onclick = () =>{
         window.location.href = "library.html"
     }
-}
-else{
-    // game not bought
-    buyBtn.innerHTML = (price === "free"? `Free`: `Buy Now $${price}`);
-    buyBtn.onclick= () => {
-        if(!userData.library.includes(gameName)){
-            if(price != "free"){
-                if(balance >= price){
-                    balance -= price;
-                    userData.balance = balance;
+    }
+    else{
+        // game not bought
+        buyBtn.innerHTML = (price === "free"? `Free`: `Buy Now $${price}`);
+        buyBtn.onclick= () => {
+            if(!userData.library.includes(gameName)){
+                if(price != "free"){
+                    if(balance >= price){
+                        balance -= price;
+                        userData.balance = balance;
+                        userData.library.push(`${gameName}`);
+                        buyBtn.innerHTML = "Library"
+                        balanceSpan.innerHTML = `$${balance}`;
+                        buyBtn.onclick = () =>{
+                        window.location.href = "library.html"
+                        }
+                        localStorage.setItem("users", JSON.stringify(users))
+                    }
+                    else{
+                        buyBtn.before(noBalanceMsg);
+                        setTimeout(function () {
+                            noBalanceMsg.remove();
+                        }, 2000);
+                    }
+                }else{
                     userData.library.push(`${gameName}`);
                     buyBtn.innerHTML = "Library"
-                    balanceSpan.innerHTML = `$${balance}`;
                     buyBtn.onclick = () =>{
                     window.location.href = "library.html"
                     }
                     localStorage.setItem("users", JSON.stringify(users))
                 }
-                else{
-                    buyBtn.before(noBalanceMsg);
-                    setTimeout(function () {
-                        noBalanceMsg.remove();
-                    }, 2000);
-                }
-            }else{
-                userData.library.push(`${gameName}`);
-                buyBtn.innerHTML = "Library"
-                buyBtn.onclick = () =>{
-                window.location.href = "library.html"
-                }
-                localStorage.setItem("users", JSON.stringify(users))
             }
         }
+    }
+}
+else{
+    buyBtn.innerHTML = (price === "free"? `Free`: `Buy Now $${price}`);
+    buyBtn.onclick = () => {
+        window.location.href = "signin.html";
     }
 }
 
 // wishlist button
 let wishlistBtn = document.querySelector("#wishlist-btn");
-if(userData.wishlist.includes(gameName)){
+if(login == "user"){
+    if(userData.wishlist.includes(gameName)){
     wishlistBtn.innerHTML = "In Wishlist";
+    }
+    else{
+        wishlistBtn.innerHTML = "Add to Wishlist";
+    }
+
+    wishlistBtn.onclick = () =>{
+        // game in list remove it
+        if(userData.wishlist.includes(gameName)){
+            wishlistBtn.innerHTML = "Add to Wishlist";
+            userData.wishlist = userData.wishlist.filter(game => game != gameName);
+            console.log(userData.wishlist);
+        }
+        else{ // game not in library add it
+            wishlistBtn.innerHTML = "In Wishlist";
+            userData.wishlist.push(`${gameName}`);
+            console.log(userData.wishlist);
+        }
+        localStorage.removeItem("users");
+        localStorage.setItem("users",JSON.stringify(users));
+        console.log(users);
+    }
 }
 else{
     wishlistBtn.innerHTML = "Add to Wishlist";
-}
-
-wishlistBtn.onclick = () =>{
-    // game in list remove it
-    if(userData.wishlist.includes(gameName)){
-        wishlistBtn.innerHTML = "Add to Wishlist";
-        userData.wishlist = userData.wishlist.filter(game => game != gameName);
-        console.log(userData.wishlist);
+    wishlistBtn.onclick = () => {
+        window.location.href = "signin.html";
     }
-    else{ // game not in library add it
-        wishlistBtn.innerHTML = "In Wishlist";
-        userData.wishlist.push(`${gameName}`);
-        console.log(userData.wishlist);
-    }
-    localStorage.removeItem("users");
-    localStorage.setItem("users",JSON.stringify(users));
-    console.log(users);
 }
 
 let trailer = document.getElementById("watch-trailer");
