@@ -162,7 +162,7 @@ nav .nav-toggle{
     top: 120px;
     left: 60px;
     background-color: var(--menu);
-    width: 200px;
+    width: 250px;
     border-radius: 10px;
     height: 0px;
     overflow: hidden;
@@ -204,7 +204,10 @@ nav .sub-menu .balanceLi{
     gap: 20px;
     font-size: 1.1rem;
     color: var(--nav); 
-    padding: 3px 10px;
+    transition: all 1s;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
 }
 nav .sub-menu li a{
     width: 100%;
@@ -226,6 +229,11 @@ nav .sub-menu li a:hover{
     i{
         translate: 5px 0px;
     }
+    color: var(--signature);
+    background-color: var(--links-hover);
+    translate: 5px;
+}
+#signin-userContainer .sub-menu .balanceLi:hover{
     color: var(--signature);
     background-color: var(--links-hover);
     translate: 5px;
