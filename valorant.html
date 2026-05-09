@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixels | Valorant</title>
+    <link rel="icon" type="png" href="images/pixels_icon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" class="theme dark-theme" href="css/global.css" />
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <header>
+        <nav class="nav-bar">
+          <button class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </button>
+          <div class="nav-logo">
+            <a href="" class="logo">
+              <i class="fa-solid fa-ghost"></i>
+              <p>Pixels</p>
+            </a>
+          </div>
+          <div class="lightnav-toggle">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="nav-menu">
+            <li>
+              <a href="index.html" class="active">
+                <i class="fa-solid fa-gamepad"></i>
+                <p>Store</p>
+              </a>
+            </li>
+            <li>
+              <a href="browse.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>Browse</p>
+              </a>
+            </li>
+            <li class="session-dependentLink">
+              <a href="support.html">
+                <i class="fa-solid fa-headset"></i>
+                <p>Support</p>
+              </a>
+            </li>
+            <li>
+              <a href="news.html">
+                <i class="fa-solid fa-newspaper"></i>
+                <p>News</p>
+              </a>
+            </li>
+            <div id="theme-container">
+              <input type="checkbox" id="theme-btn" />
+              <label for="theme-btn" class="theme-toggle">
+                <i class="bi bi-sun-fill"></i>
+                <i class="fa-solid fa-moon"></i>
+              </label>
+            </div>
+          </ul>
+          <div id="signin-userContainer">
+            <a href="signin.html" class="sign-in">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <p>Sign in</p>
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <section class="big-background">
+          <img src="images/valorant/bg.jpeg" class="bg" alt="Game Background" />
+
+          <h2 class="game-name">Valorant</h2>
+
+          <div id="watch-trailer">
+            <img src="images/valorant/val0.jpeg" />
+            <i class="fa-solid fa-play trailer-play"></i>
+          </div>
+
+          <div class="btns-card">
+            <p class="price"></p>
+            <div class="button-group">
+              <button id="buy-btn"></button>
+              <button id="wishlist-btn"></button>
+            </div>
+          </div>
+        </section>
+        <section id="description">
+          <h2>About Valorant</h2>
+          <p>
+            Valorant is a highly competitive tactical first-person shooter developed by
+            Riot Games that combines precise gunplay with unique character
+            abilities to create a fast-paced and strategic multiplayer
+            experience. Since its official release in 2020, the game has grown
+            into one of the most popular esports titles in the world, attracting
+            millions of players through its mix of teamwork, communication, and
+            skill-based gameplay. In Valorant, two teams of five players compete
+            against each other in rounds where one side attacks by planting a
+            device called the Spike while the other side defends and attempts to
+            stop them. What makes the game stand out from traditional shooters
+            is its roster of Agents, each possessing unique abilities that can
+            control areas, gather information, heal teammates, block vision, or
+            create aggressive openings during combat. Players must balance sharp
+            aiming skills with tactical decision-making, economy management, and
+            team coordination to succeed. Riot Games continuously updates the
+            game with new maps, agents, balance changes, cosmetic skins, and
+            seasonal competitive content, helping maintain a constantly evolving
+            meta that keeps the experience fresh for both casual and
+            professional players. Valorant’s esports scene has also become
+            massive, featuring international tournaments, franchised leagues,
+            and superstar players from around the world competing for major
+            championships and prize pools. The game is especially praised for
+            its responsive shooting mechanics, clean art style, strong
+            anti-cheat system, and emphasis on strategic depth, although some
+            players criticize the steep learning curve and the pressure of
+            ranked competition. Even with those challenges, Valorant remains one
+            of the leading multiplayer shooters of the modern gaming era and
+            continues to shape the future of tactical esports gaming.
+          </p>
+        </section>
+        <section class="info">
+          <div class="show">
+            <img
+              id="screenImage"
+              class="event"
+              src="images/valorant/val1.jpeg"
+              style="display: block"
+            />
+            <div class="scroller">
+              <img
+                src="images/valorant/val2.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/valorant/val3.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/valorant/val4.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/valorant/val5.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/valorant/val6.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/valorant/val7.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/valorant/val8.png"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/valorant/val9.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+            </div>
+          </div>
+        </section>
+        <section class="specifications">
+          <table>
+            <caption class="tcaption">
+              System Requirements
+            </caption>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Minimum</th>
+                <th>Recommended</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>OS version</strong></td>
+                <td>Windows 10 64-bit</td>
+                <td>Windows 10 64-bit</td>
+              </tr>
+              <tr>
+                <td><strong>CPU</strong></td>
+                <td>Intel i5-4670k or AMD Ryzen 3 1200</td>
+                <td>Intel i5-8600 or AMD Ryzen 5 3600</td>
+              </tr>
+              <tr>
+                <td><strong>Memory</strong></td>
+                <td>8 GB</td>
+                <td>16 GB</td>
+              </tr>
+              <tr>
+                <td><strong>GPU</strong></td>
+                <td>
+                  NVIDIA GTX 1060 (6GB) or AMD RX 5500 XT (8GB) or Intel Arc
+                  A750
+                </td>
+                <td>
+                  NVIDIA GTX 1060 (6GB) or AMD RX 5500 XT (8GB) or Intel Arc
+                  A750
+                </td>
+              </tr>
+              <tr>
+                <td><strong>DirectX</strong></td>
+                <td>DirectX 12</td>
+                <td>DirectX 12</td>
+              </tr>
+              <tr>
+                <td><strong>Storage</strong></td>
+                <td>190 GB</td>
+                <td>190 GB</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="foot">
+        <a class="logo" href="index.html"> Pixels </a>
+        <p>&copy; 2026 Pixels | All rights reserved</p>
+      </div>
+      <a href="about_us.html" class="about"> About us </a>
+    </footer>
+    <script src="js/global.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>
