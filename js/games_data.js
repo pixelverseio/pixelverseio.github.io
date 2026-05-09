@@ -16,7 +16,7 @@ let games = {
         "badge": "RPG"
     },
 
-        "the_last_of_us": {
+        "the-last-of-us": {
         "game_name": "The Last Of Us II",
         "image": "images/the_last_of_us2.jpg",
         "price": 69.99,
@@ -24,7 +24,7 @@ let games = {
         "badge": "RPG"
     },
 
-        "god_of_war_ragnarok": {
+        "god-of-war-ragnarok": {
         "game_name": "God Of War Ragnarok",
         "image": "images/god_of_war_ragnarok.jpg",
         "price": 50,
@@ -32,7 +32,7 @@ let games = {
         "badge": "RPG"
     },
 
-        "dying_light_the_beast": {
+        "dying-light-the-beast": {
         "game_name": "Dying Light: The Beast",
         "image": "images/dying-light-card.jpg",
         "price": 60,
@@ -40,7 +40,7 @@ let games = {
         "badge": "RPG"
     },
 
-        "fc_26": {
+        "fc-26": {
         "game_name": "FC 26",
         "image": "images/fc26.jpg",
         "price": 69.99,
@@ -54,7 +54,7 @@ let games = {
         "categories": ["explore", "new", "action", "RPG", "openWorld", "windows", "4", "20$-30$", "singlePlayer", "offline"],
         "badge": "RPG"
     },
-    "gta_v": {
+    "gta-v": {
         "game_name": "GTA V",
         "image": "images/gta-card.jpg",
         "price": 50,
@@ -70,7 +70,7 @@ let games = {
         "badge": "RPG"
     },
 
-    "cyberpunk_2077": {
+    "cyberpunk-2077": {
         "game_name": "Cyberpunk 2077",
         "image": "images/cyberpunk.jpg",
         "price": 56,
@@ -78,7 +78,7 @@ let games = {
         "badge": "RPG"
     },
 
-    "poppy_playtime": {
+    "poppy-playtime": {
         "game_name": "Poppy Playtime",
         "image": "images/poppy-card.jpg",
         "price": 70,
@@ -93,7 +93,7 @@ let games = {
         "badge": "RPG"
     },
 
-        "elden_ring": {
+        "elden-ring": {
         "game_name": "Elden ring",
         "image": "images/elden_ring.jpg",
         "price": 60,
@@ -101,7 +101,7 @@ let games = {
         "badge": "RPG"
     },
 
-        "red_dead_redemption_2": {
+        "red-dead-redemption-2": {
         "game_name": "Red dead redemption 2",
         "image": "images/red_dead_redemption_2.jpg",
         "price": 45,
@@ -109,7 +109,7 @@ let games = {
         "badge": "RPG"
     },
 
-    "nba_2k26": {
+    "nba-2k26": {
         "game_name": "NBA 2K26",
         "image": "images/nba-card.jpg",
         "price": 80,
