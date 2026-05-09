@@ -1,17 +1,15 @@
-let gamesData = JSON.parse(localStorage.getItem("games")); //getting the gamesData data
-console.log("gamesData = ",gamesData);
+// console.log("gamesData = ",gamesData);
 
-let usersData = JSON.parse(localStorage.getItem("users")); //getting the users data
-console.log("users = ",usersData);
+// console.log("users = ",users);
 
 let username = localStorage.getItem("pixeluser");
 console.log("username = ",username);
 
 const container = document.getElementById("library-container");
 console.log("username = ",username)
-for(let i = 0 ; i<usersData[username].library.length ; i++){
-    let game_key = usersData[username].library[i]
-    let gameOb = gamesData[usersData[username].library[i]];
+for(let i = 0 ; i<users[username].library.length ; i++){
+    let game_key = users[username].library[i]
+    let gameOb = gamesData[users[username].library[i]];
     console.log("gameOb = ",gameOb)
     const card = document.createElement("div");
     card.className = "game-card";
@@ -23,8 +21,12 @@ for(let i = 0 ; i<usersData[username].library.length ; i++){
         <button class="action-btn" onclick="alert('Enjoy playing!')">
             <span>🎮</span> Play
         </button>
-    `;
-    container.appendChild(card);
+        `;
+        container.appendChild(card);
+
+        card.addEventListener("click", function(){
+        window.location.href = `${game_key}.html`;
+        });
     }
 
 const searchBox = document.querySelector('.search-box');

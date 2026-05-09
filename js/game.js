@@ -3,6 +3,10 @@ let gameName = window.location.pathname.slice(1,-5);
 let price = gamesData[gameName].price;
 //** users, user, userData, balance are initialized in global ***////
 
+let balanceSpan = document.querySelector(".balanceLi span");
+// console.log(balanceSpan)
+
+
 // console.log(gamesData)
 // console.log(balance);
 // console.log(gamesData[gameName])
@@ -11,6 +15,7 @@ let price = gamesData[gameName].price;
 let noBalanceMsg = document.createElement("div");
 noBalanceMsg.innerHTML = `<p> No Enough Balance For Purchase</p>`;
 noBalanceMsg.id = ("no-balance-div");
+
 
 // buy button logic
 let buyBtn = document.querySelector("#buy-btn");
@@ -25,18 +30,31 @@ else{
     // game not bought
     buyBtn.innerHTML = (price === "free"? `Free`: `Buy Now $${price}`);
     buyBtn.onclick= () => {
-        if(price != "free"){
-            if(balance >= price){
-                balance -= price;
-                userData.balance = balance;
+        if(!userData.library.includes(gameName)){
+            if(price != "free"){
+                if(balance >= price){
+                    balance -= price;
+                    userData.balance = balance;
+                    userData.library.push(`${gameName}`);
+                    buyBtn.innerHTML = "Library"
+                    balanceSpan.innerHTML = `$${balance}`;
+                    buyBtn.onclick = () =>{
+                    window.location.href = "library.html"
+                    }
+                    localStorage.setItem("users", JSON.stringify(users))
+                }
+                else{
+                    buyBtn.before(noBalanceMsg);
+                    setTimeout(function () {
+                        noBalanceMsg.remove();
+                    }, 2000);
+                }
+            }else{
                 userData.library.push(`${gameName}`);
-                localStorage.setItem("users", JSON.stringify(users))
-            }
-            else{
-                buyBtn.before(noBalanceMsg);
-                setTimeout(function () {
-                    noBalanceMsg.remove();
-                }, 2000);
+                buyBtn.innerHTML = "Library"
+                buyBtn.onclick = () =>{
+                window.location.href = "library.html"
+                }
             }
         }
     }
