@@ -55,6 +55,7 @@ else{
                 buyBtn.onclick = () =>{
                 window.location.href = "library.html"
                 }
+                localStorage.setItem("users", JSON.stringify(users))
             }
         }
     }
