@@ -16,7 +16,7 @@ let games = {
         "badge": "RPG"
     },
 
-        "the-last-of-us": {
+        "the-last-of-us-ii": {
         "game_name": "The Last Of Us II",
         "image": "images/the_last_of_us2.jpg",
         "price": 69.99,
