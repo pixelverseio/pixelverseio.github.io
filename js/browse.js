@@ -1,17 +1,18 @@
+// console.log() just to show that the data is loaded correctly from global.js
 console.log("gamesData = ",gamesData);
+console.log("users = ",users);
 
-// console.log("users = ",users);
-
+// getting the username of user logged in currently and show it in the console
 let username = localStorage.getItem("pixeluser");
-// console.log("username = ",username);
+console.log("username = ",username);
 
-
+// put the cards in the page using the gamesData data from global.js
 document.addEventListener("DOMContentLoaded", function(){
     const container = document.querySelector(".cards-container");
-    
+    // loop through the gamesData and create a card for each game
     for (let name in gamesData) {
-        const gameOb = gamesData[name];
-        const price = gameOb.price;
+        const gameOb = gamesData[name]; // get the game object
+        const price = gameOb.price;     // get the price of the game
         
         const card = document.createElement("div");
         card.classList.add("game-card");
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function(){
             let wishContainer = card.querySelector(".wish-container");
             wishContainer.classList.add("active");
         }
+        //make the card clickable and go to the game page when click on it
         card.addEventListener("click", function(){
         window.location.href = `${name}.html`;
         })
@@ -43,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
+// function to add or remove game from user's wishlist
 function wishListActive(Container, gameName){
     // if user not logged in go to login page
     if(login === ""){
@@ -69,18 +72,21 @@ function wishListActive(Container, gameName){
     }
 }
 
-
+// search bar logic
 let searchBar = document.querySelector(".search");
 
 searchBar.addEventListener("input",function(event){
-    console.log("working")
-    let word = event.target.value.toLowerCase();
+    let word = event.target.value.toLowerCase();// get any thing in the search bar and convert it to lowercase
     let cards = document.querySelectorAll('.game-card'); 
+    // loop through all cards
     cards.forEach(function(card) {
         let title = card.querySelector('h3').textContent.toLowerCase();
+        // if hist title include the word in the search bar show it
         if (title.includes(word)) {
             card.style.display = "block";
-        } else {
+        }
+        //else hide it
+        else {
             card.style.display = "none";
         }
     });
