@@ -1,6 +1,6 @@
 // getting game name from url without / and .html
-let gameName = window.location.pathname.slice(1,-5);
-let price = gamesData[gameName].price;
+const gameName = window.location.pathname.split('/').pop().replace('.html', '');
+let price = gamesData[`${gameName}`].price;
 //** users, user, userData, balance are initialized in global ***////
 
 let balanceSpan = document.querySelector(".balanceLi span");
