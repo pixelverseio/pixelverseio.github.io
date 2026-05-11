@@ -12,6 +12,7 @@ body{
 }
 main{
     margin-top: 30px;
+    overflow-x: hidden;
 }
 
 h1{
@@ -60,6 +61,13 @@ h1{
 .slide img{
     width: 100%;
 }
+#display-screen{
+    transition: ease 0.7s;
+}
+#display-screen:hover{
+    scale: 1.02;
+    box-shadow: 0px -2px 20px 5px rgba(163, 163, 163, 0.356);
+}
 .arrow{
     color: white;
     background: grey;
@@ -69,6 +77,12 @@ h1{
     border-radius: 50%;
     text-align: center;
     font-size: 1.3rem;
+    cursor: pointer;
+    transition: ease 0.5s;
+}
+.arrow:hover{
+    scale: 1.1;
+    box-shadow: 0px 0px 20px 1px rgba(163, 163, 163, 0.356);
 }
 h1 a.explore{
     display: inline-block;
@@ -206,7 +220,7 @@ a.explore:hover{
 .light-theme{
     main{
         margin-left: 80px;
-        width: 90%;
+        width: 100%;
     }
     #store-header{
         margin-top: 0px;
@@ -217,7 +231,6 @@ a.explore:hover{
     }
     .game-card{
         background:  #1a3a8ac8;
-
     }
     .game-card:hover {
     transform: translateY(-10px);
