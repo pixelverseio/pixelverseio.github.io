@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixels | CyberPunk 2077</title>
+    <link rel="icon" type="png" href="images/pixels_icon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" class="theme dark-theme" href="css/global.css" />
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <header>
+        <nav class="nav-bar">
+          <button class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </button>
+          <div class="nav-logo">
+            <a href="" class="logo">
+              <i class="fa-solid fa-ghost"></i>
+              <p>Pixels</p>
+            </a>
+          </div>
+          <div class="lightnav-toggle">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="nav-menu">
+            <li>
+              <a href="index.html">
+                <i class="fa-solid fa-gamepad"></i>
+                <p>Store</p>
+              </a>
+            </li>
+            <li>
+              <a href="browse.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>Browse</p>
+              </a>
+            </li>
+            <li class="session-dependentLink">
+              <a href="support.html">
+                <i class="fa-solid fa-headset"></i>
+                <p>Support</p>
+              </a>
+            </li>
+            <li>
+              <a href="news.html">
+                <i class="fa-solid fa-newspaper"></i>
+                <p>News</p>
+              </a>
+            </li>
+            <div id="theme-container">
+              <input type="checkbox" id="theme-btn" />
+              <label for="theme-btn" class="theme-toggle">
+                <i class="bi bi-sun-fill"></i>
+                <i class="fa-solid fa-moon"></i>
+              </label>
+            </div>
+          </ul>
+          <div id="signin-userContainer">
+            <a href="signin.html" class="sign-in">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <p>Sign in</p>
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <section class="big-background">
+          <img
+            src="images/cyberpunk-2077/cp8.jpg"
+            class="bg"
+            alt="Game Background"
+          />
+
+          <!-- <h2 class="game-name">Cyberpunk 2077</h2> -->
+
+          <div id="watch-trailer">
+            <img src="images/cyberpunk-2077/trailerBg.jpg" />
+            <i class="fa-solid fa-play trailer-play"></i>
+          </div>
+
+          <div class="btns-card">
+            <p class="price"></p>
+            <div class="button-group">
+              <button id="buy-btn"></button>
+              <button id="wishlist-btn"></button>
+            </div>
+          </div>
+        </section>
+        <section id="description">
+          <h2>About Cyberpunk 2077</h2>
+          <p>
+            Cyberpunk 2077 is an open-world action role-playing game developed
+            by CD Projekt Red and released in 2020. The game takes place in
+            Night City, a futuristic and dangerous metropolis filled with crime,
+            advanced technology, cybernetic enhancements, powerful corporations,
+            and violent gangs. Players control a mercenary named V, whose
+            appearance, skills, and background can be customized. The story
+            focuses on survival, ambition, identity, and the consequences of
+            technology merging with humanity. One of the game’s most famous
+            characters is Johnny Silverhand, played by Keanu Reeves. Johnny is a
+            rebellious rockstar and anti-corporate terrorist whose digital
+            consciousness becomes trapped inside V’s mind. Their relationship is
+            one of the main parts of the story and changes depending on the
+            player’s choices throughout the game. The gameplay mixes
+            first-person shooting, hacking, stealth, exploration, driving, and
+            RPG mechanics. Players can install cybernetic upgrades, improve
+            weapons, and create different playstyles such as stealth assassins,
+            skilled hackers, or aggressive fighters. The game also features side
+            missions, romance options, character interactions, and multiple
+            endings based on decisions made during the story. When the game
+            first launched, it received heavy criticism because of bugs,
+            glitches, and poor performance on older consoles. Over time, the
+            developers released major updates that improved performance,
+            redesigned gameplay systems, and added new features. The expansion
+            “Phantom Liberty” introduced a completely new storyline, a new area
+            of the city, and the character Solomon Reed played by Idris Elba.
+            Today, Cyberpunk 2077 is widely considered one of the most immersive
+            and visually impressive RPGs ever made, praised for its detailed
+            world, atmosphere, soundtrack, storytelling, and character
+            development.
+          </p>
+        </section>
+        <section class="info">
+          <div class="show">
+            <img
+              id="screenImage"
+              class="event"
+              src="images/cyberpunk-2077/cp2.jpg"
+              style="display: block"
+            />
+            <div class="scroller">
+              <img
+                src="images/cyberpunk-2077/cp2.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/cyberpunk-2077/cp4.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/cyberpunk-2077/cp5.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/cyberpunk-2077/cp6.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/cyberpunk-2077/cp7.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/cyberpunk-2077/cp9.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/cyberpunk-2077/cp10.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/cyberpunk-2077/cp11.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+            </div>
+          </div>
+        </section>
+        <section class="specifications">
+          <table>
+            <caption class="tcaption">
+              System Requirements
+            </caption>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Minimum</th>
+                <th>Recommended</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>OS version</strong></td>
+                <td>Windows 10 64-bit</td>
+                <td>Windows 10 64-bit</td>
+              </tr>
+              <tr>
+                <td><strong>CPU</strong></td>
+                <td>Intel i5-4670k or AMD Ryzen 3 1200</td>
+                <td>Intel i5-8600 or AMD Ryzen 5 3600</td>
+              </tr>
+              <tr>
+                <td><strong>Memory</strong></td>
+                <td>8 GB</td>
+                <td>16 GB</td>
+              </tr>
+              <tr>
+                <td><strong>GPU</strong></td>
+                <td>
+                  NVIDIA GTX 1060 (6GB) or AMD RX 5500 XT (8GB) or Intel Arc
+                  A750
+                </td>
+                <td>
+                  NVIDIA GTX 1060 (6GB) or AMD RX 5500 XT (8GB) or Intel Arc
+                  A750
+                </td>
+              </tr>
+              <tr>
+                <td><strong>DirectX</strong></td>
+                <td>DirectX 12</td>
+                <td>DirectX 12</td>
+              </tr>
+              <tr>
+                <td><strong>Storage</strong></td>
+                <td>190 GB</td>
+                <td>190 GB</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="foot">
+        <a class="logo" href="index.html"> Pixels </a>
+        <p>&copy; 2026 Pixels | All rights reserved</p>
+      </div>
+      <a href="about_us.html" class="about"> About us </a>
+    </footer>
+    <script src="js/global.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>
