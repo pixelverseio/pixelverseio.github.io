@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixels | Elden Ring</title>
+    <link rel="icon" type="png" href="images/pixels_icon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" class="theme dark-theme" href="css/global.css" />
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <header>
+        <nav class="nav-bar">
+          <button class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </button>
+          <div class="nav-logo">
+            <a href="" class="logo">
+              <i class="fa-solid fa-ghost"></i>
+              <p>Pixels</p>
+            </a>
+          </div>
+          <div class="lightnav-toggle">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="nav-menu">
+            <li>
+              <a href="index.html">
+                <i class="fa-solid fa-gamepad"></i>
+                <p>Store</p>
+              </a>
+            </li>
+            <li>
+              <a href="browse.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>Browse</p>
+              </a>
+            </li>
+            <li class="session-dependentLink">
+              <a href="support.html">
+                <i class="fa-solid fa-headset"></i>
+                <p>Support</p>
+              </a>
+            </li>
+            <li>
+              <a href="news.html">
+                <i class="fa-solid fa-newspaper"></i>
+                <p>News</p>
+              </a>
+            </li>
+            <div id="theme-container">
+              <input type="checkbox" id="theme-btn" />
+              <label for="theme-btn" class="theme-toggle">
+                <i class="bi bi-sun-fill"></i>
+                <i class="fa-solid fa-moon"></i>
+              </label>
+            </div>
+          </ul>
+          <div id="signin-userContainer">
+            <a href="signin.html" class="sign-in">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <p>Sign in</p>
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <section class="big-background">
+          <img
+            src="images/elden-ring/elden-ring-pc-wallpapers.jpg.jpeg"
+            class="bg"
+            alt="Game Background"
+          />
+
+          <!-- <h2 class="game-name">Elden Ring</h2> -->
+
+          <div id="watch-trailer">
+            <img src="images/elden-ring/trailerBg.jpg" />
+            <i class="fa-solid fa-play trailer-play"></i>
+          </div>
+
+          <div class="btns-card">
+            <p class="price"></p>
+            <div class="button-group">
+              <button id="buy-btn"></button>
+              <button id="wishlist-btn"></button>
+            </div>
+          </div>
+        </section>
+        <section id="description">
+          <h2>About Elden Ring</h2>
+          <p>
+            Set in the Lands Between, a mystical realm once ruled by Queen
+            Marika. The Elden Ring, source of the Erdtree’s power, has been
+            shattered, sparking a war known as The Shattering. Players take the
+            role of a Tarnished, exiled warriors guided back by grace to restore
+            the Elden Ring and become the Elden Lord. Narrative combines mythic
+            lore by Martin with Miyazaki’s signature cryptic storytelling.
+            Gameplay Features Open World Exploration: Vast landscapes including
+            grassy plains, swamps, mountains, castles, and dungeons. Traversal:
+            On foot or horseback using Torrent, the spectral steed. Combat: Wide
+            variety of weapons, spells, and skills. Options for direct combat,
+            stealth, or summoning allies. Progression: Players collect Runes
+            (currency) to level up attributes. Multiplayer: Cooperative boss
+            fights and PvP duels. Reception & Legacy Awards: Winner of multiple
+            Game of the Year honors, praised for its open world, freedom, and
+            depth. Sales: Over 30 million copies sold, making it one of the
+            best-selling games ever. DLC: Shadow of the Erdtree (June 2024) —
+            expanded lore, new bosses, and regions. Sold over 10 million copies,
+            even nominated for Game of the Year. Spinoff: Elden Ring: Nightreign
+            (2025), focused on multiplayer. Future: A film adaptation is in
+            production, slated for release in 2028. Risks & Considerations
+            Difficulty: Known for punishing combat; not beginner-friendly.
+            Online Play: PvP can be unbalanced, and cooperative play requires
+            coordination. Time Investment: Exploration and progression demand
+            patience and persistence.
+          </p>
+        </section>
+        <section class="info">
+          <div class="show">
+            <img
+              id="screenImage"
+              class="event"
+              src="images/elden-ring/elden-ring-img5.jpg.jpeg"
+              style="display: block"
+            />
+            <div class="scroller">
+              <img
+                src="images/elden-ring/elden-ring-img5.jpg.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/elden-ring/elden-ring-img6.jpg.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/elden-ring/elden-ring-img4.jpg.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/elden-ring/elden-ring-img3.jpg.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/elden-ring/elden-ring-img2.jpg.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/elden-ring/elden-ring-img1.png"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/elden-ring/elden-ring-img7.jpg.jpeg"
+                onclick="updateMainContent(this, 'image')"
+              />
+            </div>
+          </div>
+        </section>
+        <section class="specifications">
+          <table>
+            <caption class="tcaption">
+              System Requirements
+            </caption>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Minimum</th>
+                <th>Recommended</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>OS version</strong></td>
+                <td>Windows 10 64-bit</td>
+                <td>Windows 10 64-bit</td>
+              </tr>
+              <tr>
+                <td><strong>CPU</strong></td>
+                <td>Intel i5-4670k or AMD Ryzen 3 1200</td>
+                <td>Intel i5-8600 or AMD Ryzen 5 3600</td>
+              </tr>
+              <tr>
+                <td><strong>Memory</strong></td>
+                <td>8 GB</td>
+                <td>16 GB</td>
+              </tr>
+              <tr>
+                <td><strong>GPU</strong></td>
+                <td>
+                  NVIDIA GTX 1060 (6GB) or AMD RX 5500 XT (8GB) or Intel Arc
+                  A750
+                </td>
+                <td>
+                  NVIDIA GTX 1060 (6GB) or AMD RX 5500 XT (8GB) or Intel Arc
+                  A750
+                </td>
+              </tr>
+              <tr>
+                <td><strong>DirectX</strong></td>
+                <td>DirectX 12</td>
+                <td>DirectX 12</td>
+              </tr>
+              <tr>
+                <td><strong>Storage</strong></td>
+                <td>190 GB</td>
+                <td>190 GB</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="foot">
+        <a class="logo" href="index.html"> Pixels </a>
+        <p>&copy; 2026 Pixels | All rights reserved</p>
+      </div>
+      <a href="about_us.html" class="about"> About us </a>
+    </footer>
+    <script src="js/global.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>
