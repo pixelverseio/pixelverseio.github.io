@@ -1,20 +1,18 @@
-// console.log("gamesData = ",gamesData);
+let username = localStorage.getItem("pixeluser"); //localStorage جلب اسم المستخدم المسجل دخوله من 
+console.log("username = ", username);
 
-// console.log("users = ",users);
+const container = document.getElementById("wishlist-container"); //بنجيب الديف الي الكلاس بتاعها دا
 
-let username = localStorage.getItem("pixeluser");
-console.log("username = ",username);
+for (let i = 0; i < users[username].wishlist.length; i++) { 
+    let game_key = users[username].wishlist[i]; // جلب مفتاح اللعبة (الاسم/المعرف) عند الفهرس i
+    console.log("gamesData[users[username].wishlist[i]] = ", gamesData[users[username].wishlist[i]]);
+    let gameOb = gamesData[users[username].wishlist[i]]; // جلب كائن اللعبة الكامل من gamesData باستخدام المفتاح
+    console.log("gameOb = ", gameOb);
 
-const container = document.getElementById("wishlist-container");
-for(let i = 0 ; i<users[username].wishlist.length ; i++){
-    let game_key = users[username].wishlist[i];
-    console.log("gamesData[users[username].wishlist[i]] = ",gamesData[users[username].wishlist[i]]);
-    let gameOb = gamesData[users[username].wishlist[i]];
-    console.log("gameOb = ",gameOb);
-    const card = document.createElement("div");
-    card.className = "game-card";
-    card.id = game_key;
-    // console.log(game_key);
+    const card = document.createElement("div"); // بنعمل ديف جديد في المتغير دا
+    card.className = "game-card"; // game-card تعيين كلاس 
+    card.id = game_key; // تعيين اي دي باسم اللعبة
+    // بناء HTML الداخلي للبطاقة مع الشارة وزر الحذف والصورة والاسم والسعر وزر الشراء
     card.innerHTML = `
         <span class="badge">${gameOb.badge}</span>
         <span class="cross" onclick="event.stopPropagation(); removeFromWishlist('${game_key}')" style="color: #ff3b3b">✖</span>
@@ -25,38 +23,25 @@ for(let i = 0 ; i<users[username].wishlist.length ; i++){
         Buy
         </button>
         `;
-        container.appendChild(card);
-        card.addEventListener("click", function(){
+
+    container.appendChild(card); //containerإضافة البطاقة إلى ديف ا
+
+    // الانتقال إلى صفحة اللعبة الخاصة عند النقر على البطاقة
+    card.addEventListener("click", function () {
         window.location.href = `${game_key}.html`;
-        })
+    });
 }
 
+// إزالة لعبة معينة من قائمة الأمنيات عن طريق اسمها/مفتاحها
 function removeFromWishlist(gameName) {
-    console.log("gameName = ",gameName);
-    document.getElementById(`${gameName}`).remove();
-    let wishlistArray = userData.wishlist;
-    userData.wishlist = wishlistArray.filter(function(game){
+    console.log("gameName = ", gameName);
+    document.getElementById(`${gameName}`).remove(); //html إزالة عنصر بطاقة اللعبة من ال 
+
+    let wishlistArray = userData.wishlist; 
+    userData.wishlist = wishlistArray.filter(function (game) { //بنشيل اللعبة من مصفوفة ال wishlist
         return game != gameName;
     });
-    localStorage.removeItem("users");
-    localStorage.setItem("users",JSON.stringify(users));
-}
 
-function libraryAvtive(game_div){
-    // console.log("users[username].library = ",users[username].library)
-    if(users[username].library.includes(game_div.id) === false){
-        users[username].library.push(game_div.id);
-    }
-    // console.log("users[username].library = ",users[username].library)
-    localStorage.removeItem("users");
-    localStorage.setItem("users",JSON.stringify(users));
-}
-
-
-function clearWishlist() {
-    if(confirm("Clear your entire wishlist?")) {
-        localStorage.removeItem("pixels_wishlist");
-        wishlistIds = [];
-        renderWishlist();
-    }
+    localStorage.removeItem("users"); // localStorageحذف بيانات المستخدمين القديمة من 
+    localStorage.setItem("users", JSON.stringify(users)); // localStorageحفظ بيانات المستخدمين الجديدة في 
 }
