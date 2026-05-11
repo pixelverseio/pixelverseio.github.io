@@ -180,6 +180,15 @@ nav .bar{
     color: var(--links);
     font-size: 1.3rem;
 }
+#signin-userContainer .add-game i{
+    font-size: 2rem; 
+    color: #c7c7c7; 
+    cursor: pointer;
+}
+#signin-userContainer .add-game i:hover{
+    color: var(--links);
+    font-size: 2.1rem;
+}
 #signin-userContainer{
     position: relative;
 }
@@ -274,6 +283,11 @@ nav .bar{
     color: var(--links);
     background-color: var(--links-hover);
     translate: 5px;
+}
+#signin-userContainer .sub-menu li .logout{
+    display: flex;
+    justify-content: flex-start;
+    gap: 27%;
 }
 #signin-userContainer .sub-menu li .logout:hover{
     background-color: var(--signature);

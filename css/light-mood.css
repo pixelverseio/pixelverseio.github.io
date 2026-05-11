@@ -154,6 +154,14 @@ nav .nav-toggle{
     display: none;
     transition: all 1s ease;
 }
+.nav-bar .add-game i{
+    font-size: 2rem; 
+    cursor: pointer;
+}
+.nav-bar .add-game i:hover{
+    color: var(--links);
+    font-size: 2.1rem;
+}
 .menu-container{
     position: absolute;
     display: flex;
@@ -221,6 +229,9 @@ nav .sub-menu li a{
 }
 .sub-menu .logout{
     background-color: #d51616;
+    display: flex;
+    justify-content: flex-start;
+    gap: 27%;
     i,p{
     color: white;
     }
