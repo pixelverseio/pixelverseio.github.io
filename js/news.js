@@ -13,22 +13,25 @@ window.onload = function () {
 };
 
 // 3. OPEN AND CLOSE THE POST FORM
+
+// open the post form
 addPostBtn.addEventListener('click', function () {
     postModal.style.display = 'block';
 });
 
+//closes the post form
 closeBtn.addEventListener('click', function () {
     postModal.style.display = 'none';
 });
 
 // 4. SAVE POST LOGIC
 submitPostBtn.addEventListener('click', function () {
-    const newTitle = titleInput.value.trim();
+    const newTitle = titleInput.value.trim();  // .trim() -> clears the spaces in the beginning and the end of the text
     const newBody = bodyInput.value.trim();
 
     // Validation
     if (newTitle === "" || newBody === "") {
-        alert("Please fill in both the title and the body of your post.");
+        alert("Please fill in both the title and the body of your post.");  // if the useer did not input any texts -> prompt the user to input validat data
         return;
     }
 
@@ -43,7 +46,7 @@ submitPostBtn.addEventListener('click', function () {
     // Get the current data from LocalStorage (or empty array if first time)
     const savedPosts = JSON.parse(localStorage.getItem('communityPosts')) || [];
 
-    // Add the new post to our list
+    // Add the new post to the list
     savedPosts.push(postData);
 
     // Save the updated list back to the browser memory
@@ -58,8 +61,9 @@ submitPostBtn.addEventListener('click', function () {
 
 // 5. DISPLAYING THE POSTS
 function displaySavedPosts() {
-
+    //clear the container to prevent any duplicates posts 
     postsFeed.innerHTML = "";
+    
     // convert the data into code again from the JSON
     const savedPosts = JSON.parse(localStorage.getItem('communityPosts')) || [];
 
@@ -69,7 +73,7 @@ function displaySavedPosts() {
         return;
     }
 
-    // Loop through our savedPosts and create the HTML for each post
+    // Loop through the savedPosts and create the HTML for each post
     savedPosts.forEach(post => {
         const newPostCard = document.createElement('div');
         newPostCard.className = 'post-card';
