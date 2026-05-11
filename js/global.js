@@ -51,11 +51,45 @@ let currentTheme = localStorage.getItem("theme");
 let profile = document.createElement("div");
 // User & Admin account icon
 if (login == "admin") {
-    profile.innerHTML = `<i class="fa-solid fa-circle-plus"></i>`;
-    profile.classList.add("add-game");
+    // admin account icon
+    profile.innerHTML = `<i class="fa-solid fa-user-tie"></i>`;
+    profile.classList.add("admin-photo");
+
+    let subMenuContainer = document.createElement("div");
+    subMenuContainer.classList.add("menu-container", "admin-menu-container");
+
+    subMenuContainer.innerHTML = `
+    <ul class = "sub-menu">
+        <li class = "admin-info">
+            <i class="fa-solid fa-user-tie"></i>
+            <p> Adminstrator </p>
+        </li>
+        <li class = "add-game"> 
+            <a href = "add-game.html">
+                <i class="fa-solid fa-circle-plus"></i>
+                <p> Add Game </p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </li>
+        <li>
+            <a href = "index.html" class = "logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p>Logout</p>
+            </a>
+        </li>
+    </ul>
+    `;
+
+    // add drop menu
+    signinUserContainer.append(subMenuContainer);
+    // add username to profile
+    let usernameP = document.createElement("p");
+    usernameP.innerHTML = `Adminstrator`;
+    profile.append(usernameP);
+
     profile.addEventListener("click",function(){
-        window.location.href = "add-game.html";
-    });
+        subMenuContainer.classList.toggle("active");
+    })
     if(currentTheme == "dark"){
         signinUserContainer.append(profile);
     }
@@ -69,7 +103,7 @@ if (login == "admin") {
     profile.classList.add("user-photo");
 
     // Drop down menu
-    var subMenuContainer = document.createElement("div");
+    let subMenuContainer = document.createElement("div");
     subMenuContainer.classList.add("menu-container");
     // console.log(user);
     // console.log(profile);
@@ -84,7 +118,7 @@ if (login == "admin") {
         <li class="balanceLi">
             <i class="fa-solid fa-wallet"></i>
             <p>Balance</p>
-            <span>${balance}$</sapn>
+            <span>${balance}$</span>
         </li>
         <li>
             <a href = "wishlist.html">
@@ -123,7 +157,7 @@ if (login == "admin") {
     signinBtn.remove();
     // add drop menu
     signinUserContainer.append(subMenuContainer);
-    console.log(profile);
+    // console.log(profile);
     // when user icon clicked => User Info appear
     profile.addEventListener("click",function(){
         subMenuContainer.classList.toggle("active");
