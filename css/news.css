@@ -96,7 +96,8 @@ main{
 }
 
 .big-headline h1 {
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 .reguler {
