@@ -87,6 +87,13 @@ header.active-light{
             font-size: 10px;
         }
     }
+    .nav-bar .admin-photo p{
+        display: inline-block;
+        @starting-style {
+            opacity: 0;
+            font-size: 10px;
+        }
+    }
     .menu-container{
     top: 120px;
     left: 170px;
@@ -149,19 +156,34 @@ nav .nav-toggle{
     cursor: pointer;
     font-family: "Chakra Petch", "Saira Stencil", sans-serif;
 }
+.nav-bar .admin-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.9rem; 
+    color: var(--menu); 
+    cursor: pointer;
+    font-family: "Chakra Petch", "Saira Stencil", sans-serif;
+}
 .nav-bar .user-photo p{
     font-size: 1.3rem;
     display: none;
     transition: all 1s ease;
 }
-.nav-bar .add-game i{
+.nav-bar .admin-photo p{
+    font-size: 1.3rem;
+    display: none;
+    transition: all 1s ease;
+}
+/* .nav-bar .add-game i{
     font-size: 2rem; 
     cursor: pointer;
 }
 .nav-bar .add-game i:hover{
     color: var(--links);
     font-size: 2.1rem;
-}
+} */
 .menu-container{
     position: absolute;
     display: flex;
@@ -180,6 +202,9 @@ nav .nav-toggle{
 .menu-container.active{
     padding: 10px 20px;
     height: 280px;
+}
+.admin-menu-container.active{
+    height: 210px;
 }
 .sub-menu{
     list-style: none;
@@ -200,6 +225,20 @@ nav .sub-menu .user-info{
     font-size: 1.1rem; 
     color: var(--nav);
     .fa-circle-user{
+        font-size: 1.6rem; 
+        color: var(--nav);
+    }
+    padding: 3px 10px;
+}
+nav .sub-menu .admin-info{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 1.1rem; 
+    color: var(--nav);
+    .fa-user-tie{
         font-size: 1.6rem; 
         color: var(--nav);
     }
@@ -226,6 +265,14 @@ nav .sub-menu li a{
     transition: all 1s;
     border-radius: 20px;
     padding: 3px 10px;
+}
+nav .sub-menu .add-game{
+    a{
+        padding: 10px;
+    }
+    i{
+        font-size: 1.3rem;
+    }
 }
 .sub-menu .logout{
     background-color: #d51616;

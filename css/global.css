@@ -167,6 +167,14 @@ nav .bar{
 }
 #signin-userContainer .user-photo{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#signin-userContainer .admin-photo{
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -179,15 +187,17 @@ nav .bar{
 #signin-userContainer .user-photo p{
     color: var(--links);
     font-size: 1.3rem;
-}
-#signin-userContainer .add-game i{
-    font-size: 2rem; 
-    color: #c7c7c7; 
     cursor: pointer;
 }
-#signin-userContainer .add-game i:hover{
+#signin-userContainer .admin-photo p{
     color: var(--links);
-    font-size: 2.1rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+#signin-userContainer .admin-photo i{
+    font-size: 1.5rem; 
+    color: #c7c7c7; 
+    cursor: pointer;
 }
 #signin-userContainer{
     position: relative;
@@ -210,6 +220,10 @@ nav .bar{
     padding: 10px 20px;
     height: 280px;
 }
+.admin-menu-container.active{
+    padding: 10px 20px;
+    height: 200px;
+}
 .sub-menu{
     list-style: none;
     display: flex;
@@ -220,7 +234,9 @@ nav .bar{
 #signin-userContainer .sub-menu i{
     font-size: 1.5rem;
 }
-#signin-userContainer .sub-menu .user-info{
+#signin-userContainer .sub-menu .user-info
+, #signin-userContainer .sub-menu .admin-info
+{
     width: 100%;
     margin-bottom: 10px;
     display: flex;
@@ -228,6 +244,10 @@ nav .bar{
     gap: 20px;
     font-size: 1.1rem; 
     color: var(--nav);
+    .fa-user-tie{
+        font-size: 1.6rem; 
+        color: var(--nav);
+    }
     .fa-circle-user{
         font-size: 1.6rem; 
         color: var(--nav);
@@ -264,13 +284,6 @@ nav .bar{
 #signin-userContainer .sub-menu #supportLi a{
     padding: 7px 10px;
 }
-.sub-menu .logout{
-    padding: 10px;
-    background-color: #d51616;
-    i,p{
-    color: white;
-    }
-}
 #signin-userContainer .sub-menu li a:hover{
     i{
         translate: 5px 0px;
@@ -284,13 +297,26 @@ nav .bar{
     background-color: var(--links-hover);
     translate: 5px;
 }
-#signin-userContainer .sub-menu li .logout{
+#signin-userContainer .sub-menu .logout{
+    padding: 10px;
+    background-color: #d51616;
     display: flex;
     justify-content: flex-start;
     gap: 27%;
+    i,p{
+    color: white;
+    }
 }
 #signin-userContainer .sub-menu li .logout:hover{
     background-color: var(--signature);
+}
+#signin-userContainer .sub-menu .add-game{
+    a{
+        padding: 10px;
+    }
+    i{
+        font-size: 1.3rem;
+    }
 }
 main{
     margin-top: 100px;
