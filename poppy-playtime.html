@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixels | Poppy Playtime</title>
+    <link rel="icon" type="png" href="images/pixels_icon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" class="theme dark-theme" href="css/global.css" />
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <header>
+        <nav class="nav-bar">
+          <button class="nav-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </button>
+          <div class="nav-logo">
+            <a href="" class="logo">
+              <i class="fa-solid fa-ghost"></i>
+              <p>Pixels</p>
+            </a>
+          </div>
+          <div class="lightnav-toggle">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="nav-menu">
+            <li>
+              <a href="index.html" class="active">
+                <i class="fa-solid fa-gamepad"></i>
+                <p>Store</p>
+              </a>
+            </li>
+            <li>
+              <a href="browse.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>Browse</p>
+              </a>
+            </li>
+            <li class="session-dependentLink">
+              <a href="support.html">
+                <i class="fa-solid fa-headset"></i>
+                <p>Support</p>
+              </a>
+            </li>
+            <li>
+              <a href="news.html">
+                <i class="fa-solid fa-newspaper"></i>
+                <p>News</p>
+              </a>
+            </li>
+            <div id="theme-container">
+              <input type="checkbox" id="theme-btn" />
+              <label for="theme-btn" class="theme-toggle">
+                <i class="bi bi-sun-fill"></i>
+                <i class="fa-solid fa-moon"></i>
+              </label>
+            </div>
+          </ul>
+          <div id="signin-userContainer">
+            <a href="signin.html" class="sign-in">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <p>Sign in</p>
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <section class="big-background">
+          <img
+            src="images/poppy-playtime/pbg.jpg"
+            class="bg"
+            alt="Game Background"
+          />
+
+          <!-- <h2 class="game-name">Poppy Playtime</h2> -->
+
+          <div id="watch-trailer">
+            <img src="images/poppy-playtime/ptrailerBg.jpg" />
+            <i class="fa-solid fa-play trailer-play"></i>
+          </div>
+
+          <div class="btns-card">
+            <p class="price"></p>
+            <div class="button-group">
+              <button id="buy-btn"></button>
+              <button id="wishlist-btn"></button>
+            </div>
+          </div>
+        </section>
+        <section id="description">
+          <h2>About Poppy Playtime</h2>
+          <p>
+            Poppy Playtime is an episodic survival-horror puzzle game developed
+            by Mob Entertainment. The story takes place inside an abandoned toy
+            factory called Playtime Co., where a former employee returns years
+            after all the workers mysteriously disappeared. As the player
+            explores the factory, they discover that the toys are alive and
+            extremely dangerous. The gameplay focuses on exploration, puzzles,
+            and survival. Players use a tool called the GrabPack, which has
+            extendable hands that can grab objects, connect electricity, open
+            doors, and help solve puzzles throughout the factory. Each chapter
+            introduces new mechanics, enemies, and locations. The most famous
+            character in the series is Huggy Wuggy, a giant blue toy creature
+            with long arms, long legs, and terrifying sharp teeth. Other
+            important characters include Poppy, Mommy Long Legs, CatNap, and The
+            Prototype. These characters are connected to mysterious experiments
+            that happened inside the factory. The game became very popular
+            because of its creepy atmosphere, mascot-horror style, and hidden
+            lore. Many players compare it to Five Nights at Freddy’s because
+            both games use scary mascots and mystery-focused storytelling. The
+            first chapter was released in 2021 for PC and later became available
+            on consoles and mobile devices. The franchise later expanded with a
+            multiplayer spinoff called Project: Playtime. Fans enjoy discussing
+            theories about the experiments, the missing employees, and the
+            secrets hidden inside Playtime Co., which keeps the community active
+            between chapter releases.
+          </p>
+        </section>
+        <section class="info">
+          <div class="show">
+            <img
+              id="screenImage"
+              class="event"
+              src="images/poppy-playtime/p1.jpg"
+              style="display: block"
+            />
+            <div class="scroller">
+              <img
+                src="images/poppy-playtime/p1.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/poppy-playtime/p2.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/poppy-playtime/p3.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/poppy-playtime/p4.jpg"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <!-- <img
+                src="images/poppy-playtime/fc6.avif"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/poppy-playtime/fc7.avif"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/poppy-playtime/fc8.avif"
+                onclick="updateMainContent(this, 'image')"
+              />
+              <img
+                src="images/poppy-playtime/fc9"
+                onclick="updateMainContent(this, 'image')"
+              /> -->
+            </div>
+          </div>
+        </section>
+        <section class="specifications">
+          <table>
+            <caption class="tcaption">
+              System Requirements
+            </caption>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Minimum</th>
+                <th>Recommended</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>OS version</strong></td>
+                <td>Windows 10 64-bit</td>
+                <td>Windows 10 64-bit</td>
+              </tr>
+              <tr>
+                <td><strong>CPU</strong></td>
+                <td>Intel i5-4670k or AMD Ryzen 3 1200</td>
+                <td>Intel i5-8600 or AMD Ryzen 5 3600</td>
+              </tr>
+              <tr>
+                <td><strong>Memory</strong></td>
+                <td>8 GB</td>
+                <td>16 GB</td>
+              </tr>
+              <tr>
+                <td><strong>GPU</strong></td>
+                <td>
+                  NVIDIA GTX 1060 (6GB) or AMD RX 5500 XT (8GB) or Intel Arc
+                  A750
+                </td>
+                <td>
+                  NVIDIA GTX 1060 (6GB) or AMD RX 5500 XT (8GB) or Intel Arc
+                  A750
+                </td>
+              </tr>
+              <tr>
+                <td><strong>DirectX</strong></td>
+                <td>DirectX 12</td>
+                <td>DirectX 12</td>
+              </tr>
+              <tr>
+                <td><strong>Storage</strong></td>
+                <td>190 GB</td>
+                <td>190 GB</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="foot">
+        <a class="logo" href="index.html"> Pixels </a>
+        <p>&copy; 2026 Pixels | All rights reserved</p>
+      </div>
+      <a href="about_us.html" class="about"> About us </a>
+    </footer>
+    <script src="js/global.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>
