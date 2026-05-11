@@ -1,13 +1,33 @@
-const slides = document.querySelectorAll(".slide");
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
+let nextBtn = document.getElementById("nextBtn");
+let prevBtn = document.getElementById("prevBtn");
+let allGames = Object.keys(games);
+let slideGames = allGames.filter((game) => games[game].categories.includes("store-slide"));
+let screen = document.getElementById("display-screen");
+
+slideGames.forEach((slide_game) => {
+    // console.log(slide_game);
+    let slideDiv = document.createElement("div");
+    slideDiv.classList.add("slide");
+    if(slide_game == "horizon-zero-dawn"){
+        slideDiv.classList.add("active");
+    }
+    let img = document.createElement("img");
+    img.src = `images/${slide_game}-slide.jpg`;
+    let link = document.createElement("a");
+    link.href = `${slide_game}.html`
+    link.append(img)
+    slideDiv.append(link);
+    screen.append(slideDiv);
+})
 
 let currentIndex = 0;
 let timer;
 
+let slides = document.querySelectorAll(".slide");
+
 function showSlide(index) {
     // Remove active class from all slides
-    slides.forEach(slide => slide.classList.remove('active'));
+    slides.forEach(slide => slide.classList.remove("active"));
     
     // wrapping around (first to last, last to first)
     if (index >= slides.length) {
@@ -18,9 +38,11 @@ function showSlide(index) {
         currentIndex = index;
     }
     // Add active class to the selected slide
-    slides[currentIndex].classList.add('active');
+    // console.log(slides[currentIndex])
+    if(slides[currentIndex])
+        slides[currentIndex].classList.add("active");
 }
-nextBtn.addEventListener('click', () => {
+nextBtn.addEventListener("click", () => {
     showSlide(currentIndex + 1);
     clearInterval(timer);
     timer = setInterval(() => {
@@ -29,7 +51,7 @@ nextBtn.addEventListener('click', () => {
 }, 5000);
 });
 
-prevBtn.addEventListener('click', () => {
+prevBtn.addEventListener("click", () => {
     showSlide(currentIndex - 1);
     clearInterval(timer);
     timer = setInterval(() => {
@@ -45,7 +67,7 @@ timer = setInterval(() => {
 
 
 
-let categories = ["explore", "new"];
+let categories = ["explore", "most Played", "new"];
 let categoriesContainer = document.getElementById("categories-container");
 
 
@@ -56,6 +78,7 @@ window.addEventListener("load", function(){
         let categorysection = document.createElement("section");
         // give the section id with value of the category being displayeed
         categorysection.id = `${category}`;
+        // console.log(category);
         if(category == "explore"){
             // in explore category only add a link to browse page
             categorysection.innerHTML = `
@@ -158,59 +181,3 @@ function wishListActive(Container, gameName){
         localStorage.setItem("users",JSON.stringify(users));
     }
 }
-
-
-//     const containers = document.querySelectorAll(".cards-container");
-//     containers.forEach(function(container){
-//         for (let name in gamesData) {
-//             // console.log(name);
-//             const gameOb = gamesData[name];
-//             const price = gameOb.price;
-//             // console.log(gameOb);
-            
-//             const card = document.createElement("div");
-//             card.classList.add("game-card");
-//             card = name;
-            
-//             card.innerHTML = `
-//             <span class="badge">${gameOb.badge}</span>
-//             <span class="wish" onclick="wishListActive(${name})" style="color: #ff3b3b">⭐</span>
-//             <img src="${gameOb.image}">
-//             <h3 style="margin: 15px 10px 5px;">${gameOb.game_name}</h3>
-//             <p style="margin: 0 10px 10px; color: #d1ff05; font-weight: bold;">${gameOb.price=="free"? "Free" : `${gameOb.price}$`}</p>
-//             <button class="action-btn" onclick="alert('Added to Cart!')">
-//             Buy Now
-//             </button>
-//             `;
-//             container.appendChild(card);
-//         }
-//     })
-// });
-// window.addEventListener("load", function(){
-//     const containers = document.querySelectorAll(".cards-container");
-//     containers.forEach(function(container){
-//         for (let name in gamesData) {
-//             // console.log(name);
-//             const gameOb = gamesData[name];
-//             const price = gameOb.price;
-//             // console.log(gameOb);
-            
-//             const card = document.createElement("div");
-//             card.classList.add("game-card");
-//             card.id = name;
-            
-//             card.innerHTML = `
-//             <span class="badge">${gameOb.badge}</span>
-//             <span class="wish" onclick="wishListActive(${name})" style="color: #ff3b3b">⭐</span>
-//             <img src="${gameOb.image}">
-//             <h3 style="margin: 15px 10px 5px;">${gameOb.game_name}</h3>
-//             <p style="margin: 0 10px 10px; color: #d1ff05; font-weight: bold;">${gameOb.price=="free"? "Free" : `${gameOb.price}$`}</p>
-//             <button class="action-btn" onclick="alert('Added to Cart!')">
-//             Buy Now
-//             </button>
-//             `;
-//             container.appendChild(card);
-//         }
-//     })
-
-// });
