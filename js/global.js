@@ -35,12 +35,11 @@ let ltNavToggle = document.querySelector(".lightnav-toggle");
 let header = document.querySelector("header");
 
 if(!sign_in_up){
-ltNavToggle.addEventListener("click", function(){
-    ltNavToggle.classList.toggle("active-light");
-    header.classList.toggle("active-light");
-})
+    ltNavToggle.addEventListener("click", function(){
+        ltNavToggle.classList.toggle("active-light");
+        header.classList.toggle("active-light");
+    })
 }
-
 
 // Login Nav
 let signinBtn = document.querySelector(".sign-in");
@@ -65,15 +64,16 @@ if (login == "admin") {
     }
     signinBtn.remove();
 } else if(login == "user") {
-    profile.classList.add("user-photo");
-
     // User account icon
-    profile.innerHTML = `<i class = "fa-solid fa-circle-user"></i>`
+    profile.innerHTML = `<i class = "fa-solid fa-circle-user"></i>`;
     profile.classList.add("user-photo");
 
     // Drop down menu
     var subMenuContainer = document.createElement("div");
-    subMenuContainer.classList.add("menu-container")
+    subMenuContainer.classList.add("menu-container");
+    // console.log(user);
+    console.log(profile);
+    console.log(signinUserContainer);
 
     subMenuContainer.innerHTML =
     `<ul class="sub-menu">
@@ -121,30 +121,15 @@ if (login == "admin") {
         logo.after(profile);
     }
     signinBtn.remove();
-    profile.addEventListener("click",function(){
-    subMenuContainer.classList.toggle("active");
-    })
-    // Balance
-    let balanceBtn = subMenuContainer.querySelector(".balanceLi");
-    // console.log(balanceBtn);
-    // check if balance button exists
-    if(balanceBtn){
-        balanceBtn.addEventListener("click", () => {
-            window.location.href = "balance.html";
-        })
-    }
-}
-
-// when user icon clicked => User Info appear & support hidden from nav
-let sessionDepLi = document.querySelector(".session-dependentLink");
-let dynamicLink = sessionDepLi.firstElementChild;
-if(login == "user"){
-    // add drop menu
+    // profile.addEventListener("click",function(){
+    //     subMenuContainer.classList.toggle("active");
+    // })
+        // add drop menu
     signinUserContainer.append(subMenuContainer);
-    // add username to profile
-    let usernameP = document.createElement("p");
-    usernameP.innerHTML = `${user}`;
-    profile.append(usernameP);
+    console.log(profile);
+    // when user icon clicked => User Info appear & support hidden from nav
+    let sessionDepLi = document.querySelector(".session-dependentLink");
+    let dynamicLink = sessionDepLi.firstElementChild;
     // remove support link (added to drop menu)
     dynamicLink.setAttribute("href", "library.html");
     dynamicLink.firstElementChild.className = "";
@@ -160,19 +145,21 @@ if(login == "user"){
         logo.after(profile);
     }
     signinBtn.remove();
+    
     // Balance
     let balanceBtn = subMenuContainer.querySelector(".balanceLi");
     // console.log(balanceBtn);
+
     // check if balance button exists
     if(balanceBtn){
         balanceBtn.addEventListener("click", () => {
             window.location.href = "balance.html";
         })
     }
+    profile.addEventListener("click",function(){
+        subMenuContainer.classList.toggle("active");
+    })
 }
-profile.addEventListener("click",function(){
-    subMenuContainer.classList.toggle("active");
-})
 
 
 //logout
@@ -237,7 +224,6 @@ themeToggle.addEventListener("click", function(){
 // localStorage.setItem("pixelUser", JSON.stringify(userobj));
 
 // let obj = JSON.parse(localStorage.getItem("pixelUser"));
-
 
 
 
