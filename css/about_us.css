@@ -29,16 +29,6 @@
   --p-color: #f7eeee;
 }
 
-.light-theme {
-  :root {
-    --main-color: rgb(18 86 138);
-    --p-color: #191d23;
-  }
-  .main {
-    margin-left: 115px;
-  }
-}
-
 .contaner {
   padding-left: 15px;
   padding-right: 15px;
@@ -76,9 +66,15 @@
   }
 }
 .contaner i {
-  color:#1a3a8a;
+  color: rgb(116, 192, 252);
+  flex-basis: 60px;
 }
 
+/* edite lidht mode  */
+.light-theme .contaner i {
+  color: #1a3a8a;
+  flex-basis: 60px;
+}
 /* Endcomponants */
 
 /* start about content */
@@ -89,9 +85,9 @@
 .about_us .about_content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px; 
+  gap: 50px;
   margin-top: 150px;
-  align-items: center; 
+  align-items: center;
   padding-bottom: 30px;
 }
 
@@ -105,15 +101,10 @@
   margin-bottom: 40px;
 }
 
-.about_us .about_content i {
-  color: #1a3a8a;
-  flex-basis: 60px;
-}
-
 @media (max-width: 768px) {
   .about_us .about_content {
     grid-template-columns: 1fr;
-    text-align: center; 
+    text-align: center;
   }
 
   .about_us .about_content .abou {
@@ -149,7 +140,7 @@
   font-weight: 800;
 }
 .about_us .about_content .text p a:hover {
-  color:#1a3a8a;
+  color: #1a3a8a;
 }
 
 .about_us .about_content .video {
@@ -164,12 +155,16 @@
 .about_us .about_content .video::before {
   content: "";
   position: absolute;
-  background-color: var(--main-color);
+  background-color: rgb(116, 192, 252);
   width: 80px;
   height: calc(100% + 100px);
   right: -20%;
   top: -50px;
   z-index: -1;
+}
+
+.light-theme .about_us .about_content .video::before {
+  background-color: #1a3a8a;
 }
 
 .about_us .about_content .col .img img {
@@ -206,7 +201,7 @@
 .feature .contaner .feat h3 {
   font-weight: 800;
   margin: 15px 0;
-  color:#1a3a8a;
+  color: #1a3a8a;
 }
 
 .feature .contaner .feat p {
@@ -222,7 +217,7 @@
 }
 
 .feature .contaner .feat p a:hover {
-  color:#1a3a8a;
+  color: #1a3a8a;
 }
 /* end serv*/
 
@@ -257,7 +252,7 @@
 }
 
 .created .contaner .cer:hover a h3 {
-  color: var(--main-color);
+  color: rgb(116, 192, 252);
 }
 
 .created .contaner .cer img {
@@ -265,18 +260,25 @@
   height: auto;
 }
 
+/* start light theam mode */
 .light-theme .speasial-text {
-  color:  #1a3a8a;
+  color: #1a3a8a;
 }
 .light-theme .about_us .about_content .text p {
   color: #1a3a8a;
 }
 .light-theme .about_us .about_content .text h3 {
-  color:  #1a3a8a;
+  color: #1a3a8a;
 }
 .light-theme p {
-  color:  #1a3a8a;
+  color: #1a3a8a;
 }
 .light-theme h1 {
-  color:  #1a3a8a;
+  color: #1a3a8a;
 }
+
+.light-theme .created .contaner .cer:hover a h3 {
+  color: #1a3a8a;
+}
+
+/* end light theam mode */
