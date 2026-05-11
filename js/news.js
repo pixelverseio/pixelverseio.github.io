@@ -14,10 +14,18 @@ window.onload = function () {
 
 // 3. OPEN AND CLOSE THE POST FORM
 
-// open the post form
-addPostBtn.addEventListener('click', function () {
-    postModal.style.display = 'block';
-});
+// 3. OPEN AND CLOSE THE POST FORM
+addPostBtn.onclick = () => {
+    // check if user is logged in -> if not redirect him to sign in page
+    if (login == "user") {
+        addPostBtn.addEventListener('click', function () {
+            postModal.style.display = 'block';
+        });
+    }
+    else {
+        window.location.href = "signin.html";
+    }
+}
 
 //closes the post form
 closeBtn.addEventListener('click', function () {
