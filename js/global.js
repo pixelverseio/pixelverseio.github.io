@@ -50,46 +50,90 @@ let currentTheme = localStorage.getItem("theme");
 
 // User account icon
 let profile = document.createElement("div");
-profile.innerHTML = `<i class = "fa-solid fa-circle-user"></i>`
-profile.classList.add("user-photo");
+// User & Admin account icon
+if (login == "admin") {
+    profile.innerHTML = `<i class="fa-solid fa-circle-plus"></i>`;
+    profile.classList.add("add-game");
+    profile.addEventListener("click",function(){
+        window.location.href = "add-game.html";
+    });
+    if(currentTheme == "dark"){
+        signinUserContainer.append(profile);
+    }
+    else if(currentTheme == "light"){
+        logo.after(profile);
+    }
+    signinBtn.remove();
+} else if(login == "user") {
+    profile.classList.add("user-photo");
 
-// Drop down menu
-let subMenuContainer = document.createElement("div");
-subMenuContainer.classList.add("menu-container")
+    // User account icon
+    profile.innerHTML = `<i class = "fa-solid fa-circle-user"></i>`
+    profile.classList.add("user-photo");
 
-subMenuContainer.innerHTML =
-`<ul class="sub-menu">
-    <li class="user-info">
-        <i class="fa-solid fa-circle-user"></i>
-        <p class="username">${user}</p>
-    </li>
-    <li class="balanceLi">
-        <i class="fa-solid fa-wallet"></i>
-        <p>Balance</p>
-        <span>${balance}$</sapn>
-    </li>
-    <li>
-        <a href = "wishlist.html">
-            <i class="bi bi-heart-fill"></i>
-            <p>Wishlist</p>
-            <i class="fa-solid fa-chevron-right"></i>
-        </a>
-    </li>
-    <li id = "supportLi">
-        <a href = "support.html">
-            <i class="fa-solid fa-headset"></i>
-            <p>Support</p>
-            <i class="fa-solid fa-chevron-right"></i>
-        </a>
-    </li>
-    <li>
-        <a href = "index.html" class = "logout">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <p>Logout</p>
-            <i></i>
-        </a>
-    </li>
-</ul>`;
+    // Drop down menu
+    var subMenuContainer = document.createElement("div");
+    subMenuContainer.classList.add("menu-container")
+
+    subMenuContainer.innerHTML =
+    `<ul class="sub-menu">
+        <li class="user-info">
+            <i class="fa-solid fa-circle-user"></i>
+            <p class="username">${user}</p>
+        </li>
+        <li class="balanceLi">
+            <i class="fa-solid fa-wallet"></i>
+            <p>Balance</p>
+            <span>${balance}$</sapn>
+        </li>
+        <li>
+            <a href = "wishlist.html">
+                <i class="bi bi-heart-fill"></i>
+                <p>Wishlist</p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </li>
+        <li id = "supportLi">
+            <a href = "support.html">
+                <i class="fa-solid fa-headset"></i>
+                <p>Support</p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </li>
+        <li>
+            <a href = "index.html" class = "logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p>Logout</p>
+            </a>
+        </li>
+    </ul>`;
+    // add drop menu
+    signinUserContainer.append(subMenuContainer);
+    // add username to profile
+    let usernameP = document.createElement("p");
+    usernameP.innerHTML = `${user}`;
+    profile.append(usernameP);
+    
+    if(currentTheme == "dark"){
+        signinUserContainer.append(profile);
+    }
+    else if(currentTheme == "light"){
+        logo.after(profile);
+    }
+    signinBtn.remove();
+    profile.addEventListener("click",function(){
+    subMenuContainer.classList.toggle("active");
+    })
+    // Balance
+    let balanceBtn = subMenuContainer.querySelector(".balanceLi");
+    // console.log(balanceBtn);
+    // check if balance button exists
+    if(balanceBtn){
+        balanceBtn.addEventListener("click", () => {
+            window.location.href = "balance.html";
+        })
+    }
+}
 
 // when user icon clicked => User Info appear & support hidden from nav
 let sessionDepLi = document.querySelector(".session-dependentLink");
@@ -116,20 +160,20 @@ if(login == "user"){
         logo.after(profile);
     }
     signinBtn.remove();
+    // Balance
+    let balanceBtn = subMenuContainer.querySelector(".balanceLi");
+    // console.log(balanceBtn);
+    // check if balance button exists
+    if(balanceBtn){
+        balanceBtn.addEventListener("click", () => {
+            window.location.href = "balance.html";
+        })
+    }
 }
 profile.addEventListener("click",function(){
     subMenuContainer.classList.toggle("active");
 })
 
-// Balance
-let balanceBtn = subMenuContainer.querySelector(".balanceLi");
-// console.log(balanceBtn);
-// check if balance button exists
-if(balanceBtn){
-    balanceBtn.addEventListener("click", () => {
-        window.location.href = "balance.html";
-    })
-}
 
 //logout
 logout = document.querySelector(".logout");
@@ -166,7 +210,7 @@ themeToggle.addEventListener("click", function(){
         localStorage.setItem("theme", "light");
         document.documentElement.className = "light-theme";
         // change profile location
-        if(login == "user"){
+        if(login == "user" || login == "admin"){
         profile.remove();
         profile.style.color = "#252444";
         logo.after(profile);
@@ -180,7 +224,7 @@ themeToggle.addEventListener("click", function(){
         localStorage.setItem("theme", "dark");
         document.documentElement.className = "dark-theme";
         // change profile location
-        if(login == "user"){
+        if(login == "user" || login == "admin"){
         profile.remove();
         profile.style.color = "#c7c7c7";
         signinUserContainer.append(profile);
