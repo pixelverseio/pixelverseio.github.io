@@ -33,9 +33,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
         // add the active class to whislist icon container 
         // if the wishlist of this user contain this game
-        if(users[username].wishlist.includes(name)){
-            let wishContainer = card.querySelector(".wish-container");
-            wishContainer.classList.add("active");
+        if(user != "no User"){
+            if(users[username].wishlist.includes(name)){
+                let wishContainer = card.querySelector(".wish-container");
+                wishContainer.classList.add("active");
+            }
         }
         //make the card clickable and go to the game page when click on it
         card.addEventListener("click", function(){
