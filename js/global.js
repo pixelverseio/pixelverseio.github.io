@@ -72,8 +72,8 @@ if (login == "admin") {
     var subMenuContainer = document.createElement("div");
     subMenuContainer.classList.add("menu-container");
     // console.log(user);
-    console.log(profile);
-    console.log(signinUserContainer);
+    // console.log(profile);
+    // console.log(signinUserContainer);
 
     subMenuContainer.innerHTML =
     `<ul class="sub-menu">
@@ -121,13 +121,14 @@ if (login == "admin") {
         logo.after(profile);
     }
     signinBtn.remove();
-    // profile.addEventListener("click",function(){
-    //     subMenuContainer.classList.toggle("active");
-    // })
-        // add drop menu
+    // add drop menu
     signinUserContainer.append(subMenuContainer);
     console.log(profile);
-    // when user icon clicked => User Info appear & support hidden from nav
+    // when user icon clicked => User Info appear
+    profile.addEventListener("click",function(){
+        subMenuContainer.classList.toggle("active");
+    })
+    // support link
     let sessionDepLi = document.querySelector(".session-dependentLink");
     let dynamicLink = sessionDepLi.firstElementChild;
     // remove support link (added to drop menu)
@@ -145,7 +146,7 @@ if (login == "admin") {
         logo.after(profile);
     }
     signinBtn.remove();
-    
+
     // Balance
     let balanceBtn = subMenuContainer.querySelector(".balanceLi");
     // console.log(balanceBtn);
@@ -156,9 +157,6 @@ if (login == "admin") {
             window.location.href = "balance.html";
         })
     }
-    profile.addEventListener("click",function(){
-        subMenuContainer.classList.toggle("active");
-    })
 }
 
 
