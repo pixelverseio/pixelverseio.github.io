@@ -217,7 +217,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <!-- <article class="card">
             <img src="images/Hollow Knight Poster.jpg" alt="" />
             <div class="card-text">
               <h3>
@@ -291,7 +291,7 @@
                 future and the legacy of the machines we leave behind.
               </p>
             </div>
-          </article>
+          </article> -->
 
           <article class="card">
             <img src="images/valo.jpg" alt="" />
@@ -325,6 +325,26 @@
             </div>
           </article>
         </section>
+        <section class="community-section" id="community">
+        <div class="community-header">
+          <h2 class="section-title">Community Discussions</h2>
+          <button id="addPostBtn" class="accent-btn">Add New Post</button>
+        </div>
+
+        <div id="postModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 class="modal-title">Share Your Thoughts</h3>
+
+            <input type="text" id="postTitleInput" class="post-input" placeholder="Post Title (e.g., Thoughts on RDR2)">
+            <textarea id="postBodyInput" class="post-input" rows="4" placeholder="What's on your mind?"></textarea>
+
+            <button id="submitPostBtn" class="accent-btn">Publish Post</button>
+          </div>
+        </div>
+
+        <div class="posts-feed" id="postsFeed"></div>
+      </section>
       </main>
     </div>
     <footer>
