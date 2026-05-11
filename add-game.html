@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" class = "sign-in-up">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="icon" type="png" href="images/pixels_icon.svg" />
+    <link rel = "stylesheet" class = "theme dark-theme" href = "css/global.css"/>
+    <link rel="stylesheet" href="css/add-game.css" />
+    <title>Pixels | Add Game </title>
+  </head>
+  <body>
+    <header>
+            <nav class="nav-bar">
+                <button class="nav-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+                <div class="nav-logo">
+                    <a href="" class="logo">
+                        <i class="fa-solid fa-ghost"></i>
+                        <p>Pixels</p>
+                    </a>
+                </div>
+                <div class = "lightnav-toggle">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <ul class="nav-menu">
+                    <li>
+                        <a href="index.html" class = "active">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <p>Store</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="browse.html">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <p>Browse</p>
+                        </a>
+                    </li>
+                    <li class = "session-dependentLink">
+                        <a href="support.html">
+                            <i class="fa-solid fa-headset"></i>
+                            <p>Support</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="news.html">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <P>News</P>
+                        </a>
+                    </li>
+                    <div id = "theme-container">
+                        <input type="checkbox" id = "theme-btn">
+                        <label for="theme-btn" class = "theme-toggle">
+                            <i class="bi bi-sun-fill"></i>
+                            <i class="fa-solid fa-moon"></i>
+                        </label>
+                    </div>
+                </ul>
+                <div id = "signin-userContainer">
+                    <a href="signin.html" class="sign-in">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <p>Sign in</p>
+                    </a>
+                </div>
+            </nav>
+        </header>
+    <main>
+      <div class="container">
+        <form id="form">
+          <h1>
+            <i class="fa-solid fa-ghost"></i> Add Game To <span>Pixels</span>
+          </h1>
+          <div class="input-box">
+            <input type="text" placeholder="Game Title" name="game-title" />
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+          <div class="input-box">
+            <input type="number" placeholder="Price $" name="price" />
+            <i class="fa-solid fa-tag"></i>
+          </div>
+          <div class="input-box">
+            <input type="url" placeholder="Main wallpaper URL" >
+            <i class="fa-solid fa-image"></i>
+          </div>
+          <div class="input-box">
+            <input type="url" placeholder="Enter URL for trial video">
+          </div>
+            <div class="input-box">
+              <input type="url" placeholder="Enter URL Photos (between photo and other write (,))">
+              <i class="fa-solid fa-link"></i>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="write About for game">
+            </div>
+          <input type="submit" class="publish-game" value="Publish Game" />
+          <div class="register">
+            <p class="footer-text">Want to go back? <a href="index.html">Cancel</a></p>
+          </div>
+
+        </form>
+      </div>
+    </main>
+    <script src="js/global.js"></script>
+    <script src="js/add-game.js"></script>
+  </body>
+</html>
