@@ -16,53 +16,81 @@ let noBalanceMsg = document.createElement("div");
 noBalanceMsg.innerHTML = `<p> No Enough Balance For Purchase</p>`;
 noBalanceMsg.id = ("no-balance-div");
 
+// message on successful purchase
+let buySuccesMsg = document.createElement("div");
+buySuccesMsg.innerHTML = `<p> Game Purchase successful</p>`;
+buySuccesMsg.id = ("purchase-successful-div");
+
+
+
 
 // buy button logic
 let buyBtn = document.querySelector("#buy-btn");
+
+// buyBtn.before(buySuccesMsg);
+// buyBtn.before(noBalanceMsg);
+
+
 if(login == "user"){
     if(userData.library.includes(gameName)){
     // if game in library
-    buyBtn.innerHTML = "Library"
-    buyBtn.onclick = () =>{
-        window.location.href = "library.html"
+        buyBtn.innerHTML = "Library"
+        buyBtn.onclick = () =>{
+            window.location.href = "library.html"
+        }
     }
-    }
-    else{
-        // game not bought
+    else{// game not bought
+        // Buy button either Free  or the game's price
         buyBtn.innerHTML = (price === "free"? `Free`: `Buy Now $${price}`);
         buyBtn.onclick= () => {
+            // if not in the userslibrary
             if(!userData.library.includes(gameName)){
-                if(price != "free"){
-                    if(balance >= price){
+                if(price != "free"){// has a price
+                    if(balance >= price){// enough balace to buy game
                         balance -= price;
-                        userData.balance = balance;
-                        userData.library.push(`${gameName}`);
+                        userData.balance = balance; // update the balance of userData Object
+                        userData.library.push(`${gameName}`);// add game to lib
                         buyBtn.innerHTML = "Library"
-                        balanceSpan.innerHTML = `$${balance}`;
+                        balanceSpan.innerHTML = `$${balance}`; // update balance in user menue
+                        // ad an event for the button to take the user to library page
                         buyBtn.onclick = () =>{
-                        window.location.href = "library.html"
+                        window.location.href = "library.html" 
                         }
+                        // display successfulpurchase message
+                        buyBtn.before(buySuccesMsg);
+                        setTimeout(function () {
+                            buySuccesMsg.remove();
+                        }, 2000);
+
                         localStorage.setItem("users", JSON.stringify(users))
+                        // update the users info in the local storage
+                        // users automatically updated one changing userData because objects are sent by refference
                     }
-                    else{
+                    else{// no balance
+                        // display message
                         buyBtn.before(noBalanceMsg);
                         setTimeout(function () {
                             noBalanceMsg.remove();
                         }, 2000);
                     }
-                }else{
+                }else{// Free game
                     userData.library.push(`${gameName}`);
                     buyBtn.innerHTML = "Library"
                     buyBtn.onclick = () =>{
-                    window.location.href = "library.html"
+                        window.location.href = "library.html"
                     }
+                    // display successfulpurchase message
+                    buyBtn.before(buySuccesMsg);
+                    setTimeout(function () {
+                        buySuccesMsg.remove();
+                    }, 2000);
                     localStorage.setItem("users", JSON.stringify(users))
                 }
             }
         }
     }
 }
-else{
+else{// user not signed in
     buyBtn.innerHTML = (price === "free"? `Free`: `Buy Now $${price}`);
     buyBtn.onclick = () => {
         window.location.href = "signin.html";
@@ -84,16 +112,16 @@ if(login == "user"){
         if(userData.wishlist.includes(gameName)){
             wishlistBtn.innerHTML = "Add to Wishlist";
             userData.wishlist = userData.wishlist.filter(game => game != gameName);
-            console.log(userData.wishlist);
+            // console.log(userData.wishlist);
         }
         else{ // game not in library add it
             wishlistBtn.innerHTML = "In Wishlist";
             userData.wishlist.push(`${gameName}`);
-            console.log(userData.wishlist);
+            // console.log(userData.wishlist);
         }
         localStorage.removeItem("users");
         localStorage.setItem("users",JSON.stringify(users));
-        console.log(users);
+        // console.log(users);
     }
 }
 else{
@@ -126,5 +154,5 @@ trailer.addEventListener("click", ()=>{
 function updateMainContent(element) {
     const mainImage = document.getElementById("screenImage");
     mainImage.style.display = "block";
-    mainImage.src = element.src;   
+    mainImage.src = element.src;
 }
