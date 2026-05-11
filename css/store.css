@@ -84,6 +84,9 @@ h1{
     scale: 1.1;
     box-shadow: 0px 0px 20px 1px rgba(163, 163, 163, 0.356);
 }
+#categories-container{
+    margin-bottom: 50px;
+}
 h1 a.explore{
     display: inline-block;
     position: relative;
@@ -202,7 +205,6 @@ a.explore:hover{
         display: none;
     }
 }
-
 .action-btn {
     width: 90%;
     margin: 0 15px 15px;
