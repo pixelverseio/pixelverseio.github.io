@@ -77,6 +77,10 @@ header.active-light{
         height: 30px;
         left: 8px;
     }
+    .theme-toggle i.bi-sun-fill {
+        position: relative;
+        left: 2px;
+    }
     .theme-toggle i{
         font-size: 1.2rem;
     }
@@ -94,6 +98,7 @@ header.active-light{
             font-size: 10px;
         }
     }
+
     .menu-container{
     top: 120px;
     left: 170px;
@@ -354,14 +359,12 @@ nav .sub-menu li a:hover{
     border-radius: 15px;
     background-color: var(--signature);
     position: absolute;
-    left: 5px;
     transition: all 0.7s ease;
 }
 .theme-toggle:hover::after{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    translate: -5px 0px;
 }
 .theme-toggle i.bi-sun-fill {
     z-index: 10;
@@ -369,6 +372,8 @@ nav .sub-menu li a:hover{
 }
 .theme-toggle i.fa-moon {
     display: none;
+    position: relative;
+    left: 3px;
 }
 #theme-btn{
     width: 0;
