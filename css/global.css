@@ -140,8 +140,6 @@ nav .bar{
     display: inline;
     z-index: 1000;
     color: var(--links);
-    position: relative;
-    left: 3px;
 }
 .theme-toggle i.bi-sun-fill{
     display: inline;
