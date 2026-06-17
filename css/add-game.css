@@ -1,6 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.goUp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-size: xx-large;
+  
+  padding: 10px;
+  border-radius: 20px;
+  color: #f7eeee;
+  background-color: blueviolet;
+  display: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.light-theme .goUp {
+  color: #abccfd;
+  background-color: #3a4f7a;
+  transition: 0.3s;
+
+}
 
 body {
   display: flex;

@@ -1,370 +1,423 @@
-:root{
-    --name_shadow: #13172b;
+.goUp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-size: xx-large;
+  padding: 10px;
+  border-radius: 20px;
+  color: #f7eeee;
+  background-color: blueviolet;
+  display: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.light-theme .goUp {
+  color: #abccfd;
+  background-color: #3a4f7a;
+  transition: 0.3s;
+}
+.enjoy {
+  width: 400px;
+  height: 300px;
+  color: #1a3a8a;
+  background-color: #d1e4fd;
+  border-radius: 20px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  padding-top: 20px;
+
+  p {
+    letter-spacing: 4px;
+    font-family: "FontAwesome";
+    font-size: 50px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+  i {
+    font-size: 60px;
+    padding: 20px;
+  }
+}
+:root {
+  --name_shadow: #13172b;
 }
 
-*{
-    margin: 0px;
+* {
+  margin: 0px;
 }
-header{
-    border-radius: 0px;
+header {
+  border-radius: 0px;
 }
 main {
-    display: flex;
-    flex-direction: column;
-    margin-top: 80px;
-    max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  max-width: 100vw;
 }
 
 .big-background {
-    width: 100%;
-    height: 90vh;
-    position: relative;
-    overflow: hidden;
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .big-background .bg {
-    width: 100%;
-    height: 100%;
-    opacity: 0.9;
-    object-fit: cover;
-    display: block;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  object-fit: cover;
+  display: block;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0)
+  );
 }
 
-
 .game-name {
-    color: white;
-    font-size: 7rem;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    margin: 0;
-    width: 40%;
-    text-shadow: 1px 1px 5px var(--name_shadow);
+  color: white;
+  font-size: 7rem;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  width: 40%;
+  text-shadow: 1px 1px 5px var(--name_shadow);
+  display: none;
 }
 
 #watch-trailer {
-    position: absolute;
-    bottom: 70px;
-    left: 30px;
-    width: 350px;
-    height: 200px;
-    border-radius: 15px;
-    box-shadow: 1px 1px 10px var(--name_shadow);
+  position: absolute;
+  bottom: 70px;
+  left: 30px;
+  width: 350px;
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px var(--name_shadow);
 }
-#watch-trailer img{
-    width: 350px;
-    height: 200px;
-    border-radius: 15px;
+#watch-trailer img {
+  width: 350px;
+  height: 200px;
+  border-radius: 15px;
 }
 
-i.trailer-play{
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 350px;
-    height: 200px;
-    border-radius: 15px;
-    font-size: 4rem;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.522);
-    cursor: pointer;
+i.trailer-play {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 350px;
+  height: 200px;
+  border-radius: 15px;
+  font-size: 4rem;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.522);
+  cursor: pointer;
 }
-i.trailer-play:hover{
-    background-color: transparent;
-    color: rgba(216, 215, 215, 0.558);
+i.trailer-play:hover {
+  background-color: transparent;
+  color: rgba(216, 215, 215, 0.558);
 }
-.trailer-container{
-    position: fixed;
-    z-index: 999;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.721);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.trailer-container {
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.721);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.trailer-container .trailer-vid{
-width: 80%;
+.trailer-container .trailer-vid {
+  width: 80%;
 }
-.trailer-container #close{
-    position: absolute;
-    right: 100px;
-    top: 30px;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
+.trailer-container #close {
+  position: absolute;
+  right: 100px;
+  top: 30px;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .btns-card {
-    width: 350px;
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    background: rgba(0, 0, 0, 0.283);
-    padding: 20px;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.096);
-    text-align: center;
+  width: 350px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background: rgba(0, 0, 0, 0.283);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.096);
+  text-align: center;
 }
 
 .price {
-    color: white;
-    text-align: left;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
+  color: white;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .button-group {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
 }
 
 button {
-    font-size: 1.3rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
+  font-size: 1.3rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 #buy-btn {
-    background-color: var(--main-text);
-    color: black;
+  background-color: var(--main-text);
+  color: black;
 }
-#no-balance-div{
-    position: absolute;
-    top: -50px;
-    left: 30px;
-    background-color: #d51616;
-    color: white;
-    border-radius: 10px;
-    padding: 10px;
+#no-balance-div {
+  position: absolute;
+  top: -50px;
+  left: 30px;
+  background-color: #d51616;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
 }
-#purchase-successful-div{
-    position: absolute;
-    top: -50px;
-    left: 50px;
-    background-color: #0faa4d;
-    color: black;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 1rem;
-    font-weight: 500;
+#purchase-successful-div {
+  position: absolute;
+  top: -50px;
+  left: 50px;
+  background-color: #0faa4d;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .wishlist-btn {
-    background-color: var(--signature);
-    color: white;
+  background-color: var(--signature);
+  color: white;
 }
 
 button:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.295);
+  transform: scale(1.03);
+  box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.295);
 }
-#description{
-    margin: 30px 0px;
-    padding: 20px;
+#description {
+  margin: 30px 0px;
+  padding: 20px;
 }
-#description h2{
-    color: var(--main-text);
+#description h2 {
+  color: var(--main-text);
 }
-#description p{
-    color: white;
-    font-size: 1rem;
+#description p {
+  color: white;
+  font-size: 1rem;
 }
 
 /*-------------------------------------------*/
 
 .show {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .event {
-    width: 1000px;
-    height: 500px;
-    object-fit: cover;
-    padding: 0px;
-    border: none;
-    margin-left: 20px;
-    border-radius: 15px;
-    background-color: black;
+  width: 1000px;
+  height: 500px;
+  object-fit: cover;
+  padding: 0px;
+  border: none;
+  margin-left: 20px;
+  border-radius: 15px;
+  background-color: black;
 }
-.show{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .scroller {
-    display: flex;
-    width: 55%;
-    height: 145px;
-    gap: 20px;
-    padding: 20px 20px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--main-text) transparent;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    align-self: center;
+  display: flex;
+  width: 55%;
+  height: 145px;
+  gap: 20px;
+  padding: 20px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-text) transparent;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  align-self: center;
 }
 
 .scrollerVid,
 .scroller img {
-    position: relative;
-    width: 20%;
-    cursor: pointer;
-    height: 100%;
-    flex-shrink: 0;
-    border-radius: 12px;
-    object-fit: cover;
-    transition: 0.3s;
+  position: relative;
+  width: 20%;
+  cursor: pointer;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: 0.3s;
 }
-.scrollerVid{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.scrollerVid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.scrollerVid img{
-    width: 100%;
+.scrollerVid img {
+  width: 100%;
 }
-.scVidPlay{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    color: white;
-    font-size: 2rem;
-    background-color: #00000085;
-    border-radius: 12px;
+.scVidPlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 2rem;
+  background-color: #00000085;
+  border-radius: 12px;
 }
-i.scVidPlay:hover{
-    background-color: transparent;
-    color: #edededdd;
+i.scVidPlay:hover {
+  background-color: transparent;
+  color: #edededdd;
 }
 
 .scroller :hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /*-------------------------------------------*/
 .specifications {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .specifications h2 {
-    color: #39c3ff;
-    font-size: 3rem;
-    padding: 20px;
+  color: #39c3ff;
+  font-size: 3rem;
+  padding: 20px;
 }
 
 table {
-    width: 80%;
-    border-collapse: collapse;
-    color: white;
-    overflow: hidden;
-    margin-left: 20px;
+  width: 80%;
+  border-collapse: collapse;
+  color: white;
+  overflow: hidden;
+  margin-left: 20px;
 }
 
-table .tcaption{
-    color: var(--main-text);
-    font-size: 2rem; 
-    font-weight: 700;
-    margin: 35px auto;
+table .tcaption {
+  color: var(--main-text);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 35px auto;
 }
 
-table,tr,th,
+table,
+tr,
+th,
 td {
-    font-size: 1.3rem;
-    padding: 20px;
-    text-align: center;
-    border: #293551 3px solid;
-    border-collapse: collapse;
+  font-size: 1.3rem;
+  padding: 20px;
+  text-align: center;
+  border: #293551 3px solid;
+  border-collapse: collapse;
 }
 
 th {
-    background-color: #2a2e39;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1.3rem;
-    padding: 20px;
+  background-color: #2a2e39;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 20px;
+  text-align: center;
+}
+tr:nth-child(odd) {
+  background-color: #13172b;
+}
+tr:nth-child(even) {
+  background-color: #20253c;
+}
+
+tr:hover {
+  background-color: #25262b;
+  background-color: #8d90a0;
+}
+.light-theme {
+  main {
+    margin-top: 0px;
+  }
+  .big-background {
+    height: 100vh;
+  }
+  .game-name {
+    text-shadow: 1px 1px 5px var(--name_shadow);
+  }
+
+  table .tcaption {
+    color: var(--main-text);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 35px auto;
+  }
+  table,
+  tr,
+  td {
+    border: #021b55 solid 3px;
+    padding: 10px;
+    font-family: "Tahoma";
     text-align: center;
-}
-tr:nth-child(odd){
-    background-color: #13172b;
-}
-tr:nth-child(even){
-    background-color: #20253c;
-}
+    border-collapse: collapse;
+    padding: 10px;
+  }
+  table {
+    overflow: hidden;
+  }
 
-tr:hover{
-    background-color: #25262b;
-    background-color: #8d90a0;
-}
-.light-theme{
-    main{
-        margin-top: 0px;
-    }
-    .big-background {
-        height: 100vh;
-    }
-    .game-name {
-        text-shadow: 1px 1px 5px var(--name_shadow);
-    }
-
-    table .tcaption{
-        color: var(--main-text);
-        font-size: 2rem; 
-        font-weight: 700;
-        margin: 35px auto;
-    }
-    table, tr, td{
-        border:#021b55 solid 3px;
-        padding: 10px;
-        font-family: 'Tahoma';
-        text-align: center;
-        border-collapse: collapse;
-        padding: 10px;
-    }
-    table{
-        overflow: hidden;
-    }
-    
-    th{
-        background-color: #3a4f7a;
-        text-align: center;
-        padding: 10px;
-        color: white;
-    }
-    tr:nth-child(odd){
-        background-color: #abccfd;
-        color: black
-    }
-    tr:nth-child(even){
-        background-color: #d1e2f3;
-        color: black
-    }
-    tr:hover{
-        background-color: #61729a;
-        color: white;
-    }
-
+  th {
+    background-color: #3a4f7a;
+    text-align: center;
+    padding: 10px;
+    color: white;
+  }
+  tr:nth-child(odd) {
+    background-color: #abccfd;
+    color: black;
+  }
+  tr:nth-child(even) {
+    background-color: #d1e2f3;
+    color: black;
+  }
+  tr:hover {
+    background-color: #61729a;
+    color: white;
+  }
 }

@@ -117,6 +117,28 @@
     color: #1a3a8a;
   }
 }
+.goUp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-size: xx-large;
+  
+  padding: 10px;
+  border-radius: 20px;
+  color: #f7eeee;
+  background-color: blueviolet;
+  display: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.light-theme .goUp {
+  color: #abccfd;
+  background-color: #3a4f7a;
+  transition: 0.3s;
+
+}
+
 .about_us .about_content .text {
   flex: 1;
 }
