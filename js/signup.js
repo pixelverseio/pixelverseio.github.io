@@ -12,7 +12,7 @@ function validateEmail(email) {
 
 let invalidEmailMsg = document.createElement("div");
 invalidEmailMsg.className = "error";
-invalidEmailMsg.id = "InvalidEerror";
+invalidEmailMsg.id = "equalCheck";
 invalidEmailMsg.innerHTML = `<p><i class="fa-solid fa-triangle-exclamation"></i> Invalid Email Format!</p>`;
 form.insertBefore(invalidEmailMsg, form.children[1]);
 invalidEmailMsg.style.display = "none";
@@ -27,25 +27,18 @@ createaccsuccess.innerHTML = `
 document.body.appendChild(createaccsuccess);
 
 let emailMsg = document.createElement("div");
-emailMsg.className = "error";
+emailMsg.className = "equalCheck";
 emailMsg.id = "Eerror";
 emailMsg.innerHTML = `<p><i class="fa-solid fa-triangle-exclamation"></i> Email Exists, try another one!</p>`;
 form.insertBefore(emailMsg, form.children[1]);
 emailMsg.style.display = "none";
 
 let userMsg = document.createElement("div");
-userMsg.className = "error";
+userMsg.className = "equalCheck";
 userMsg.id = "Uerror";
 userMsg.innerHTML = `<p><i class="fa-solid fa-triangle-exclamation"></i> Username Exists, try another one!</p>`;
 form.insertBefore(userMsg, form.children[1]);
 userMsg.style.display = "none";
-
-let passMsg = document.createElement("div");
-passMsg.className = "error";
-passMsg.id = "Perror";
-passMsg.innerHTML = `<p><i class="fa-solid fa-triangle-exclamation"></i> Password Exists, try another one!</p>`;
-form.insertBefore(passMsg, form.children[1]);
-passMsg.style.display = "none";
 
 let equalCheck = document.createElement("p");
 equalCheck.className = "equalCheck";
@@ -53,12 +46,34 @@ equalCheck.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Passwor
 form.insertBefore(equalCheck, form.children[1]);
 equalCheck.style.display = "none";
 
+let mustfill = document.createElement("p");
+mustfill.className = "equalCheck";
+mustfill.innerHTML = `
+  <i class="fa-solid fa-triangle-exclamation"></i> All Fields should be filled!
+`;
+form.insertBefore(mustfill, form.children[1]);
+mustfill.style.display = "none";
+
 document.forms[0].onsubmit = function (event) {
   let userValid = false,
     passValid = false,
     emailValid = false,
     ConPassValid = false;
 
+  if (
+    userInput.value.trim() === "" ||
+    passInput.value.trim() === "" ||
+    ConPassInput.value.trim() === "" ||
+    emailInput.value.trim() === ""
+  ) {
+    event.preventDefault();
+    mustfill.style.display = "block";
+
+    setTimeout(function () {
+      mustfill.style.display = "none";
+    }, 3000);
+    return;
+  }
   if (userInput.value.trim() !== "") {
     userValid = true;
   }
@@ -113,9 +128,9 @@ document.forms[0].onsubmit = function (event) {
     let users = JSON.parse(localStorage.getItem("users")) || {};
 
     let emailExist = Object.values(users).find(function (user) {
-  return user.email === emailInput.value.trim();
-});
-  var username = userInput.value.trim();
+      return user.email === emailInput.value.trim();
+    });
+    var username = userInput.value.trim();
     if (emailExist) {
       event.preventDefault();
       setTimeout(function () {
@@ -133,9 +148,9 @@ document.forms[0].onsubmit = function (event) {
     // });
     console.log(userExist);
     if (userExist) {
-      console.log(users)
-      console.log(Object.keys(users))
-      console.log(username)
+      console.log(users);
+      console.log(Object.keys(users));
+      console.log(username);
       event.preventDefault();
       userMsg.style.display = "block";
       setTimeout(function () {
@@ -143,21 +158,7 @@ document.forms[0].onsubmit = function (event) {
       }, 3000);
       return;
     }
-    let passExist = Object.values(users).find(function (user) {
-      return user.password === passInput.value.trim();
-    });
-
-    // if (passExist) {
-    //   event.preventDefault();
-    //   passMsg.style.display = "block";
-    //   setTimeout(function () {
-    //     passMsg.style.display = "none";
-    //   }, 3000);
-    //   return;
-    // }
-
-
-    users[username] ={
+    users[username] = {
       email: `${emailInput.value.trim()}`,
       password: `${passInput.value.trim()}`,
       balance: 0,
