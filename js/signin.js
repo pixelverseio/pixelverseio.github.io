@@ -9,6 +9,7 @@ loginSuccess.className = "successlogin";
 loginSuccess.id = "successlogin";
 loginSuccess.innerHTML = `
     <p>User Login Successful</p>
+    
     <i class="fa-solid fa-circle-check" style="color: rgb(99, 230, 190)"></i>
 `;
 
@@ -53,19 +54,21 @@ document.forms[0].onsubmit = function (event) {
     setTimeout(function () {
       window.location.href = "index.html";
     }, 2000);
-  }
-  else{
+  } else {
     let userValid = false,
-    passValid = false;
+      passValid = false;
 
-    if (userInput.value.trim() !== "" && Object.keys(users).includes(username)) {
+    if (
+      userInput.value.trim() !== "" &&
+      Object.keys(users).includes(username)
+    ) {
       userValid = true;
     }
 
     if (
       passInput.value.trim() !== "" &&
-      passInput.value.length >= 4 &&
-      passInput.value.length <= 10
+      passInput.value.length > 4 &&
+      passInput.value.length <= 20
     ) {
       //////////////////////////
       passValid = true;
@@ -77,23 +80,22 @@ document.forms[0].onsubmit = function (event) {
       setTimeout(function () {
         appearMes.style.display = "none";
       }, 3000);
-    } 
-    else {
+    } else {
       ////////////////////////////////////
-        let found = function() {
+      let found = function () {
         let username = userInput.value.trim();
         let password = passInput.value.trim();
 
         let user = users[username];
-                console.log(username)
+        console.log(username);
 
         return user !== undefined && user.password === password;
-    };
+      };
 
       event.preventDefault();
 
-      if (found) {
-        console.log(username)
+      if (found()) {
+        console.log(username);
         localStorage.setItem("login", "user");
         localStorage.setItem("pixeluser", username);
         loginSuccess.style.display = "block";
@@ -110,4 +112,3 @@ document.forms[0].onsubmit = function (event) {
     }
   }
 };
-
