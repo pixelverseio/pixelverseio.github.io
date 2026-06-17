@@ -5,7 +5,7 @@
   letter-spacing: 15px;
   transition: 0.5s;
 }
-header{
+header {
   display: none;
 }
 body {
@@ -77,7 +77,7 @@ form {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 620px;
+  height: 700px;
   h1,
   h3 {
     text-align: center;
@@ -92,53 +92,17 @@ form {
     margin: 10px 0 -10px 0;
   }
 
-  .input-box {
-    padding: 10px;
-    width: 100%;
-  }
-  .input-box input {
-    padding: 10px;
-    width: 100%;
-    border-style: none;
-    outline: none;
-    border-radius: 15px;
-  }
-
-  .input-box input:hover {
-    transform: translateX(1.7px);
-    transition: 0.3s;
-  }
-  #Eerror {
-    position: relative;
-    right: 15px;
-  }
   .pass-checker {
     position: relative;
     bottom: 20px;
     right: 20px;
     color: rgb(0, 170, 255);
   }
-  .error p {
-    color: red;
-    position: relative;
-    right: 140px;
-    top: 25px;
-  }
   .equalCheck {
     color: red;
     position: relative;
-    top: 15px;
-    right: 140px;
-    display: none;
-  }
-
-  #Eerror {
-    display: none;
-  }
-  #Uerror {
-    display: none;
-  }
-  #Perror {
+    top: 5px;
+    right: 150px;
     display: none;
   }
 
@@ -159,34 +123,80 @@ form {
     transition: 0.3s;
     cursor: pointer;
   }
+}
+form .input-box {
+  padding: 10px;
+  width: 100%;
+}
+form .input-box input {
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  border-color: transparent;
+  border-bottom-color: #0085ff;
+  background-color: transparent;
+  color: white;
+}
+form .input-box {
+  position: relative;
+  background-color: transparent;
+  font-weight: 800;
+  font-family: cursive;
+  letter-spacing: 0.5px;
+}
 
-  .fa-lock,
-  .fa-key,
-  .fa-user,
-  .fa-envelope {
-    color: #6a00ff;
-  }
+form .input-box label {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: gray;
+  transition: 0.3s;
+  background-color: transparent;
+}
 
-  .fa-lock {
-    position: absolute;
-    right: 45px;
-    top: 395px;
-  }
-  .fa-key {
-    position: absolute;
-    top: 315px;
-    right: 45px;
-  }
-  .fa-user {
-    position: absolute;
-    top: 235px;
-    right: 45px;
-  }
-  .fa-envelope {
-    position: absolute;
-    top: 155px;
-    right: 45px;
-  }
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #00a2ff;
+  background-color: transparent;
+}
+.input-box input:hover {
+  transform: translateX(1.7px);
+  transition: 0.3s;
+}
+/* ضبط الإكمال التلقائي في الـ Dark Mode */
+.input-box input:-webkit-autofill,
+.input-box input:-webkit-autofill:hover,
+.input-box input:-webkit-autofill:focus,
+.input-box input:-webkit-autofill:active {
+  -webkit-text-fill-color: white !important;
+  /* اللون ده #201b4b هو تقريباً لون الخلفية الشفافة للفورم الغامق بتاعك */
+  /* -webkit-box-shadow: 0 0 0px 1000px #201b4b inset !important;  */
+  caret-color: white;
+
+  /* توحيد الخط هنا كمان */
+  font-family: "Chakra Petch", cursive !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px;
+  transition: background-color 9999s ease-in-out 0s;
+}
+.light-theme .input-box input:-webkit-autofill,
+.light-theme .input-box input:-webkit-autofill:hover,
+.light-theme .input-box input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #1a3a8a !important;
+  -webkit-box-shadow: 0 0 0 1000px #eef5fa inset !important;
+  caret-color: #1a3a8a;
+  font-family: "Chakra Petch", cursive !important;
+  font-weight: 800 !important;
+}
+.light-theme .input-box input:focus + label,
+.light-theme .input-box input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #1a3a8a;
+  background-color: transparent;
+  -webkit-text-fill-color: #1a3a8a !important;
 }
 
 .have-acc {
@@ -203,6 +213,11 @@ form {
     transition: 0.5s;
   }
 }
+.light-theme .input-box input {
+  border-bottom-color: #1a3a8a;
+  color: #1a3a8a;
+}
+
 .light-theme body,
 .light-theme header,
 .light-theme footer,
@@ -215,6 +230,16 @@ form {
   box-shadow:
     0px 0px 0px #010101d1,
     0 0 25px #2424269c;
+  p {
+    color: #1a3a8a;
+  }
+}
+.equalCheck {
+  color: red;
+  position: relative;
+  top: 5px;
+  right: 150px;
+  display: none;
 }
 
 .light-theme .have-acc p {
