@@ -4,16 +4,23 @@ let userInput = document.querySelector("[name='user']"),
   adminName = "administrator",
   adminPass = "admingg";
 
-let loginSuccess = document.createElement("div");
-loginSuccess.className = "successlogin";
-loginSuccess.id = "successlogin";
-loginSuccess.innerHTML = `
-    <p>User Login Successful</p>
-    
+let loading = document.createElement("div");
+loading.innerHTML = `
+  <div class="loading">
+    <p>Loading</p>
+    <div class="circle"></div>
+  </div>
+`;
+passInput.after(loading);
+
+let loaded = document.createElement("div");
+loaded.className = "successlogin";
+loaded.id = "successlogin";
+loaded.innerHTML = `
+    <p>Loaded Successfully</p>
     <i class="fa-solid fa-circle-check" style="color: rgb(99, 230, 190)"></i>
 `;
-
-document.body.appendChild(loginSuccess);
+passInput.after(loaded);
 
 let adminLoginSuccess = document.createElement("div");
 adminLoginSuccess.className = "adminsuccesslogin";
@@ -22,7 +29,6 @@ adminLoginSuccess.innerHTML = `
     <p>Admin Login Successful</p>
     <i class="fa-solid fa-circle-check" style="color: rgb(99, 230, 190)"></i>
 `;
-
 document.body.appendChild(adminLoginSuccess);
 
 let appearMes = document.createElement("div");
@@ -36,11 +42,12 @@ appearMes.innerHTML = `
 `;
 
 form.insertBefore(appearMes, form.children[1]);
+loading.style.display = "none";
+appearMes.style.display = "none";
+loaded.style.display = "none";
+adminLoginSuccess.style.display = "none";
 document.forms[0].onsubmit = function (event) {
   var username = userInput.value.trim();
-  appearMes.style.display = "none";
-  loginSuccess.style.display = "none";
-  adminLoginSuccess.style.display = "none";
 
   if (
     userInput.value.trim() === adminName &&
@@ -93,21 +100,27 @@ document.forms[0].onsubmit = function (event) {
       };
 
       event.preventDefault();
-
       if (found()) {
-        console.log(username);
-        localStorage.setItem("login", "user");
-        localStorage.setItem("pixeluser", username);
-        loginSuccess.style.display = "block";
-        form.style.display = "none";
-        setTimeout(function () {
-          window.location.href = "index.html";
-        }, 2000);
-      } else {
-        appearMes.style.display = "block";
-        setTimeout(function () {
-          appearMes.style.display = "none";
-        }, 3000);
+        if (found()) {
+          loading.style.display = "block";
+
+          localStorage.setItem("login", "user");
+          localStorage.setItem("pixeluser", username);
+
+          setTimeout(() => {
+            loading.style.display = "none";
+            loaded.style.display = "flex";
+          }, 3000);
+
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 4000);
+        } else {
+          appearMes.style.display = "block";
+          setTimeout(function () {
+            appearMes.style.display = "none";
+          }, 3000);
+        }
       }
     }
   }
